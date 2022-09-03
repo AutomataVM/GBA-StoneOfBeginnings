@@ -1,0 +1,13 @@
+CC_NODEBUG = cl.exe /O2 /DNDEBUG /W3 /MD
+CC_DEBUG = cl.exe /Od /D_DEBUG /RTC1 /Z7 /W3 /MDd
+CFLAGS = /Gd /errorReport:prompt /Zc:wchar_t /Zc:forScope /GR- /arch:SSE2 /EHsc /GS /Gy /Oy- /nologo /W3 /WX- /MP /analyze /analyze:stacksize 32768 /D _CRT_SECURE_NO_WARNINGS
+
+all: swordcraft3c.exe swordcraft3-menu.exe
+
+swordcraft3c.exe: main.cpp expr.cpp inserter.cpp lz77.cpp opcodes.cpp parser.cpp script.cpp sjis.cpp tokenizer.cpp
+	$(CC_NODEBUG) $(CFLAGS) $** /link /out:swordcraft3c.exe
+
+swordcraft3-menu.exe: menu.cpp expr.cpp lz77.cpp sjis.cpp tokenizer.cpp
+	$(CC_NODEBUG) $(CFLAGS) $** /link /out:swordcraft3-menu.exe
+
+.PHONY: all
