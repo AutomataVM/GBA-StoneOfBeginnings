@@ -103,3 +103,10 @@ script_inserter\swordcraft3c swordcraft3-test.gba script\1732aec.txt --pos=1732a
 script_inserter\swordcraft3c swordcraft3-test.gba script\17d4b7c.txt --pos=17d4b7c 
 script_inserter\swordcraft3c swordcraft3-test.gba script\17d4fac.txt --pos=17d4fac 
 script_inserter\swordcraft3c swordcraft3-test.gba script\17d535c.txt --pos=17d535c 
+
+
+tools\flips --create --ips swordcraft3.gba swordcraft3-test.gba patches\swordcraft3.ips
+tools\flips --create --bps-linear swordcraft3.gba swordcraft3-test.gba patches\swordcraft3.bps
+tools\flips --create --bps-delta swordcraft3.gba swordcraft3-test.gba patches\swordcraft3_delta.bps
+
+pause
