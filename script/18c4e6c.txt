@@ -1,0 +1,397 @@
+jumpz           @Cond_0018, ($bv031 == 0)
+call            @Func_06f6
+goto            @Cond_0018
+
+@Cond_0018:
+setvar          $bv029, 0
+call            @Func_05be
+code037c        $h232
+code047d        0, 150
+jumpz           @Cond_0178, ($bv031 == 1)
+jumpz           @Cond_0106, ($bv029 == 0)
+code0301        8, 7
+code047e        0, 1
+dialogtxt       "Hey, "
+dialogtxt       "do you have any ζs?"
+code0309        
+dialogtxt       "You know, ζ"
+dialogtxt       "is my favorite."
+code0309        
+dialogtxt       "I want to own every"
+dialogtxt       "ζ in the world."
+code0309        
+code047e        0, 0
+code0302        7
+goto            @Label_0174
+
+@Cond_0106:
+code0301        8, 7
+code047e        0, 1
+dialogtxt       "I'll buy any ζs"
+dialogtxt       "you have."
+dialogtxt       "Sell 'em to me."
+code0309        
+code047e        0, 0
+code0302        7
+call            @Func_069e
+goto            @Label_0174
+
+@Label_0174:
+goto            @Label_05b0
+
+@Cond_0178:
+jumpz           @Cond_031e, ($bv031 == 2)
+jumpz           @Cond_02ac, ($bv029 == 0)
+code0301        8, 7
+code047e        0, 1
+dialogtxt       "Hey,"
+dialogtxt       "have you got any ζs?"
+code0309        
+dialogtxt       "They're great for preventing"
+dialogtxt       "drafts from coming in."
+code0309        
+dialogtxt       "You know, my dream is to live"
+dialogtxt       "in a house build by my own hands."
+code0309        
+dialogtxt       "I've built one before, but there"
+dialogtxt       "were cracks everywhere, and my"
+dialogtxt       "family made a big deal out of it."
+code0309        
+code047e        0, 0
+code0302        7
+goto            @Label_031a
+
+@Cond_02ac:
+code0301        8, 7
+code047e        0, 1
+dialogtxt       "I'll buy any ζs"
+dialogtxt       "you have."
+dialogtxt       "Sell 'em to me."
+code0309        
+code047e        0, 0
+code0302        7
+call            @Func_069e
+goto            @Label_031a
+
+@Label_031a:
+goto            @Label_05b0
+
+@Cond_031e:
+jumpz           @Cond_0444, ($bv031 == 3)
+jumpz           @Cond_03d2, ($bv029 == 0)
+code0301        8, 7
+code047e        0, 1
+dialogtxt       "Hey,"
+dialogtxt       "do you have any ζs?"
+code0309        
+dialogtxt       "ζ, you know,"
+dialogtxt       "the way they feel is enticing."
+dialogtxt       "It'll take your breath away."
+code0309        
+code047e        0, 0
+code0302        7
+goto            @Label_0440
+
+@Cond_03d2:
+code0301        8, 7
+code047e        0, 1
+dialogtxt       "I'll buy any ζs"
+dialogtxt       "you have. \"pant\""
+dialogtxt       "Sell 'em to me."
+code0309        
+code047e        0, 0
+code0302        7
+call            @Func_069e
+goto            @Label_0440
+
+@Label_0440:
+goto            @Label_05b0
+
+@Cond_0444:
+jumpz           @Label_05b0, ($bv031 == 4)
+jumpz           @Cond_053e, ($bv029 == 0)
+code0301        8, 7
+code047e        0, 1
+dialogtxt       "Hey,"
+dialogtxt       "do you have any ζs?"
+code0309        
+dialogtxt       "They've gotten popular with some"
+dialogtxt       "people and can fetch a high price."
+code0309        
+dialogtxt       "Ah, it's impossible for an amateur"
+dialogtxt       "to figure out how to do it, so"
+dialogtxt       "leave it to a pro like me."
+code0309        
+code047e        0, 0
+code0302        7
+goto            @Label_05ac
+
+@Cond_053e:
+code0301        8, 7
+code047e        0, 1
+dialogtxt       "I'll buy every ζ"
+dialogtxt       "you have."
+dialogtxt       "Sell 'em to me."
+code0309        
+code047e        0, 0
+code0302        7
+call            @Func_069e
+goto            @Label_05ac
+
+@Label_05ac:
+goto            @Label_05b0
+
+@Label_05b0:
+setvar          $bv031, 0
+done            
+
+@Func_05be:
+jumpz           @Cond_05ea, ($bv031 == 1)
+setvar          $h232, 321
+setvar          $h233, 20
+goto            @Label_066e
+
+@Cond_05ea:
+jumpz           @Cond_0616, ($bv031 == 2)
+setvar          $h232, 317
+setvar          $h233, 50
+goto            @Label_066e
+
+@Cond_0616:
+jumpz           @Cond_0642, ($bv031 == 3)
+setvar          $h232, 329
+setvar          $h233, 100
+goto            @Label_066e
+
+@Cond_0642:
+jumpz           @Label_066e, ($bv031 == 4)
+setvar          $h232, 340
+setvar          $h233, 200
+goto            @Label_066e
+
+@Label_066e:
+code036a        $h232
+jumpz           @Cond_069c, $b070
+setvar          $bv029, 1
+setvar          $bv030, $b070
+goto            @Cond_069c
+
+@Cond_069c:
+ret             
+
+@Func_069e:
+setvar          $h096, 63
+code040a        
+code0354        $h232, $h233
+code0355        
+code036a        $h232
+jumpz           @Cond_06e4, ($b070 < $bv030)
+setvar          $bv029, 2
+goto            @Label_06f4
+
+@Cond_06e4:
+setvar          $bv029, 3
+goto            @Label_06f4
+
+@Label_06f4:
+ret             
+
+@Func_06f6:
+code0301        8, 7
+dialogtxt       "Location error"
+dialogtxt       "POS_TEMP"
+dialogtxt       "is not set."
+code0309        
+code0302        7
+ret             
+
+code031a        7
+code031b        7, -1, -1, $h136, $h137
+code031c        7, 1
+code031f        7
+ret             
+
+code031b        7, -1, -1, $h136, $h137
+code031c        7, 2
+code031f        7
+code031a        7
+ret             
+
+code031a        7
+code031b        7, (-1 - $h139), $h140, $h136, $h137
+code031c        7, 1
+code031f        7
+ret             
+
+code031a        6
+code031b        6, $h139, 0, $h136, $h137
+code031c        6, 1
+code031f        6
+ret                      
+
+code031b        6, $h139, 0, $h136, $h137
+code031c        6, 2
+code031f        6
+code031a        6
+ret             
+
+code031a        7
+code031b        7, -1, -1, $h141, $h137
+code031c        7, 1
+code040d        15
+code031a        6
+code031b        6, -1, -1, $h136, $h137
+code031c        6, 1
+code031f        6
+code031a        7
+code031b        6, -1, -1, $h136, ($h137 / 2)
+code031c        6, 2
+code031f        6
+code031a        6
+ret             
+
+code031a        7
+code031b        7, -1, -1, $h141, $h137
+code031c        7, 1
+code040d        15
+code031a        6
+code031b        6, -1, -1, $h136, $h137
+code031c        6, 1
+code031f        6
+code031a        7
+ret             
+
+jumpz           @Cond_0a90, ($h131 == 0)
+setvar          $h139, ($h139 | 0x0001)
+goto            @Label_0cca
+
+@Cond_0a90:
+jumpz           @Cond_0ab6, ($h131 == 1)
+setvar          $h139, ($h139 | 0x0002)
+goto            @Label_0cca
+
+@Cond_0ab6:
+jumpz           @Cond_0adc, ($h131 == 2)
+setvar          $h139, ($h139 | 0x0004)
+goto            @Label_0cca
+
+@Cond_0adc:
+jumpz           @Cond_0b02, ($h131 == 3)
+setvar          $h139, ($h139 | 0x0008)
+goto            @Label_0cca
+
+@Cond_0b02:
+jumpz           @Cond_0b28, ($h131 == 4)
+setvar          $h139, ($h139 | 0x0010)
+goto            @Label_0cca
+
+@Cond_0b28:
+jumpz           @Cond_0b4e, ($h131 == 5)
+setvar          $h139, ($h139 | 0x0020)
+goto            @Label_0cca
+
+@Cond_0b4e:
+jumpz           @Cond_0b74, ($h131 == 6)
+setvar          $h139, ($h139 | 0x0040)
+goto            @Label_0cca
+
+@Cond_0b74:
+jumpz           @Cond_0b9a, ($h131 == 7)
+setvar          $h139, ($h139 | 0x0080)
+goto            @Label_0cca
+
+@Cond_0b9a:
+jumpz           @Cond_0bc0, ($h131 == 8)
+setvar          $h139, ($h139 | 0x0100)
+goto            @Label_0cca
+
+@Cond_0bc0:
+jumpz           @Cond_0be6, ($h131 == 9)
+setvar          $h139, ($h139 | 0x0200)
+goto            @Label_0cca
+
+@Cond_0be6:
+jumpz           @Cond_0c0c, ($h131 == 10)
+setvar          $h139, ($h139 | 0x0400)
+goto            @Label_0cca
+
+@Cond_0c0c:
+jumpz           @Cond_0c32, ($h131 == 11)
+setvar          $h139, ($h139 | 0x0800)
+goto            @Label_0cca
+
+@Cond_0c32:
+jumpz           @Cond_0c58, ($h131 == 12)
+setvar          $h139, ($h139 | 0x1000)
+goto            @Label_0cca
+
+@Cond_0c58:
+jumpz           @Cond_0c7e, ($h131 == 13)
+setvar          $h139, ($h139 | 0x2000)
+goto            @Label_0cca
+
+@Cond_0c7e:
+jumpz           @Cond_0ca4, ($h131 == 14)
+setvar          $h139, ($h139 | 0x4000)
+goto            @Label_0cca
+
+@Cond_0ca4:
+jumpz           @Label_0cca, ($h131 == 15)
+setvar          $h139, ($h139 | 0x00008000)
+goto            @Label_0cca
+
+@Label_0cca:
+ret             
+
+code0301        2, 4
+code047e        0, 1
+ret             
+
+code0301        2, 7
+code047e        0, 1
+ret             
+
+code047e        0, 0
+code0302        4
+ret             
+
+code047e        0, 0
+code0302        7
+ret             
+
+code0301        4, 5
+code047e        1, 1
+ret             
+
+code0301        4, 7
+code047e        1, 1
+ret             
+
+code047e        1, 0
+code0302        5
+ret             
+
+code047e        1, 0
+code0302        7
+ret             
+
+code047a        0, 1, 1
+ret             
+
+code047a        1, 1, 1
+ret             
+
+code047a        0, 1, 1
+code047a        1, 1, 1
+ret             
+
+code047a        0, 0, 1
+ret             
+
+code047a        1, 0, 1
+ret             
+
+code047a        0, 0, 1
+code047a        1, 0, 1
+ret             
+

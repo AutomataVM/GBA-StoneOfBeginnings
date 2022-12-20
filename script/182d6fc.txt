@@ -1,0 +1,217 @@
+code0304        1
+dialogtxt       "　　　　　　なんだかんだで　　　　　"
+dialogtxt       "　明日トラムと勝負をすることになった"
+code030a        6, 1
+dialogtxt       "　　　　　　　それから　　　　　　　"
+dialogtxt       "　ギャラハンさん家に泊まることにも　"
+dialogtxt       "　　　　　　　なっていた　　　　　　"
+code030a        6, 1
+dialogtxt       "　　　なっちゃったもんは仕方ない　　"
+dialogtxt       "　　　　　　　とにかく　　　　　　　"
+dialogtxt       "　　　　　　　勝とう！　　　　　　　"
+code030a        6, 1
+code0304        0
+done            
+
+code031a        7
+code031b        7, -1, -1, $h136, $h137
+code031c        7, 1
+code031f        7
+ret             
+
+code031b        7, -1, -1, $h136, $h137
+code031c        7, 2
+code031f        7
+code031a        7
+ret             
+
+code031a        7
+code031b        7, (-1 - $h139), $h140, $h136, $h137
+code031c        7, 1
+code031f        7
+ret             
+
+code031a        6
+code031b        6, $h139, 0, $h136, $h137
+code031c        6, 1
+code031f        6
+ret             
+
+code031b        7, (-1 - $h139), $h140, $h136, $h137
+code031c        7, 2
+code031f        7
+code031a        7
+ret             
+
+code031b        6, $h139, 0, $h136, $h137
+code031c        6, 2
+code031f        6
+code031a        6
+ret             
+
+code031a        7
+code031b        7, -1, -1, $h141, $h137
+code031c        7, 1
+code040d        15
+code031a        6
+code031b        6, -1, -1, $h136, $h137
+code031c        6, 1
+code031f        6
+code031a        7
+code031b        6, -1, -1, $h136, ($h137 / 2)
+code031c        6, 2
+code031f        6
+code031a        6
+ret             
+
+code031a        7
+code031b        7, -1, -1, $h141, $h137
+code031c        7, 1
+code040d        15
+code031a        6
+code031b        6, -1, -1, $h136, $h137
+code031c        6, 1
+code031f        6
+code031a        7
+ret             
+
+code031b        6, -1, -1, $h136, ($h137 / 2)
+code031c        6, 2
+code031f        6
+code031a        6
+ret             
+
+jumpz           @Cond_04c4, ($h131 == 0)
+setvar          $h139, ($h139 | 0x0001)
+goto            @Label_06fe
+
+@Cond_04c4:
+jumpz           @Cond_04ea, ($h131 == 1)
+setvar          $h139, ($h139 | 0x0002)
+goto            @Label_06fe
+
+@Cond_04ea:
+jumpz           @Cond_0510, ($h131 == 2)
+setvar          $h139, ($h139 | 0x0004)
+goto            @Label_06fe
+
+@Cond_0510:
+jumpz           @Cond_0536, ($h131 == 3)
+setvar          $h139, ($h139 | 0x0008)
+goto            @Label_06fe
+
+@Cond_0536:
+jumpz           @Cond_055c, ($h131 == 4)
+setvar          $h139, ($h139 | 0x0010)
+goto            @Label_06fe
+
+@Cond_055c:
+jumpz           @Cond_0582, ($h131 == 5)
+setvar          $h139, ($h139 | 0x0020)
+goto            @Label_06fe
+
+@Cond_0582:
+jumpz           @Cond_05a8, ($h131 == 6)
+setvar          $h139, ($h139 | 0x0040)
+goto            @Label_06fe
+
+@Cond_05a8:
+jumpz           @Cond_05ce, ($h131 == 7)
+setvar          $h139, ($h139 | 0x0080)
+goto            @Label_06fe
+
+@Cond_05ce:
+jumpz           @Cond_05f4, ($h131 == 8)
+setvar          $h139, ($h139 | 0x0100)
+goto            @Label_06fe
+
+@Cond_05f4:
+jumpz           @Cond_061a, ($h131 == 9)
+setvar          $h139, ($h139 | 0x0200)
+goto            @Label_06fe
+
+@Cond_061a:
+jumpz           @Cond_0640, ($h131 == 10)
+setvar          $h139, ($h139 | 0x0400)
+goto            @Label_06fe
+
+@Cond_0640:
+jumpz           @Cond_0666, ($h131 == 11)
+setvar          $h139, ($h139 | 0x0800)
+goto            @Label_06fe
+
+@Cond_0666:
+jumpz           @Cond_068c, ($h131 == 12)
+setvar          $h139, ($h139 | 0x1000)
+goto            @Label_06fe
+
+@Cond_068c:
+jumpz           @Cond_06b2, ($h131 == 13)
+setvar          $h139, ($h139 | 0x2000)
+goto            @Label_06fe
+
+@Cond_06b2:
+jumpz           @Cond_06d8, ($h131 == 14)
+setvar          $h139, ($h139 | 0x4000)
+goto            @Label_06fe
+
+@Cond_06d8:
+jumpz           @Label_06fe, ($h131 == 15)
+setvar          $h139, ($h139 | 0x00008000)
+goto            @Label_06fe
+
+@Label_06fe:
+ret             
+
+code0301        2, 4
+code047e        0, 1
+ret             
+
+code0301        2, 7
+code047e        0, 1
+ret             
+
+code047e        0, 0
+code0302        4
+ret             
+
+code047e        0, 0
+code0302        7
+ret             
+
+code0301        4, 5
+code047e        1, 1
+ret             
+
+code0301        4, 7
+code047e        1, 1
+ret             
+
+code047e        1, 0
+code0302        5
+ret             
+
+code047e        1, 0
+code0302        7
+ret             
+
+code047a        0, 1, 1
+ret             
+
+code047a        1, 1, 1
+ret             
+
+code047a        0, 1, 1
+code047a        1, 1, 1
+ret             
+
+code047a        0, 0, 1
+ret             
+
+code047a        1, 0, 1
+ret             
+
+code047a        0, 0, 1
+code047a        1, 0, 1
+ret             
+

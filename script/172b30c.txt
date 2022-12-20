@@ -1,0 +1,402 @@
+@start:
+setvar          $b097, 0
+code0408        0
+code0410        0, 59, 60, -1
+code0410        1, 59, 61, 63
+code0410        2, 59, 62, -1
+code0411        
+code0430        64
+code0412        4, 1
+code0418        1
+setvar          $b075, 1
+setvar          $b072, 0
+placetxt        "Rob's Workshop　Workshop"
+code040c        1, @Label_05c0
+code0450        0, 0, -1
+code0452        0, 2, 27
+code0453        0, @Label_05d4, 0
+code0420        0, 4, 17
+code0422        0, 0
+jumpz           @Cond_01b2, ($f0038 == 0 || $f0039 == 0)
+code0438        2, 160, 550, 1
+code043a        2, 2, 0
+code043d        2, 128, 120
+code043c        2, 1
+code043e        2, 3, 0
+code0442        2, @Talk_0820
+code0443        2, 16384, 1
+goto            @Cond_01b2
+
+@Cond_01b2:
+jumpz           @Cond_0200, ($f0038 == 1 && $f0039 == 0)
+code041c        0, 128, 144, 3
+code043e        0, 3, 0
+goto            @Label_024c
+
+@Cond_0200:
+code041c        0, 48, 247, 1
+jumpz           @Cond_0248, ($h319 == 7)
+code041c        1, 48, 247, 3
+goto            @Cond_0248
+
+@Cond_0248:
+goto            @Label_024c
+
+@Label_024c:
+mapev           0, @Event_03e0, 4
+mapevpos        0, (5,31)-(6,31)
+mapev           1, @Event_04be, 64
+mapevpos        1, (15,11)-(16,11)
+mapev           2, @Event_053a, 16
+mapevpos        2, (24,23)-(25,24)
+jumpz           @Cond_0320, ($f0038 == 0)
+mapev           3, @Event_03ae, 4
+mapevpos        3, (10,18)-(22,18)
+goto            @Cond_0320
+
+@Cond_0320:
+setvar          $h319, 6
+code0409        
+code046e        13, 256, 0
+code041d        
+jumpz           @Cond_0394, ($f0038 == 1 && $f0039 == 0 && $b071 == 1)
+setvar          $f0039, 1
+code0006        1608
+code043b        2
+code0439        2
+goto            @Cond_0394
+
+@Cond_0394:
+jumpz           @Cond_03ac, ($f0131 == 0)
+call            @Func_0604
+goto            @Cond_03ac
+
+@Cond_03ac:
+code040b        
+
+@Event_03ae:
+setvar          $f0038, 1
+code043e        0, 3, 0
+code0006        1607
+code0461        3
+code040b        
+
+@Event_03e0:
+jumpz           @Cond_048c, ($f0038 == 1 && $f0039 == 0)
+code043e        0, 3, 0
+code0301        8, 7
+code047d        0, 108
+code047e        0, 1
+dialogtxt       "Where are you going?"
+dialogtxt       "You're still in the"
+dialogtxt       "middle of the training."
+
+code0309        
+code047e        0, 0
+code0302        7
+call            @Func_0e02
+code040b        
+
+goto            @Cond_048c
+
+@Cond_048c:
+setvar          $h096, 32
+code041c        17, 0, 0, 1
+code041d        
+code040a        
+gotomap         208 ; map 172bbec
+
+@Event_04be:
+setvar          $h096, 63
+setvar          $h087, 1
+code040a        
+setvar          $h086, 0
+code0359        0
+code036e        
+jumpz           @Cond_0526, ($f0038 == 1 && $f0039 == 0 && $b071 == 1)
+setvar          $h096, 48
+goto            @Label_0536
+
+@Cond_0526:
+setvar          $b071, 0
+goto            @Label_0536
+
+@Label_0536:
+goto            @start
+
+@Event_053a:
+code0445        0, 7
+code0446        0
+setvar          $h136, 0
+setvar          $h137, 30
+call            @Func_087e
+code033a        112, 0
+code033e        112
+code0368        
+code043d        0, 200, 192
+code043c        0, 1
+call            @Func_08be
+popuptxt        "You feel refreshed!"
+code0318        
+code040b        
+
+@Label_05c0:
+setvar          $h096, 63
+code040a        
+code034f        
+goto            @start
+
+@Label_05d4:
+code0357        
+jumpz           @Cond_05fe, ($b068 == 0)
+setvar          $h096, 63
+code040a        
+code0358        
+goto            @start
+
+goto            @Func_0604
+
+@Cond_05fe:
+code040b        
+
+goto            @Func_0604
+
+@Func_0604:
+setvar          $f0131, 1
+code043e        0, 6, 0
+walkto          0, 48, 240, 1
+walkwait        0
+code043c        0, 2
+code043e        0, 3, 0
+code043e        0, 3, 0
+code0445        0, 3
+code0446        0
+code0301        0, 9
+code0305        1
+dialogtxt       "This is a save point."
+dialogtxt       "You can save your game here"
+dialogtxt       "without using an Anywhere Diary."
+code0309        
+dialogtxt       "To do so, stand facing the"
+dialogtxt       "save point, and press the A button."
+code0309        
+code0302        9
+code043c        0, 4
+code0445        0, 7
+code0446        0
+code0301        0, 9
+code0305        1
+dialogtxt       "Sleep in a bed to recover"
+dialogtxt       "health and spell uses."
+code0309        
+dialogtxt       "To do so, stand in front of"
+dialogtxt       "your bed and press the A button."
+code0309        
+code0302        9
+ret             
+
+@Talk_0820:
+code0301        8, 7
+code047d        0, 108
+code047e        0, 1
+dialogtxt       "Let's put some spirit into it!"
+code0309        
+code047e        0, 0
+code0302        7
+code040b        
+
+done            
+
+@Func_087e:
+code031a        7
+code031b        7, -1, -1, $h136, $h137
+code031c        7, 1
+code031f        7
+ret             
+
+@Func_08be:
+code031b        7, -1, -1, $h136, $h137
+code031c        7, 2
+code031f        7
+code031a        7
+ret             
+
+code031a        7
+code031b        7, (-1 - $h139), $h140, $h136, $h137
+code031c        7, 1
+code031f        7
+ret             
+
+code031a        6
+code031b        6, $h139, 0, $h136, $h137
+code031c        6, 1
+code031f        6
+ret             
+
+code031b        7, (-1 - $h139), $h140, $h136, $h137
+code031c        7, 2
+code031f        7
+code031a        7
+ret             
+
+code031b        6, $h139, 0, $h136, $h137
+code031c        6, 2
+code031f        6
+code031a        6
+ret             
+
+code031a        7
+code031b        7, -1, -1, $h141, $h137
+code031c        7, 1
+code040d        15
+code031a        6
+code031b        6, -1, -1, $h136, $h137
+code031c        6, 1
+code031f        6
+code031a        7
+code031b        6, -1, -1, $h136, ($h137 / 2)
+code031c        6, 2
+code031f        6
+code031a        6
+ret             
+
+code031a        7
+code031b        7, -1, -1, $h141, $h137
+code031c        7, 1
+code040d        15
+code031a        6
+code031b        6, -1, -1, $h136, $h137
+code031c        6, 1
+code031f        6
+code031a        7
+ret             
+
+code031b        6, -1, -1, $h136, ($h137 / 2)
+code031c        6, 2
+code031f        6
+code031a        6
+ret             
+
+jumpz           @Cond_0bc6, ($h131 == 0)
+setvar          $h139, ($h139 | 0x0001)
+goto            @Label_0e00
+
+@Cond_0bc6:
+jumpz           @Cond_0bec, ($h131 == 1)
+setvar          $h139, ($h139 | 0x0002)
+goto            @Label_0e00
+
+@Cond_0bec:
+jumpz           @Cond_0c12, ($h131 == 2)
+setvar          $h139, ($h139 | 0x0004)
+goto            @Label_0e00
+
+@Cond_0c12:
+jumpz           @Cond_0c38, ($h131 == 3)
+setvar          $h139, ($h139 | 0x0008)
+goto            @Label_0e00
+
+@Cond_0c38:
+jumpz           @Cond_0c5e, ($h131 == 4)
+setvar          $h139, ($h139 | 0x0010)
+goto            @Label_0e00
+
+@Cond_0c5e:
+jumpz           @Cond_0c84, ($h131 == 5)
+setvar          $h139, ($h139 | 0x0020)
+goto            @Label_0e00
+
+@Cond_0c84:
+jumpz           @Cond_0caa, ($h131 == 6)
+setvar          $h139, ($h139 | 0x0040)
+goto            @Label_0e00
+
+@Cond_0caa:
+jumpz           @Cond_0cd0, ($h131 == 7)
+setvar          $h139, ($h139 | 0x0080)
+goto            @Label_0e00
+
+@Cond_0cd0:
+jumpz           @Cond_0cf6, ($h131 == 8)
+setvar          $h139, ($h139 | 0x0100)
+goto            @Label_0e00
+
+@Cond_0cf6:
+jumpz           @Cond_0d1c, ($h131 == 9)
+setvar          $h139, ($h139 | 0x0200)
+goto            @Label_0e00
+
+@Cond_0d1c:
+jumpz           @Cond_0d42, ($h131 == 10)
+setvar          $h139, ($h139 | 0x0400)
+goto            @Label_0e00
+
+@Cond_0d42:
+jumpz           @Cond_0d68, ($h131 == 11)
+setvar          $h139, ($h139 | 0x0800)
+goto            @Label_0e00
+
+@Cond_0d68:
+jumpz           @Cond_0d8e, ($h131 == 12)
+setvar          $h139, ($h139 | 0x1000)
+goto            @Label_0e00
+
+@Cond_0d8e:
+jumpz           @Cond_0db4, ($h131 == 13)
+setvar          $h139, ($h139 | 0x2000)
+goto            @Label_0e00
+
+@Cond_0db4:
+jumpz           @Cond_0dda, ($h131 == 14)
+setvar          $h139, ($h139 | 0x4000)
+goto            @Label_0e00
+
+@Cond_0dda:
+jumpz           @Label_0e00, ($h131 == 15)
+setvar          $h139, ($h139 | 0x00008000)
+goto            @Label_0e00
+
+@Label_0e00:
+ret             
+
+@Func_0e02:
+code046d        0, 192
+code043e        0, 6, 0
+walkto          0, $h128, ($h129 - 8), 1
+walkwait        0
+ret             
+
+code046d        0, 192
+code043e        0, 6, 0
+walkto          0, $h128, ($h129 + 8), 1
+walkwait        0
+ret             
+
+code046d        0, 192
+code043e        0, 6, 0
+walkto          0, ($h128 - 8), $h129, 1
+walkwait        0
+ret             
+
+code046d        0, 192
+code043e        0, 6, 0
+walkto          0, ($h128 + 8), $h129, 1
+walkwait        0
+ret             
+
+code033a        196, 0
+code048e        
+code031a        7
+code031b        7, -1, -1, 32767, 6
+code031c        7, 1
+code031f        7
+code0443        0, 48, 0
+code043d        0, $h192, $h193
+code0443        0, 48, 1
+code031b        7, -1, -1, 32767, 6
+code031c        7, 2
+code031f        7
+code031a        7
+code033e        196
+ret             
+

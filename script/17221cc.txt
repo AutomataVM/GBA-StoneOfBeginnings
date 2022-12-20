@@ -1,0 +1,26 @@
+setvar          $h100, -1
+code04a3        
+jumpz           @Cond_005c, ($h101 != 1)
+code0301        0, 7
+dialogtxt       "The portal is not activated."
+code0309        
+code0302        7
+goto            @Label_00b6
+
+goto            @Cond_005c
+
+@Cond_005c:
+menutitle       "Return to dungeon?"
+menutxt         @Menu_008a, "Return"
+menutxt         @Label_00b6, "Quit"
+menuwait        
+
+@Menu_008a:
+setvar          $h319, -3
+code04a2        
+code041c        27, 0, 0, -1
+code041d        
+code040a        
+@Label_00b6:
+done            
+

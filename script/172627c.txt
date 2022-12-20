@@ -1,0 +1,74 @@
+code035e        389
+jumpz           @Cond_0028, ($b005 != 0)
+setvar          $b006, 2
+goto            @Label_0082
+
+@Cond_0028:
+code0114        
+@Label_002a:
+code0300        
+code0312        
+code0313        @Menu_007e
+menutxt         @Menu_0052, "態勢を整える！"
+menutxt         @Menu_007e, "戦う"
+menuwait        
+
+@Menu_0052:
+setvar          $b075, 0
+setvar          $b072, 0
+setvar          $b081, 1
+code0303        
+code034f        
+goto            @Label_002a
+
+@Menu_007e:
+goto            @Label_0082
+
+@Label_0082:
+code035b        1
+setvar          $b032, 1
+setvar          $b033, 3
+setvar          $b039, 4
+setvar          $h032, (0 + $b002)
+setvar          $b034, 1
+setvar          $h033, 258
+setvar          $b043, 100
+setvar          $b042, 100
+setvar          $b044, 0
+setvar          $w015, 0
+setvar          $b063, 0
+jumpz           @Cond_0134, ($b002 == 0)
+setvar          $h050, 66
+goto            @Label_0144
+
+@Cond_0134:
+setvar          $h050, 57
+goto            @Label_0144
+
+@Label_0144:
+code0331        6, 256
+code0100        
+code0101        
+jumpz           @Cond_0192, ($b041 == 3)
+code0111        
+jumpz           @Cond_017e, ($b004 == 1)
+code035c        
+goto            @Label_018e
+
+@Cond_017e:
+code035d        
+code000d        
+gotomap         1 ; map 1720aac
+
+goto            @Label_018e
+
+@Label_018e:
+goto            @Label_0198
+
+@Cond_0192:
+code035d        
+goto            @Label_0198
+
+@Label_0198:
+done            
+

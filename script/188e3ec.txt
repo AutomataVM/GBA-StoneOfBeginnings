@@ -1,0 +1,332 @@
+@start:
+setvar          $b097, 1
+code0408        1
+code0410        0, 362, 374, -1
+code0410        1, 362, 375, -1
+code0410        2, 363, 376, -1
+code0411        
+code0430        377
+code0412        4, 1
+code0418        2
+code046c        1
+setvar          $b075, 1
+setvar          $b072, 1
+placetxt        "ディックル鉱洞"
+code040c        0, @Label_052a
+code040c        1, @Label_05d2
+code040c        2, @Label_05c8
+code0450        0, 5, 554
+code0452        0, 9, 12
+code0450        1, 5, 555
+code0452        1, 11, 12
+code0450        2, 5, 556
+code0452        2, 13, 12
+code0450        3, 5, 557
+code0452        3, 15, 12
+code0450        4, 5, 558
+code0452        4, 10, 14
+code0450        5, 5, 559
+code0452        5, 12, 14
+code0450        6, 5, 560
+code0452        6, 14, 14
+code0450        7, 4, 561
+code0452        7, 7, 35
+code0450        8, 4, 562
+code0452        8, 9, 35
+code0450        9, 3, 563
+code0452        9, 11, 35
+code0450        10, 9, 564
+code0452        10, 31, 70
+code0450        11, 9, 565
+code0452        11, 29, 71
+code0450        12, 9, 566
+code0452        12, 31, 72
+code0450        13, 9, 567
+code0452        13, 29, 73
+code041c        0, 335, 192, 1
+jumpz           @Cond_034a, ($h319 == 60)
+code041c        1, 335, 192, 2
+goto            @Label_03aa
+
+@Cond_034a:
+jumpz           @Cond_0378, ($h319 == 62)
+code041c        1, 104, 775, 3
+goto            @Label_03aa
+
+@Cond_0378:
+jumpz           @Label_03aa, ($h319 == -3)
+code04a1        
+code041c        11, 0, 0, 1
+code0475        
+goto            @Label_03aa
+
+@Label_03aa:
+mapev           0, @Event_0564, 4
+mapevpos        0, (42,21)-(43,25)
+mapev           1, @Event_0596, 4
+mapevpos        1, (10,97)-(15,97)
+jumpz           @Cond_0468, (($f0035 == 0 && !($bv048 & 0x0001)) && $h311 == 5)
+mapev           2, @Event_05e6, 16384
+mapevpos        2, (0,0)-(43,97)
+goto            @Cond_0468
+
+@Cond_0468:
+setvar          $h319, 61
+code0409        
+code046e        20, 256, 0
+code041d        
+jumpz           @Cond_04bc, ($b073 == 1)
+setvar          $b073, 0
+code0006        13
+gotomap         $h313
+
+goto            @Label_050c
+
+@Cond_04bc:
+jumpz           @Label_050c, ($b073 == 2)
+setvar          $h100, 3032
+code0006        14
+jumpz           @Cond_0508, ($h312 != -1)
+setvar          $b073, 0
+gotomap         $h312
+
+goto            @Cond_0508
+
+@Cond_0508:
+goto            @Label_050c
+
+@Label_050c:
+placetxt        "ディックル鉱洞　エリア２"
+code040b        
+
+@Label_052a:
+setvar          $h096, 47
+code0332        
+code033a        116, 0
+code0468        1
+code033e        116
+code040a        
+code0006        31
+goto            @start
+
+@Event_0564:
+setvar          $h096, 48
+code041c        17, 0, 0, 4
+code041d        
+code040a        
+gotomap         3031 ; map 188ddcc
+
+@Event_0596:
+setvar          $h096, 48
+code041c        17, 0, 0, 1
+code041d        
+code040a        
+gotomap         3033 ; map 188e8ac
+
+@Label_05c8:
+code0006        21
+code040b        
+
+@Label_05d2:
+setvar          $h096, 63
+code040a        
+code034f        
+goto            @start
+
+@Event_05e6:
+setvar          $bv048, ($bv048 | 0x0001)
+code0461        2
+code040b        
+
+done            
+
+code031a        7
+code031b        7, -1, -1, $h136, $h137
+code031c        7, 1
+code031f        7
+ret             
+
+code031b        7, -1, -1, $h136, $h137
+code031c        7, 2
+code031f        7
+code031a        7
+ret             
+
+code031a        7
+code031b        7, (-1 - $h139), $h140, $h136, $h137
+code031c        7, 1
+code031f        7
+ret             
+
+code031a        6
+code031b        6, $h139, 0, $h136, $h137
+code031c        6, 1
+code031f        6
+ret             
+
+code031b        7, (-1 - $h139), $h140, $h136, $h137
+code031c        7, 2
+code031f        7
+code031a        7
+ret             
+
+code031b        6, $h139, 0, $h136, $h137
+code031c        6, 2
+code031f        6
+code031a        6
+ret             
+
+code031a        7
+code031b        7, -1, -1, $h141, $h137
+code031c        7, 1
+code040d        15
+code031a        6
+code031b        6, -1, -1, $h136, $h137
+code031c        6, 1
+code031f        6
+code031a        7
+code031b        6, -1, -1, $h136, ($h137 / 2)
+code031c        6, 2
+code031f        6
+code031a        6
+ret             
+
+code031a        7
+code031b        7, -1, -1, $h141, $h137
+code031c        7, 1
+code040d        15
+code031a        6
+code031b        6, -1, -1, $h136, $h137
+code031c        6, 1
+code031f        6
+code031a        7
+ret             
+
+code031b        6, -1, -1, $h136, ($h137 / 2)
+code031c        6, 2
+code031f        6
+code031a        6
+ret             
+
+jumpz           @Cond_094c, ($h131 == 0)
+setvar          $h139, ($h139 | 0x0001)
+goto            @Label_0b86
+
+@Cond_094c:
+jumpz           @Cond_0972, ($h131 == 1)
+setvar          $h139, ($h139 | 0x0002)
+goto            @Label_0b86
+
+@Cond_0972:
+jumpz           @Cond_0998, ($h131 == 2)
+setvar          $h139, ($h139 | 0x0004)
+goto            @Label_0b86
+
+@Cond_0998:
+jumpz           @Cond_09be, ($h131 == 3)
+setvar          $h139, ($h139 | 0x0008)
+goto            @Label_0b86
+
+@Cond_09be:
+jumpz           @Cond_09e4, ($h131 == 4)
+setvar          $h139, ($h139 | 0x0010)
+goto            @Label_0b86
+
+@Cond_09e4:
+jumpz           @Cond_0a0a, ($h131 == 5)
+setvar          $h139, ($h139 | 0x0020)
+goto            @Label_0b86
+
+@Cond_0a0a:
+jumpz           @Cond_0a30, ($h131 == 6)
+setvar          $h139, ($h139 | 0x0040)
+goto            @Label_0b86
+
+@Cond_0a30:
+jumpz           @Cond_0a56, ($h131 == 7)
+setvar          $h139, ($h139 | 0x0080)
+goto            @Label_0b86
+
+@Cond_0a56:
+jumpz           @Cond_0a7c, ($h131 == 8)
+setvar          $h139, ($h139 | 0x0100)
+goto            @Label_0b86
+
+@Cond_0a7c:
+jumpz           @Cond_0aa2, ($h131 == 9)
+setvar          $h139, ($h139 | 0x0200)
+goto            @Label_0b86
+
+@Cond_0aa2:
+jumpz           @Cond_0ac8, ($h131 == 10)
+setvar          $h139, ($h139 | 0x0400)
+goto            @Label_0b86
+
+@Cond_0ac8:
+jumpz           @Cond_0aee, ($h131 == 11)
+setvar          $h139, ($h139 | 0x0800)
+goto            @Label_0b86
+
+@Cond_0aee:
+jumpz           @Cond_0b14, ($h131 == 12)
+setvar          $h139, ($h139 | 0x1000)
+goto            @Label_0b86
+
+@Cond_0b14:
+jumpz           @Cond_0b3a, ($h131 == 13)
+setvar          $h139, ($h139 | 0x2000)
+goto            @Label_0b86
+
+@Cond_0b3a:
+jumpz           @Cond_0b60, ($h131 == 14)
+setvar          $h139, ($h139 | 0x4000)
+goto            @Label_0b86
+
+@Cond_0b60:
+jumpz           @Label_0b86, ($h131 == 15)
+setvar          $h139, ($h139 | 0x00008000)
+goto            @Label_0b86
+
+@Label_0b86:
+ret             
+
+code046d        0, 192
+code043e        0, 6, 0
+walkto          0, $h128, ($h129 - 8), 1
+walkwait        0
+ret             
+
+code046d        0, 192
+code043e        0, 6, 0
+walkto          0, $h128, ($h129 + 8), 1
+walkwait        0
+ret             
+
+code046d        0, 192
+code043e        0, 6, 0
+walkto          0, ($h128 - 8), $h129, 1
+walkwait        0
+ret             
+
+code046d        0, 192
+code043e        0, 6, 0
+walkto          0, ($h128 + 8), $h129, 1
+walkwait        0
+ret             
+
+code033a        196, 0
+code048e        
+code031a        7
+code031b        7, -1, -1, 32767, 6
+code031c        7, 1
+code031f        7
+code0443        0, 48, 0
+code043d        0, $h192, $h193
+code0443        0, 48, 1
+code031b        7, -1, -1, 32767, 6
+code031c        7, 2
+code031f        7
+code031a        7
+code033e        196
+ret             
+

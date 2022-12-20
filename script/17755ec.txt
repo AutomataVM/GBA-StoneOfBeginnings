@@ -1,0 +1,370 @@
+@start:
+setvar          $b097, 0
+code0408        0
+code0410        0, 47, 49, -1
+code0410        1, 47, 50, 53
+code0410        2, 48, 51, 54
+code0411        
+code0430        57
+code0412        4, 1
+code0418        2
+code0498        0, 249, 256, 120, 0
+code049a        0, 4, 138
+code049b        0, 0, 0, 0, 224, 160
+code049b        1, 0, 320, 288, 352, 312
+setvar          $b075, 1
+setvar          $b072, 0
+placetxt        "ディックル村　釣り人の池"
+code040c        1, @Label_037e
+code040c        2, @Label_0374
+code0438        2, 411, 653, 4
+code043a        2, 2, 0
+code043d        2, 248, 124
+code0443        2, -32768, 0
+mapev           31, @Event_0392, 32
+mapevpos        31, (29,15)-(32,15)
+code0438        15, 385, 638, 1
+code043a        15, 15, 0
+code043d        15, 320, 24
+code043c        15, 1
+code0442        15, @Talk_03b8
+code0444        15, -1
+code0438        16, 361, 632, 1
+code043a        16, 16, 0
+code043d        16, 64, 176
+code043c        16, 2
+code0442        16, @Talk_0584
+code0444        16, -1
+call            @Func_0d3a
+code041c        0, 16, 296, 1
+jumpz           @Cond_02ec, ($h319 == 3)
+code041c        1, 16, 296, 4
+goto            @Cond_02ec
+
+@Cond_02ec:
+mapev           0, @Event_0342, 4
+mapevpos        0, (0,36)-(1,39)
+setvar          $h319, 4
+code0409        
+code046e        13, 256, 0
+code041d        
+code040b        
+
+@Event_0342:
+setvar          $h096, 32
+code041c        17, 0, 0, 2
+code041d        
+code040a        
+gotomap         1104 ; map 17751ec
+
+@Label_0374:
+code0006        21
+code040b        
+
+@Label_037e:
+setvar          $h096, 63
+code040a        
+code034f        
+goto            @start
+
+@Event_0392:
+code0006        17
+jumpz           @Cond_03b2, ($h309 == 1)
+goto            @start
+
+goto            @Talk_03b8
+
+@Cond_03b2:
+code040b        
+
+goto            @Talk_03b8
+
+@Talk_03b8:
+code0379        196
+jumpz           @Cond_042a, $h132
+code0301        8, 7
+code047d        0, 120
+code047e        0, 1
+dialogtxt       "武器を取りに来たのか？"
+code0309        
+code047e        0, 0
+code0302        7
+goto            @Label_048a
+
+@Cond_042a:
+code0301        8, 7
+code047d        0, 120
+code047e        0, 1
+dialogtxt       "武器を預けに来たのか？"
+code0309        
+code047e        0, 0
+code0302        7
+goto            @Label_048a
+
+@Label_048a:
+code0312        
+code0313        @Menu_0582
+menutxt         @Menu_04a8, "はい"
+menutxt         @Menu_0582, "いいえ"
+menuwait        
+
+@Menu_04a8:
+code037a        
+code036e        
+jumpz           @Cond_0530, ($b071 == 0 && ($h083 != -1 ? 1 : 0))
+code0301        8, 7
+code047d        0, 120
+code047e        0, 1
+dialogtxt       "預けられそうな武器が無いぞ"
+code0309        
+code047e        0, 0
+code0302        7
+goto            @Menu_0582
+
+goto            @Cond_0530
+
+@Cond_0530:
+jumpz           @Cond_0548, ($h083 == -1)
+goto            @Menu_0582
+
+goto            @Cond_0548
+
+@Cond_0548:
+setvar          $h096, 63
+code040a        
+code035a        
+jumpz           @Cond_0570, ($h081 == -1)
+goto            @start
+
+goto            @Cond_0570
+
+@Cond_0570:
+code037b        $h083, $h080
+goto            @start
+
+@Menu_0582:
+code040b        
+
+@Talk_0584:
+setvar          $bv031, 1
+code0006        3913
+jumpz           @Cond_05b0, ($bv029 >= 2)
+goto            @start
+
+goto            @Cond_05b0
+
+@Cond_05b0:
+code040b        
+
+done            
+
+code031a        7
+code031b        7, -1, -1, $h136, $h137
+code031c        7, 1
+code031f        7
+ret             
+
+code031b        7, -1, -1, $h136, $h137
+code031c        7, 2
+code031f        7
+code031a        7
+ret             
+
+code031a        7
+code031b        7, (-1 - $h139), $h140, $h136, $h137
+code031c        7, 1
+code031f        7
+ret             
+
+code031a        6
+code031b        6, $h139, 0, $h136, $h137
+code031c        6, 1
+code031f        6
+ret             
+
+code031b        7, (-1 - $h139), $h140, $h136, $h137
+code031c        7, 2
+code031f        7
+code031a        7
+ret             
+
+code031b        6, $h139, 0, $h136, $h137
+code031c        6, 2
+code031f        6
+code031a        6
+ret             
+
+code031a        7
+code031b        7, -1, -1, $h141, $h137
+code031c        7, 1
+code040d        15
+code031a        6
+code031b        6, -1, -1, $h136, $h137
+code031c        6, 1
+code031f        6
+code031a        7
+code031b        6, -1, -1, $h136, ($h137 / 2)
+code031c        6, 2
+code031f        6
+code031a        6
+ret             
+
+code031a        7
+code031b        7, -1, -1, $h141, $h137
+code031c        7, 1
+code040d        15
+code031a        6
+code031b        6, -1, -1, $h136, $h137
+code031c        6, 1
+code031f        6
+code031a        7
+ret             
+
+code031b        6, -1, -1, $h136, ($h137 / 2)
+code031c        6, 2
+code031f        6
+code031a        6
+ret             
+
+jumpz           @Cond_08fc, ($h131 == 0)
+setvar          $h139, ($h139 | 0x0001)
+goto            @Label_0b36
+
+@Cond_08fc:
+jumpz           @Cond_0922, ($h131 == 1)
+setvar          $h139, ($h139 | 0x0002)
+goto            @Label_0b36
+
+@Cond_0922:
+jumpz           @Cond_0948, ($h131 == 2)
+setvar          $h139, ($h139 | 0x0004)
+goto            @Label_0b36
+
+@Cond_0948:
+jumpz           @Cond_096e, ($h131 == 3)
+setvar          $h139, ($h139 | 0x0008)
+goto            @Label_0b36
+
+@Cond_096e:
+jumpz           @Cond_0994, ($h131 == 4)
+setvar          $h139, ($h139 | 0x0010)
+goto            @Label_0b36
+
+@Cond_0994:
+jumpz           @Cond_09ba, ($h131 == 5)
+setvar          $h139, ($h139 | 0x0020)
+goto            @Label_0b36
+
+@Cond_09ba:
+jumpz           @Cond_09e0, ($h131 == 6)
+setvar          $h139, ($h139 | 0x0040)
+goto            @Label_0b36
+
+@Cond_09e0:
+jumpz           @Cond_0a06, ($h131 == 7)
+setvar          $h139, ($h139 | 0x0080)
+goto            @Label_0b36
+
+@Cond_0a06:
+jumpz           @Cond_0a2c, ($h131 == 8)
+setvar          $h139, ($h139 | 0x0100)
+goto            @Label_0b36
+
+@Cond_0a2c:
+jumpz           @Cond_0a52, ($h131 == 9)
+setvar          $h139, ($h139 | 0x0200)
+goto            @Label_0b36
+
+@Cond_0a52:
+jumpz           @Cond_0a78, ($h131 == 10)
+setvar          $h139, ($h139 | 0x0400)
+goto            @Label_0b36
+
+@Cond_0a78:
+jumpz           @Cond_0a9e, ($h131 == 11)
+setvar          $h139, ($h139 | 0x0800)
+goto            @Label_0b36
+
+@Cond_0a9e:
+jumpz           @Cond_0ac4, ($h131 == 12)
+setvar          $h139, ($h139 | 0x1000)
+goto            @Label_0b36
+
+@Cond_0ac4:
+jumpz           @Cond_0aea, ($h131 == 13)
+setvar          $h139, ($h139 | 0x2000)
+goto            @Label_0b36
+
+@Cond_0aea:
+jumpz           @Cond_0b10, ($h131 == 14)
+setvar          $h139, ($h139 | 0x4000)
+goto            @Label_0b36
+
+@Cond_0b10:
+jumpz           @Label_0b36, ($h131 == 15)
+setvar          $h139, ($h139 | 0x00008000)
+goto            @Label_0b36
+
+@Label_0b36:
+ret             
+
+code046d        0, 192
+code043e        0, 6, 0
+walkto          0, $h128, ($h129 - 8), 1
+walkwait        0
+ret             
+
+code046d        0, 192
+code043e        0, 6, 0
+walkto          0, $h128, ($h129 + 8), 1
+walkwait        0
+ret             
+
+code046d        0, 192
+code043e        0, 6, 0
+walkto          0, ($h128 - 8), $h129, 1
+walkwait        0
+ret             
+
+code046d        0, 192
+code043e        0, 6, 0
+walkto          0, ($h128 + 8), $h129, 1
+walkwait        0
+ret             
+
+code033a        196, 0
+code048e        
+code031a        7
+code031b        7, -1, -1, 32767, 6
+code031c        7, 1
+code031f        7
+code0443        0, 48, 0
+code043d        0, $h192, $h193
+code0443        0, 48, 1
+code031b        7, -1, -1, 32767, 6
+code031c        7, 2
+code031f        7
+code031a        7
+code033e        196
+ret             
+
+@Func_0d3a:
+code0438        17, 366, 632, 1
+code043a        17, 17, 0
+code043d        17, 128, 168
+code043c        17, 3
+code0442        17, @Talk_0da4
+code0444        17, -1
+ret             
+
+@Talk_0da4:
+code0301        8, 7
+code047d        0, 123
+code047e        0, 1
+dialogtxt       "おかえりなさい"
+dialogtxt       "いつでも帰ってきていいのよ"
+code0309        
+code047e        0, 0
+code0302        7
+code040b        
+

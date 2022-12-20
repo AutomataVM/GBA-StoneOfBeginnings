@@ -1,0 +1,123 @@
+jumpz           @Cond_00ac, ($h311 == 6 || $h311 == 7)
+setvar          $h312, -1
+setvar          $b073, 0
+code043e        0, 3, 0
+code0445        0, 3
+code0446        0
+code0301        8, 7
+code0305        1
+dialogtxt       "[NAME 7]ータルの欠片だけ消えてしまった！"
+code0309        
+code0302        7
+goto            @Label_0376
+
+goto            @Cond_00ac
+
+@Cond_00ac:
+code04a0        
+setvar          $h312, -1
+setvar          $h319, -3
+jumpz           @Cond_00e6, ($h311 == 0)
+setvar          $h312, 200
+goto            @Label_0286
+
+@Cond_00e6:
+jumpz           @Cond_0106, ($h311 == 1)
+setvar          $h312, 300
+goto            @Label_0286
+
+@Cond_0106:
+jumpz           @Cond_0126, ($h311 == 2)
+setvar          $h312, 400
+goto            @Label_0286
+
+@Cond_0126:
+jumpz           @Cond_0146, ($h311 == 3)
+setvar          $h312, 500
+goto            @Label_0286
+
+@Cond_0146:
+jumpz           @Cond_0166, ($h311 == 4)
+setvar          $h312, 600
+goto            @Label_0286
+
+@Cond_0166:
+jumpz           @Cond_0186, ($h311 == 5)
+setvar          $h312, 700
+goto            @Label_0286
+
+@Cond_0186:
+jumpz           @Cond_01a6, ($h311 == 6)
+setvar          $h312, 800
+goto            @Label_0286
+
+@Cond_01a6:
+jumpz           @Cond_01c6, ($h311 == 7)
+setvar          $h312, 900
+goto            @Label_0286
+
+@Cond_01c6:
+jumpz           @Cond_01e6, ($h311 == 8)
+setvar          $h312, 1000
+goto            @Label_0286
+
+@Cond_01e6:
+jumpz           @Cond_0206, ($h311 == 9)
+setvar          $h312, 1100
+goto            @Label_0286
+
+@Cond_0206:
+jumpz           @Cond_0226, ($h311 == 10)
+setvar          $h312, 1200
+goto            @Label_0286
+
+@Cond_0226:
+jumpz           @Cond_0246, ($h311 == 11)
+setvar          $h312, 1300
+goto            @Label_0286
+
+@Cond_0246:
+jumpz           @Cond_0266, ($h311 == 12)
+setvar          $h312, 1400
+goto            @Label_0286
+
+@Cond_0266:
+jumpz           @Label_0286, ($h311 == 99)
+setvar          $h312, 1500
+goto            @Label_0286
+
+@Label_0286:
+jumpz           @Label_0376, ($h312 != -1)
+jumpz           @Cond_02bc, ($h315 == 0)
+setvar          $h312, ($h312 + 1)
+goto            @Label_0354
+
+@Cond_02bc:
+jumpz           @Cond_02e2, ($h315 == 1)
+setvar          $h312, ($h312 + 21)
+goto            @Label_0354
+
+@Cond_02e2:
+jumpz           @Cond_0308, ($h315 == 2)
+setvar          $h312, ($h312 + 31)
+goto            @Label_0354
+
+@Cond_0308:
+jumpz           @Cond_032e, ($h315 == 3)
+setvar          $h312, ($h312 + 62)
+goto            @Label_0354
+
+@Cond_032e:
+jumpz           @Label_0354, ($h315 == 4)
+setvar          $h312, ($h312 + 81)
+goto            @Label_0354
+
+@Label_0354:
+code041c        27, 0, 0, -1
+code041d        
+code040a        
+goto            @Label_0376
+
+@Label_0376:
+done            
+

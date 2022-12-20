@@ -1,0 +1,185 @@
+setvar          $h313, 0
+setvar          $h313, ($h313 + $f1124)
+setvar          $h313, ($h313 + $f1125)
+setvar          $h313, ($h313 + $f1126)
+setvar          $h313, ($h313 + $f1127)
+setvar          $h313, ($h313 + $f1128)
+setvar          $h313, ($h313 + $f1130)
+jumpz           @Cond_00e2, ($h313 < 2)
+code0301        8, 7
+dialogtxt       "現在移動可能な接続先が"
+dialogtxt       "存在しないので使用できません"
+code0309        
+code0302        7
+goto            @Label_0464
+
+goto            @Cond_00e2
+
+@Cond_00e2:
+menutitle       "どこにいきますか？"
+code0313        @Label_0464
+jumpz           @Cond_012e, ($f1124 == 1 && ($h319 != 70 ? 1 : 0))
+menutxt         @Menu_0238, "ディックル村"
+goto            @Cond_012e
+
+@Cond_012e:
+jumpz           @Cond_0162, ($f1125 == 1 && ($h319 != 90 ? 1 : 0))
+menutxt         @Menu_024c, "マー[NAME 6]イル宿場"
+goto            @Cond_0162
+
+@Cond_0162:
+jumpz           @Cond_0196, ($f1126 == 1 && ($h319 != 110 ? 1 : 0))
+menutxt         @Menu_0260, "プロスバンの町"
+goto            @Cond_0196
+
+@Cond_0196:
+jumpz           @Cond_01c6, ($f1127 == 1 && ($h319 != 52 ? 1 : 0))
+menutxt         @Menu_0274, "ルイーズ村"
+goto            @Cond_01c6
+
+@Cond_01c6:
+jumpz           @Cond_01fc, ($f1128 == 1 && ($h319 != 215 ? 1 : 0))
+menutxt         @Menu_043c, "ミシュースの廃墟"
+goto            @Cond_01fc
+
+@Cond_01fc:
+jumpz           @Cond_022a, ($f1130 == 1 && ($h319 != 253 ? 1 : 0))
+menutxt         @Menu_0450, "転送の間"
+goto            @Cond_022a
+
+@Cond_022a:
+menutxt         @Label_0464, "やめる"
+menuwait        
+
+@Menu_0238:
+call            @Func_0474
+setvar          $h313, 3061
+goto            @Label_0578
+
+@Menu_024c:
+call            @Func_0474
+setvar          $h313, 3121
+goto            @Label_0578
+
+@Menu_0260:
+call            @Func_0474
+setvar          $h313, 3181
+goto            @Label_0578
+
+@Menu_0274:
+call            @Func_0474
+jumpz           @Cond_0298, ($h311 == 0)
+setvar          $h313, 263
+goto            @Label_0438
+
+@Cond_0298:
+jumpz           @Cond_02b8, ($h311 == 1)
+setvar          $h313, 363
+goto            @Label_0438
+
+@Cond_02b8:
+jumpz           @Cond_02d8, ($h311 == 2)
+setvar          $h313, 463
+goto            @Label_0438
+
+@Cond_02d8:
+jumpz           @Cond_02f8, ($h311 == 3)
+setvar          $h313, 563
+goto            @Label_0438
+
+@Cond_02f8:
+jumpz           @Cond_0318, ($h311 == 4)
+setvar          $h313, 663
+goto            @Label_0438
+
+@Cond_0318:
+jumpz           @Cond_0338, ($h311 == 5)
+setvar          $h313, 763
+goto            @Label_0438
+
+@Cond_0338:
+jumpz           @Cond_0358, ($h311 == 6)
+setvar          $h313, 863
+goto            @Label_0438
+
+@Cond_0358:
+jumpz           @Cond_0378, ($h311 == 7)
+setvar          $h313, 963
+goto            @Label_0438
+
+@Cond_0378:
+jumpz           @Cond_0398, ($h311 == 8)
+setvar          $h313, 1063
+goto            @Label_0438
+
+@Cond_0398:
+jumpz           @Cond_03b8, ($h311 == 9)
+setvar          $h313, 1163
+goto            @Label_0438
+
+@Cond_03b8:
+jumpz           @Cond_03d8, ($h311 == 10)
+setvar          $h313, 1263
+goto            @Label_0438
+
+@Cond_03d8:
+jumpz           @Cond_03f8, ($h311 == 11)
+setvar          $h313, 1363
+goto            @Label_0438
+
+@Cond_03f8:
+jumpz           @Cond_0418, ($h311 == 12)
+setvar          $h313, 1463
+goto            @Label_0438
+
+@Cond_0418:
+jumpz           @Label_0438, ($h311 == 99)
+setvar          $h313, 1563
+goto            @Label_0438
+
+@Label_0438:
+goto            @Label_0578
+
+@Menu_043c:
+call            @Func_0474
+setvar          $h313, 3366
+goto            @Label_0578
+
+@Menu_0450:
+call            @Func_0474
+setvar          $h313, 3464
+goto            @Label_0578
+
+@Label_0464:
+setvar          $h313, -1
+goto            @Label_0578
+
+@Func_0474:
+setvar          $h096, 48
+setvar          $h319, -1
+code041c        24, 0, 0, -1
+code041d        
+code040a        
+code0332        
+code0330        
+code0470        544, 799, 0
+setvar          $f1156, 0
+setvar          $f1157, 0
+setvar          $f1158, 0
+setvar          $f1159, 0
+setvar          $f1172, 0
+setvar          $f1173, 0
+setvar          $f1174, 0
+setvar          $f1175, 0
+setvar          $f1176, 0
+setvar          $f1177, 0
+setvar          $f1178, 0
+setvar          $f1179, 0
+setvar          $f1180, 0
+setvar          $f1181, 0
+setvar          $f1182, 0
+ret             
+
+@Label_0578:
+done            
+
