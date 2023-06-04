@@ -7,8 +7,9 @@ setvar          $h313, ($h313 + $f1128)
 setvar          $h313, ($h313 + $f1130)
 jumpz           @Cond_00e2, ($h313 < 2)
 code0301        8, 7
-dialogtxt       "現在移動可能な接続先が"
-dialogtxt       "存在しないので使用できません"
+dialogtxt       "Cannot be selected because"
+dialogtxt       "the access point has not been"
+dialogtxt       "activated yet."
 code0309        
 code0302        7
 goto            @Label_0464
@@ -16,30 +17,30 @@ goto            @Label_0464
 goto            @Cond_00e2
 
 @Cond_00e2:
-menutitle       "どこにいきますか？"
+menutitle       "Where to go?"
 code0313        @Label_0464
 jumpz           @Cond_012e, ($f1124 == 1 && ($h319 != 70 ? 1 : 0))
-menutxt         @Menu_0238, "ディックル村"
+menutxt         @Menu_0238, "Deckell Village"
 goto            @Cond_012e
 
 @Cond_012e:
 jumpz           @Cond_0162, ($f1125 == 1 && ($h319 != 90 ? 1 : 0))
-menutxt         @Menu_024c, "マー[NAME 6]イル宿場"
+menutxt         @Menu_024c, "Marnail Station"
 goto            @Cond_0162
 
 @Cond_0162:
 jumpz           @Cond_0196, ($f1126 == 1 && ($h319 != 110 ? 1 : 0))
-menutxt         @Menu_0260, "プロスバンの町"
+menutxt         @Menu_0260, "Prosban"
 goto            @Cond_0196
 
 @Cond_0196:
 jumpz           @Cond_01c6, ($f1127 == 1 && ($h319 != 52 ? 1 : 0))
-menutxt         @Menu_0274, "ルイーズ村"
+menutxt         @Menu_0274, "Louise Village"
 goto            @Cond_01c6
 
 @Cond_01c6:
 jumpz           @Cond_01fc, ($f1128 == 1 && ($h319 != 215 ? 1 : 0))
-menutxt         @Menu_043c, "ミシュースの廃墟"
+menutxt         @Menu_043c, "Mishus Ruins"
 goto            @Cond_01fc
 
 @Cond_01fc:
@@ -48,7 +49,7 @@ menutxt         @Menu_0450, "転送の間"
 goto            @Cond_022a
 
 @Cond_022a:
-menutxt         @Label_0464, "やめる"
+menutxt         @Label_0464, "Cancel"
 menuwait        
 
 @Menu_0238:
