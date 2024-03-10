@@ -1,0 +1,90 @@
+0000  code036a        500
+0008  jumpz           0x0020, ($b070 == 1)
+0018  goto            0x00c6
+
+001C  goto            0x0020
+
+0020  code036a        501
+0028  jumpz           0x0040, ($b070 == 1)
+0038  goto            0x00c6
+
+003C  goto            0x0040
+
+0040  code036a        502
+0048  jumpz           0x0060, ($b070 == 1)
+0058  goto            0x00c6
+
+005C  goto            0x0060
+
+0060  code0301        8, 7
+006E  code047d        0, 146
+007C  code047e        0, 1
+008A  dialogtxt       "基本は竿！"
+0098  dialogtxt       "話はそれからだ"
+00AA  code0309        
+00AC  code047e        0, 0
+00BA  code0302        7
+00C2  goto            0x023a
+
+00C6  code036a        336
+00CE  jumpz           0x00e6, ($b070 >= 1)
+00DE  goto            0x016a
+
+00E2  goto            0x00e6
+
+00E6  code036a        337
+00EE  jumpz           0x0106, ($b070 >= 1)
+00FE  goto            0x016a
+
+0102  goto            0x0106
+
+0106  code036a        338
+010E  jumpz           0x0126, ($b070 >= 1)
+011E  goto            0x016a
+
+0122  goto            0x0126
+
+0126  code036a        339
+012E  jumpz           0x0146, ($b070 >= 1)
+013E  goto            0x016a
+
+0142  goto            0x0146
+
+0146  code036a        340
+014E  jumpz           0x0166, ($b070 >= 1)
+015E  goto            0x016a
+
+0162  goto            0x0166
+
+0166  goto            0x01a4
+
+016A  menutitle       "どうするのかね？"
+017E  menutxt         0x01d4, "釣り"
+0188  menutxt         0x01f4, "景品交換"
+0196  menutxt         0x023a, "やめる"
+01A2  code0315        
+01A4  menutitle       "どうするのかね？"
+01B8  menutxt         0x01f4, "景品交換"
+01C6  menutxt         0x023a, "やめる"
+01D2  code0315        
+01D4  setvar          0x0002, 0x00a0, 63
+01E0  code040a        
+01E2  code0389        
+01E4  setvar          0x0002, 0x0175, 1
+01F0  goto            0x0246
+
+01F4  setvar          0x0002, 0x00a0, 63
+0200  code040a        
+0202  jumpz           0x021e, ($h311 == 99)
+0212  code0353        12
+021A  goto            0x022a
+
+021E  code0353        $h311
+0226  goto            0x022a
+
+022A  setvar          0x0002, 0x0175, 1
+0236  goto            0x0246
+
+023A  setvar          0x0002, 0x0175, 0
+0246  done            
+

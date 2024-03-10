@@ -1,0 +1,148 @@
+0000  jumpz           0x007a, ($h319 == 44)
+0010  code038e        284, 0
+001E  jumpz           0x0076, ($h220 == 0)
+002E  code0301        0, 7
+003C  code0305        1
+0044  dialogtxt       "ウリキレチュウ…"
+0058  code0309        
+005A  code0302        7
+0062  setvar          0x0002, 0x0175, 0
+006E  goto            0x0490
+
+0072  goto            0x0076
+
+0076  goto            0x007a
+
+007A  jumpz           0x0146, ($h319 == 46)
+008A  jumpz           0x00e0, ($h311 < 8)
+009A  code0301        0, 7
+00A8  code0305        1
+00B0  dialogtxt       "近日稼動予定！"
+00C2  code0309        
+00C4  code0302        7
+00CC  setvar          0x0002, 0x0175, 0
+00D8  goto            0x0490
+
+00DC  goto            0x00e0
+
+00E0  code038e        285, 1
+00EE  jumpz           0x0142, ($h221 == 0)
+00FE  code0301        0, 7
+010C  code0305        1
+0114  dialogtxt       "おしまいッ！"
+0124  code0309        
+0126  code0302        7
+012E  setvar          0x0002, 0x0175, 0
+013A  goto            0x0490
+
+013E  goto            0x0142
+
+0142  goto            0x0146
+
+0146  code036a        348
+014E  jumpz           0x020c, (($b070 < 5 ? 1 : 0) && $h319 == 46)
+016A  code0301        8, 7
+0178  code047d        0, 0
+0186  code047e        0, 1
+0194  jumpz           0x01c0, ($b002 == 0)
+01A4  dialogtxt       "福引き券が足りない…"
+01BC  goto            0x01e0
+
+01C0  dialogtxt       "福引き券が足りないよぉ…"
+01DC  goto            0x01e0
+
+01E0  code0309        
+01E2  code047e        0, 0
+01F0  code0302        7
+01F8  setvar          0x0002, 0x0175, 0
+0204  goto            0x0490
+
+0208  goto            0x020c
+
+020C  jumpz           0x02b6, ($b070 == 0)
+021C  code0301        8, 7
+022A  code047d        0, 0
+0238  code047e        0, 1
+0246  jumpz           0x0272, ($b002 == 0)
+0256  dialogtxt       "福引き券持ってない…"
+026E  goto            0x028e
+
+0272  dialogtxt       "福引き券がないよぉ…"
+028A  goto            0x028e
+
+028E  code0309        
+0290  code047e        0, 0
+029E  code0302        7
+02A6  setvar          0x0002, 0x0175, 0
+02B2  goto            0x0490
+
+02B6  setvar          0x0002, 0x00a0, 63
+02C2  code041c        16, 0, 0, 1
+02DC  code041d        
+02DE  code040a        
+02E0  jumpz           0x03d4, ($h319 == 44)
+02F0  jumpz           0x030c, ($h311 == 4)
+0300  code038c        0
+0308  goto            0x03d0
+
+030C  jumpz           0x0328, ($h311 == 5)
+031C  code038c        1
+0324  goto            0x03d0
+
+0328  jumpz           0x0344, ($h311 == 8)
+0338  code038c        4
+0340  goto            0x03d0
+
+0344  jumpz           0x0360, ($h311 == 9)
+0354  code038c        5
+035C  goto            0x03d0
+
+0360  jumpz           0x037c, ($h311 == 10)
+0370  code038c        6
+0378  goto            0x03d0
+
+037C  jumpz           0x0398, ($h311 == 11)
+038C  code038c        7
+0394  goto            0x03d0
+
+0398  jumpz           0x03b4, ($h311 == 12)
+03A8  code038c        8
+03B0  goto            0x03d0
+
+03B4  jumpz           0x03d0, ($h311 == 99)
+03C4  code038c        9
+03CC  goto            0x03d0
+
+03D0  goto            0x0480
+
+03D4  jumpz           0x03f0, ($h311 == 8)
+03E4  code038c        14
+03EC  goto            0x047c
+
+03F0  jumpz           0x040c, ($h311 == 9)
+0400  code038c        15
+0408  goto            0x047c
+
+040C  jumpz           0x0428, ($h311 == 10)
+041C  code038c        16
+0424  goto            0x047c
+
+0428  jumpz           0x0444, ($h311 == 11)
+0438  code038c        17
+0440  goto            0x047c
+
+0444  jumpz           0x0460, ($h311 == 12)
+0454  code038c        18
+045C  goto            0x047c
+
+0460  jumpz           0x047c, ($h311 == 99)
+0470  code038c        19
+0478  goto            0x047c
+
+047C  goto            0x0480
+
+0480  setvar          0x0002, 0x0175, 1
+048C  goto            0x0490
+
+0490  done            
+

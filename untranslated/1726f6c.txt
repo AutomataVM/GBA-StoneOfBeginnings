@@ -1,0 +1,71 @@
+0000  code035e        389
+0008  jumpz           0x0028, ($b005 != 0)
+0018  setvar          0x0002, 0x0186, 2
+0024  goto            0x00ba
+
+0028  code0114        
+002A  code0300        
+002C  code0312        
+002E  code0313        0x007e
+0032  menutxt         0x0052, "態勢を整える！"
+0046  menutxt         0x007e, "戦う"
+0050  code0315        
+0052  setvar          0x0002, 0x01cb, 0
+005E  setvar          0x0002, 0x01c8, 0
+006A  setvar          0x0002, 0x01d1, 1
+0076  code0303        
+0078  code034f        
+007A  goto            0x002a
+
+007E  code036f        
+0080  jumpz           0x00b6, ($b071 != 1)
+0090  code0300        
+0092  popuptxt        "武器を１本にして下さい"
+00AC  code0318        
+00AE  goto            0x002a
+
+00B2  goto            0x00b6
+
+00B6  goto            0x00ba
+
+00BA  code035b        1
+00C2  setvar          0x0002, 0x01a0, 5
+00CE  setvar          0x0002, 0x01a1, 0
+00DA  setvar          0x0002, 0x01a7, 3
+00E6  setvar          0x0002, 0x0060, (0 + $b002)
+00F8  setvar          0x0002, 0x01a2, 1
+0104  setvar          0x0002, 0x0061, 31
+0110  setvar          0x0002, 0x01ab, 100
+011C  setvar          0x0002, 0x01aa, 100
+0128  setvar          0x0002, 0x01ac, 0
+0134  setvar          0x0002, 0x000f, 0
+0140  setvar          0x0002, 0x01bc, 0
+014C  setvar          0x0002, 0x01bf, 0
+0158  jumpz           0x0178, ($b002 == 0)
+0168  setvar          0x0002, 0x0072, 65
+0174  goto            0x0188
+
+0178  setvar          0x0002, 0x0072, 56
+0184  goto            0x0188
+
+0188  code0331        6, 256
+0196  code0100        
+0198  code0101        
+019A  jumpz           0x01d6, ($b041 == 3)
+01AA  code0111        
+01AC  jumpz           0x01c2, ($b004 == 1)
+01BC  code035c        
+01BE  goto            0x01d2
+
+01C2  code035d        
+01C4  code000d        
+01C6  code0005        1
+01CE  goto            0x01d2
+
+01D2  goto            0x01dc
+
+01D6  code035d        
+01D8  goto            0x01dc
+
+01DC  done            
+

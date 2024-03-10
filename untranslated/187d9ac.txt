@@ -1,0 +1,587 @@
+0000  call            0x1810
+0004  call            0x175e
+0008  code047b        
+000A  code046d        1, 192
+0018  code043e        1, 6, 0
+002C  walkto          1, $h128, ($h129 + 8), 1
+004C  walkwait        1
+0054  code043e        1, 3, 0
+0068  code043c        1, 1
+0076  code0478        1, 2
+0084  jumpz           0x00ac, ($b003 == 0)
+0094  code0479        1, 2, 12
+00A8  goto            0x0114
+
+00AC  jumpz           0x00d4, ($b003 == 1)
+00BC  code0479        1, 3, 15
+00D0  goto            0x0114
+
+00D4  jumpz           0x00fc, ($b003 == 2)
+00E4  code0479        1, 3, 15
+00F8  goto            0x0114
+
+00FC  code0479        1, 2, 15
+0110  goto            0x0114
+
+0114  code047d        1, 2
+0122  call            0x17a4
+0126  call            0x1722
+012A  dialogbig       72, 116, 1, 0, 0, "ガァッ！"
+0154  code047b        
+0156  code030c        
+0158  call            0x17fa
+015C  call            0x175e
+0160  code047b        
+0162  code033b        236, 0, 0, 3, 1, 2
+0188  code046d        1, 192
+0196  jumpz           0x01c4, ($b003 == 0)
+01A6  code0438        9, 45, 540, 4
+01C0  goto            0x024e
+
+01C4  jumpz           0x01f2, ($b003 == 1)
+01D4  code0438        9, 65, 540, 4
+01EE  goto            0x024e
+
+01F2  jumpz           0x0220, ($b003 == 2)
+0202  code0438        9, 85, 540, 4
+021C  goto            0x024e
+
+0220  jumpz           0x024e, ($b003 == 3)
+0230  code0438        9, 105, 540, 4
+024A  goto            0x024e
+
+024E  code043a        9, 9, 0
+0262  code043d        9, $h128, ($h129 + 1)
+027C  code043e        9, 0, 1
+0290  code0443        9, 32, 0
+02A4  code040d        50
+02AC  code043b        1
+02B4  code0439        1
+02BC  code040d        90
+02C4  code033d        236
+02CC  code033a        395, 0
+02DA  code031a        5
+02E2  code031b        5, -61, -16, 32767, 4
+0302  code031c        5, 1
+0310  code031f        5
+0318  code031a        6
+0320  code0490        1
+0328  code043d        1, $h128, $h129
+033C  code043c        1, 1
+034A  code043e        1, 3, 1
+035E  code031b        5, -61, -16, 32767, 30
+037E  code031c        5, 2
+038C  code043f        9
+0394  code043b        9
+039C  code0439        9
+03A4  code031f        5
+03AC  code031a        5
+03B4  jumpz           0x03d0, ($b003 == 0)
+03C4  code047f        183
+03CC  goto            0x0424
+
+03D0  jumpz           0x03ec, ($b003 == 1)
+03E0  code047f        190
+03E8  goto            0x0424
+
+03EC  jumpz           0x0408, ($b003 == 2)
+03FC  code047f        197
+0404  goto            0x0424
+
+0408  jumpz           0x0424, ($b003 == 3)
+0418  code047f        204
+0420  goto            0x0424
+
+0424  code0480        0, 1, 0, 0
+043E  code0481        1
+0446  code0482        
+0448  code040d        30
+0450  code047d        0, 2
+045E  code0301        16, 7
+046C  code047e        0, 1
+047A  dialogtxt       "…"
+0480  code047b        
+0482  code0309        
+0484  code047e        0, 0
+0492  code0302        7
+049A  code040d        15
+04A2  code0481        0
+04AA  code0445        0, 10
+04B8  code0446        0
+04C0  code0478        0, 0
+04CE  code0479        0, 5, 15
+04E2  code047d        0, 0
+04F0  call            0x178e
+04F4  call            0x16b6
+04F8  dialogtxt       "γ！"
+0500  code047b        
+0502  code0309        
+0504  call            0x17e4
+0508  call            0x16f2
+050C  code047b        
+050E  code046d        0, 192
+051C  code043e        1, 6, 0
+0530  walkto          1, ($h128 + 8), $h129, 3
+0550  code040d        10
+0558  code033a        154, 0
+0566  walkwait        1
+056E  code043e        1, 3, 0
+0582  code043c        1, 2
+0590  setvar          0x0002, 0x00c8, 32767
+059C  setvar          0x0002, 0x00c9, 2
+05A8  call            0x1132
+05AC  code0443        0, 256, 0
+05C0  code043e        0, 5, 0
+05D4  code0443        0, 64, 1
+05E8  walkto          0, ($h128 - 24), $h129, 2
+0608  setvar          0x0002, 0x00c8, 32767
+0614  setvar          0x0002, 0x00c9, 6
+0620  call            0x1172
+0624  code048b        264, 550, 64
+0638  walkwait        0
+0640  code0443        0, 64, 0
+0654  code0443        0, 256, 1
+0668  code043e        0, 3, 0
+067C  code043c        0, 4
+068A  code0443        0, 16, 0
+069E  code0443        0, 32, 0
+06B2  code046d        0, 192
+06C0  jumpz           0x06ee, ($b002 == 0)
+06D0  code0438        10, 1, 498, 6
+06EA  goto            0x06ee
+
+06EE  jumpz           0x071c, ($b002 == 1)
+06FE  code0438        10, 21, 498, 6
+0718  goto            0x071c
+
+071C  code043a        10, 10, 0
+0730  code043e        10, 0, 1
+0744  code043d        10, $h128, $h129
+0758  code0443        10, 256, 0
+076C  code0443        10, 64, 1
+0780  code0445        10, 9
+078E  code0446        10
+0796  code043f        9
+079E  code033e        154
+07A6  code048c        
+07A8  code0479        0, 4, 14
+07BC  call            0x178e
+07C0  call            0x16b6
+07C4  dialogtxt       "くっ！"
+07CE  code047b        
+07D0  code0309        
+07D2  call            0x170a
+07D6  code043c        11, 2
+07E4  code0478        1, 13
+07F2  code0479        1, 1, 13
+0806  code047d        1, 134
+0814  call            0x17a4
+0818  call            0x1740
+081C  dialogtxt       "ははは…"
+0828  dialogtxt       "もうそいつは"
+0838  dialogtxt       "お前が誰かも忘れてるようだな"
+0858  code047b        
+085A  code0309        
+085C  code0479        1, 3, 12
+0870  dialogtxt       "今のそいつにとって人間は全て"
+0890  dialogtxt       "憎い敵だ！"
+089E  code0309        
+08A0  call            0x1776
+08A4  code0479        0, 4, 15
+08B8  call            0x16d4
+08BC  jumpz           0x08fe, ($b002 == 0)
+08CC  dialogtxt       "そんな…"
+08D8  dialogtxt       "忘れたなんて"
+08E8  dialogtxt       "ウソだろ、γ！"
+08FA  goto            0x0932
+
+08FE  dialogtxt       "そんな…"
+090A  dialogtxt       "忘れたなんて"
+091A  dialogtxt       "ウソでしょ、γ！"
+092E  goto            0x0932
+
+0932  code0309        
+0934  call            0x1810
+0938  call            0x170a
+093C  code047b        
+093E  code0478        1, 2
+094C  jumpz           0x0974, ($b003 == 0)
+095C  code0479        1, 0, 12
+0970  goto            0x09dc
+
+0974  jumpz           0x099c, ($b003 == 1)
+0984  code0479        1, 0, 12
+0998  goto            0x09dc
+
+099C  jumpz           0x09c4, ($b003 == 2)
+09AC  code0479        1, 0, 12
+09C0  goto            0x09dc
+
+09C4  code0479        1, 0, 12
+09D8  goto            0x09dc
+
+09DC  code047d        1, 2
+09EA  code0301        8, 7
+09F8  code047e        1, 1
+0A06  dialogtxt       "…"
+0A0C  code047b        
+0A0E  code0309        
+0A10  code047e        1, 0
+0A1E  code0302        7
+0A26  code0479        0, 4, 16
+0A3A  call            0x178e
+0A3E  call            0x16d4
+0A42  jumpz           0x0a82, ($b002 == 0)
+0A52  dialogtxt       "くっそ…"
+0A5E  dialogtxt       "オレは、どうすればいいんだ…"
+0A7E  goto            0x0ab8
+
+0A82  dialogtxt       "それじゃあ…"
+0A92  dialogtxt       "わたしは、どうすればいいのよ…"
+0AB4  goto            0x0ab8
+
+0AB8  code047b        
+0ABA  code0309        
+0ABC  call            0x17e4
+0AC0  call            0x16f2
+0AC4  code047b        
+0AC6  code048b        264, 534, 32
+0ADA  code048c        
+0ADC  code0478        1, 12
+0AEA  code0479        1, 2, 15
+0AFE  code047d        1, 110
+0B0C  call            0x17a4
+0B10  call            0x1722
+0B14  dialogtxt       "何してるの！"
+0B24  code047b        
+0B26  code0309        
+0B28  code0479        1, 2, 14
+0B3C  dialogtxt       "こっちも手一杯なんだ"
+0B54  dialogtxt       "手は貸せないよ！"
+0B68  code0309        
+0B6A  code0479        1, 2, 16
+0B7E  dialogtxt       "あの子の父親じゃなかったら"
+0B9C  dialogtxt       "もっとやりかたもあるのに…"
+0BBA  code0309        
+0BBC  call            0x1776
+0BC0  code0479        0, 4, 15
+0BD4  call            0x178e
+0BD8  call            0x16d4
+0BDC  jumpz           0x0c3c, ($b002 == 0)
+0BEC  dialogtxt       "でも、どうすりゃいいんだ！？"
+0C0C  dialogtxt       "もうγには"
+0C1A  dialogtxt       "オレの声も届かないんだ…！"
+0C38  goto            0x0c8a
+
+0C3C  dialogtxt       "でも、どうすればいいの！？"
+0C5A  dialogtxt       "もうγには"
+0C68  dialogtxt       "わたしの声も届かないよ…！"
+0C86  goto            0x0c8a
+
+0C8A  code047b        
+0C8C  code0309        
+0C8E  call            0x170a
+0C92  code0479        1, 2, 15
+0CA6  call            0x1740
+0CAA  dialogtxt       "それがどうしたって言うの"
+0CC6  dialogtxt       "君たちは鍛冶師なんでしょ？"
+0CE4  code0309        
+0CE6  call            0x1810
+0CEA  call            0x175e
+0CEE  code047b        
+0CF0  code0333        2, 30
+0CFE  code0445        0, 10
+0D0C  code0446        0
+0D14  code0334        
+0D16  code046e        40, 256, 1
+0D2A  code0479        0, 5, 16
+0D3E  call            0x178e
+0D42  call            0x16b6
+0D46  jumpz           0x0d86, ($b002 == 0)
+0D56  dialogtxt       "オレは、鍛冶師…"
+0D6A  dialogtxt       "…"
+0D70  dialogtxt       "へっ、そうか…"
+0D82  goto            0x0dba
+
+0D86  dialogtxt       "わたしは、鍛冶師…"
+0D9C  dialogtxt       "…"
+0DA2  dialogtxt       "あはっ、そっか…"
+0DB6  goto            0x0dba
+
+0DBA  code0309        
+0DBC  call            0x17e4
+0DC0  call            0x16f2
+0DC4  code047b        
+0DC6  code040d        15
+0DCE  code043b        10
+0DD6  code0439        10
+0DDE  code0443        0, 16, 1
+0DF2  code0443        0, 32, 1
+0E06  code040d        15
+0E0E  code0479        1, 2, 12
+0E22  code0479        0, 2, 12
+0E36  call            0x17ba
+0E3A  call            0x16b6
+0E3E  jumpz           0x0e92, ($b002 == 0)
+0E4E  dialogtxt       "わかったよ、レミィ"
+0E64  dialogtxt       "γはオレが"
+0E72  dialogtxt       "絶対に目覚めさせてやる…"
+0E8E  goto            0x0eda
+
+0E92  dialogtxt       "わかったよ、レミィ"
+0EA8  dialogtxt       "γはわたしが"
+0EB8  dialogtxt       "絶対に目覚めさせてみせる…"
+0ED6  goto            0x0eda
+
+0EDA  code0309        
+0EDC  call            0x170a
+0EE0  code0479        1, 4, 13
+0EF4  call            0x1740
+0EF8  dialogtxt       "本当に…"
+0F04  dialogtxt       "世話の焼ける人だ…"
+0F1A  code0309        
+0F1C  call            0x1810
+0F20  call            0x175e
+0F24  code047b        
+0F26  jumpz           0x0f42, ($b003 == 0)
+0F36  code047f        182
+0F3E  goto            0x0f96
+
+0F42  jumpz           0x0f5e, ($b003 == 1)
+0F52  code047f        189
+0F5A  goto            0x0f96
+
+0F5E  jumpz           0x0f7a, ($b003 == 2)
+0F6E  code047f        196
+0F76  goto            0x0f96
+
+0F7A  jumpz           0x0f96, ($b003 == 3)
+0F8A  code047f        203
+0F92  goto            0x0f96
+
+0F96  code0480        0, 1, 0, -30
+0FB0  code0481        1
+0FB8  code040d        25
+0FC0  code033a        396, 0
+0FCE  code0482        
+0FD0  code040d        15
+0FD8  code033e        396
+0FE0  code047d        0, 2
+0FEE  code0301        16, 7
+0FFC  code047e        0, 1
+100A  dialogtxt       "…"
+1010  code047b        
+1012  code0309        
+1014  code047e        0, 0
+1022  code0302        7
+102A  code040d        15
+1032  code0481        0
+103A  code0478        0, 0
+1048  code0479        0, 2, 15
+105C  code047d        0, 0
+106A  call            0x178e
+106E  call            0x16b6
+1072  jumpz           0x10d0, ($b002 == 0)
+1082  dialogtxt       "こいっ！　γ！"
+1094  dialogtxt       "お前と鍛えたこの武器で"
+10AE  dialogtxt       "今すぐ目覚めさせてやるぜ！"
+10CC  goto            0x1122
+
+10D0  dialogtxt       "きなさい！　γ！"
+10E4  dialogtxt       "あなたと鍛えたこの武器で"
+1100  dialogtxt       "今すぐ目覚めさせてあげる！"
+111E  goto            0x1122
+
+1122  code047b        
+1124  code0309        
+1126  call            0x17e4
+112A  call            0x16f2
+112E  code047b        
+1130  done            
+
+1132  code031a        7
+113A  code031b        7, -1, -1, $h136, $h137
+115A  code031c        7, 1
+1168  code031f        7
+1170  ret             
+
+1172  code031b        7, -1, -1, $h136, $h137
+1192  code031c        7, 2
+11A0  code031f        7
+11A8  code031a        7
+11B0  ret             
+
+11B2  code031a        7
+11BA  code031b        7, (-1 - $h139), $h140, $h136, $h137
+11E0  code031c        7, 1
+11EE  code031f        7
+11F6  ret             
+
+11F8  code031a        6
+1200  code031b        6, $h139, 0, $h136, $h137
+1220  code031c        6, 1
+122E  code031f        6
+1236  ret             
+
+1238  code031b        7, (-1 - $h139), $h140, $h136, $h137
+125E  code031c        7, 2
+126C  code031f        7
+1274  code031a        7
+127C  ret             
+
+127E  code031b        6, $h139, 0, $h136, $h137
+129E  code031c        6, 2
+12AC  code031f        6
+12B4  code031a        6
+12BC  ret             
+
+12BE  code031a        7
+12C6  code031b        7, -1, -1, $h141, $h137
+12E6  code031c        7, 1
+12F4  code040d        15
+12FC  code031a        6
+1304  code031b        6, -1, -1, $h136, $h137
+1324  code031c        6, 1
+1332  code031f        6
+133A  code031a        7
+1342  code031b        6, -1, -1, $h136, ($h137 / 2)
+1368  code031c        6, 2
+1376  code031f        6
+137E  code031a        6
+1386  ret             
+
+1388  code031a        7
+1390  code031b        7, -1, -1, $h141, $h137
+13B0  code031c        7, 1
+13BE  code040d        15
+13C6  code031a        6
+13CE  code031b        6, -1, -1, $h136, $h137
+13EE  code031c        6, 1
+13FC  code031f        6
+1404  code031a        7
+140C  ret             
+
+140E  code031b        6, -1, -1, $h136, ($h137 / 2)
+1434  code031c        6, 2
+1442  code031f        6
+144A  code031a        6
+1452  ret             
+
+1454  jumpz           0x147a, ($h131 == 0)
+1464  setvar          0x0002, 0x00cb, ($h139 | 0x0001)
+1476  goto            0x16b4
+
+147A  jumpz           0x14a0, ($h131 == 1)
+148A  setvar          0x0002, 0x00cb, ($h139 | 0x0002)
+149C  goto            0x16b4
+
+14A0  jumpz           0x14c6, ($h131 == 2)
+14B0  setvar          0x0002, 0x00cb, ($h139 | 0x0004)
+14C2  goto            0x16b4
+
+14C6  jumpz           0x14ec, ($h131 == 3)
+14D6  setvar          0x0002, 0x00cb, ($h139 | 0x0008)
+14E8  goto            0x16b4
+
+14EC  jumpz           0x1512, ($h131 == 4)
+14FC  setvar          0x0002, 0x00cb, ($h139 | 0x0010)
+150E  goto            0x16b4
+
+1512  jumpz           0x1538, ($h131 == 5)
+1522  setvar          0x0002, 0x00cb, ($h139 | 0x0020)
+1534  goto            0x16b4
+
+1538  jumpz           0x155e, ($h131 == 6)
+1548  setvar          0x0002, 0x00cb, ($h139 | 0x0040)
+155A  goto            0x16b4
+
+155E  jumpz           0x1584, ($h131 == 7)
+156E  setvar          0x0002, 0x00cb, ($h139 | 0x0080)
+1580  goto            0x16b4
+
+1584  jumpz           0x15aa, ($h131 == 8)
+1594  setvar          0x0002, 0x00cb, ($h139 | 0x0100)
+15A6  goto            0x16b4
+
+15AA  jumpz           0x15d0, ($h131 == 9)
+15BA  setvar          0x0002, 0x00cb, ($h139 | 0x0200)
+15CC  goto            0x16b4
+
+15D0  jumpz           0x15f6, ($h131 == 10)
+15E0  setvar          0x0002, 0x00cb, ($h139 | 0x0400)
+15F2  goto            0x16b4
+
+15F6  jumpz           0x161c, ($h131 == 11)
+1606  setvar          0x0002, 0x00cb, ($h139 | 0x0800)
+1618  goto            0x16b4
+
+161C  jumpz           0x1642, ($h131 == 12)
+162C  setvar          0x0002, 0x00cb, ($h139 | 0x1000)
+163E  goto            0x16b4
+
+1642  jumpz           0x1668, ($h131 == 13)
+1652  setvar          0x0002, 0x00cb, ($h139 | 0x2000)
+1664  goto            0x16b4
+
+1668  jumpz           0x168e, ($h131 == 14)
+1678  setvar          0x0002, 0x00cb, ($h139 | 0x4000)
+168A  goto            0x16b4
+
+168E  jumpz           0x16b4, ($h131 == 15)
+169E  setvar          0x0002, 0x00cb, ($h139 | 0xFFFF8000)
+16B0  goto            0x16b4
+
+16B4  ret             
+
+16B6  code0301        2, 4
+16C4  code047e        0, 1
+16D2  ret             
+
+16D4  code0301        2, 7
+16E2  code047e        0, 1
+16F0  ret             
+
+16F2  code047e        0, 0
+1700  code0302        4
+1708  ret             
+
+170A  code047e        0, 0
+1718  code0302        7
+1720  ret             
+
+1722  code0301        4, 5
+1730  code047e        1, 1
+173E  ret             
+
+1740  code0301        4, 7
+174E  code047e        1, 1
+175C  ret             
+
+175E  code047e        1, 0
+176C  code0302        5
+1774  ret             
+
+1776  code047e        1, 0
+1784  code0302        7
+178C  ret             
+
+178E  code047a        0, 1, 1
+17A2  ret             
+
+17A4  code047a        1, 1, 1
+17B8  ret             
+
+17BA  code047a        0, 1, 1
+17CE  code047a        1, 1, 1
+17E2  ret             
+
+17E4  code047a        0, 0, 1
+17F8  ret             
+
+17FA  code047a        1, 0, 1
+180E  ret             
+
+1810  code047a        0, 0, 1
+1824  code047a        1, 0, 1
+1838  ret             
+

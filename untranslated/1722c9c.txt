@@ -1,0 +1,124 @@
+0000  code0301        0, 7
+000E  dialogtxt       "おまえのマキ割り職人度は…"
+002C  code0309        
+002E  jumpz           0x0052, ($h045 < 10)
+003E  dialogtxt       "マキ割り素人"
+004E  goto            0x0108
+
+0052  jumpz           0x0078, ($h045 < 20)
+0062  dialogtxt       "マキ割り見習い"
+0074  goto            0x0108
+
+0078  jumpz           0x009c, ($h045 < 40)
+0088  dialogtxt       "マキ割り職人"
+0098  goto            0x0108
+
+009C  jumpz           0x00c0, ($h045 < 70)
+00AC  dialogtxt       "マキ割り名人"
+00BC  goto            0x0108
+
+00C0  jumpz           0x00e4, ($h045 < 100)
+00D0  dialogtxt       "マキ割り達人"
+00E0  goto            0x0108
+
+00E4  jumpz           0x0108, ($h045 >= 100)
+00F4  dialogtxt       "マキ割り鉄人"
+0104  goto            0x0108
+
+0108  code0309        
+010A  dialogtxt       "だな"
+0112  code0309        
+0114  code0302        7
+011C  code0443        0, 256, 0
+0130  jumpz           0x019c, ($h045 < 10)
+0140  jumpz           0x0162, ($b002 == 0)
+0150  code033a        1491, 0
+015E  goto            0x0174
+
+0162  code033a        1394, 0
+0170  goto            0x0174
+
+0174  code043e        0, 62, 1
+0188  code043f        0
+0190  code040d        30
+0198  goto            0x02b8
+
+019C  jumpz           0x0214, ($h045 >= 70 ? 1 : 0) && ($h045 < 100 ? 1 : 0)
+01B8  jumpz           0x01da, ($b002 == 0)
+01C8  code033a        1489, 0
+01D6  goto            0x01ec
+
+01DA  code033a        1392, 0
+01E8  goto            0x01ec
+
+01EC  code043e        0, 60, 1
+0200  code043f        0
+0208  code040d        30
+0210  goto            0x02b8
+
+0214  jumpz           0x02b8, ($h045 >= 100)
+0224  jumpz           0x0246, ($b002 == 0)
+0234  code033a        1489, 0
+0242  goto            0x0258
+
+0246  code033a        1392, 0
+0254  goto            0x0258
+
+0258  code043e        0, 60, 1
+026C  code043f        0
+0274  code043e        0, 59, 1
+0288  code043f        0
+0290  code043e        0, 61, 1
+02A4  code043f        0
+02AC  code040d        30
+02B4  goto            0x02b8
+
+02B8  code0443        0, 256, 1
+02CC  code043e        0, 3, 0
+02E0  setvar          0x0002, 0x011b, ($h045 * 3)
+02F2  jumpz           0x030a, ($h219 == 0)
+0302  goto            0x0428
+
+0306  goto            0x030a
+
+030A  code0301        0, 7
+0318  dialogtxt       "これはマキ割りの報酬だ"
+0332  code0309        
+0334  dialogtxt       "とっておきなさい"
+0348  code0309        
+034A  code0302        7
+0352  code0364        $h219
+035A  code0365        
+035C  jumpz           0x0374, ($h045 < 10)
+036C  goto            0x0428
+
+0370  goto            0x0428
+
+0374  jumpz           0x0398, ($h045 < 20)
+0384  code0366        336, 5
+0392  code0367        
+0394  goto            0x0428
+
+0398  jumpz           0x03bc, ($h045 < 40)
+03A8  code0366        337, 4
+03B6  code0367        
+03B8  goto            0x0428
+
+03BC  jumpz           0x03e0, ($h045 < 70)
+03CC  code0366        338, 3
+03DA  code0367        
+03DC  goto            0x0428
+
+03E0  jumpz           0x0404, ($h045 < 100)
+03F0  code0366        339, 2
+03FE  code0367        
+0400  goto            0x0428
+
+0404  jumpz           0x0428, ($h045 >= 100)
+0414  code0366        340, 1
+0422  code0367        
+0424  goto            0x0428
+
+0428  setvar          0x0002, 0x011b, 0
+0434  done            
+

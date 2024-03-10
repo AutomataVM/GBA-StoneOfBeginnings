@@ -1,0 +1,273 @@
+0000  setvar          0x0002, 0x01e1, 0
+000C  code0408        0
+0014  code0410        0, 298, 299, -1
+002E  code0410        1, 298, 302, -1
+0048  code0410        2, 298, 301, -1
+0062  code0411        
+0064  code0430        303
+006C  code0428        304, 5, 11, 0
+0086  code0412        4, 1
+0094  code0418        0
+009C  setvar          0x0002, 0x01cb, 1
+00A8  setvar          0x0002, 0x01c8, 0
+00B4  code046c        0
+00BC  placetxt        "？？？"
+00C6  jumpz           0x01dc, ($f0049 == 0)
+00D6  code041c        0, 240, 320, 1
+00F0  code043e        0, 3, 0
+0104  code0443        0, 48, 0
+0118  jumpz           0x0146, ($b002 == 0)
+0128  code0438        2, 9, 507, 0
+0142  goto            0x0164
+
+0146  code0438        2, 29, 507, 0
+0160  goto            0x0164
+
+0164  code043a        2, 2, 0
+0178  code043e        2, 0, 0
+018C  code043d        2, 240, 320
+01A0  setvar          0x0002, 0x00c9, 1
+01AC  setvar          0x0002, 0x00c8, 0
+01B8  call            0x0454
+01BC  code0488        -1, 1
+01CA  code048a        120, 0
+01D8  goto            0x0288
+
+01DC  jumpz           0x023c, ($f0050 == 0)
+01EC  code043e        0, 3, 0
+0200  setvar          0x0002, 0x00c9, 1
+020C  setvar          0x0002, 0x00c8, 0
+0218  call            0x0454
+021C  code0488        -1, 1
+022A  code048a        120, 280
+0238  goto            0x0288
+
+023C  code041c        0, 240, 391, 1
+0256  jumpz           0x0284, ($h319 == 53)
+0266  code041c        1, 240, 391, 3
+0280  goto            0x0284
+
+0284  goto            0x0288
+
+0288  code0460        0, 0x03d6, 4
+0298  code0462        0, 29, 49, 30, 49
+02B8  setvar          0x0002, 0x017f, 55
+02C4  code0409        
+02C6  code046e        16, 256, 0
+02DA  jumpz           0x0346, ($f0049 == 1 && $f0050 == 0)
+02F6  code046d        0, 192
+0304  code043d        0, $h128, $h129
+0318  code043c        0, $h130
+0326  setvar          0x0002, 0x00c9, 5
+0332  setvar          0x0002, 0x00c8, 0
+033E  call            0x0494
+0342  goto            0x0346
+
+0346  code041d        
+0348  placetxt        "？？？"
+0352  jumpz           0x03d4, ($f0048 == 1 && $f0049 == 0)
+036E  setvar          0x0002, 0x00c9, 60
+037A  setvar          0x0002, 0x00c8, 0
+0386  call            0x0494
+038A  code040d        30
+0392  code048b        120, 280, 16
+03A6  code048c        
+03A8  setvar          0x0003, 0x0131, 1
+03B4  code043e        0, 3, 0
+03C8  code0006        2118
+03D0  goto            0x03d4
+
+03D4  code040b        
+03D6  setvar          0x0003, 0x0132, 1
+03E2  code043e        0, 3, 0
+03F6  code0006        2119
+03FE  setvar          0x0002, 0x00c9, 60
+040A  setvar          0x0002, 0x00c8, 0
+0416  call            0x0454
+041A  code040a        
+041C  code0005        768
+0424  code046c        0
+042C  code0006        1591
+0434  code046c        1
+043C  code040b        
+043E  setvar          0x0002, 0x00a0, 63
+044A  code040a        
+044C  code034f        
+044E  goto            0x0000
+
+0452  done            
+
+0454  code031a        7
+045C  code031b        7, -1, -1, $h136, $h137
+047C  code031c        7, 1
+048A  code031f        7
+0492  ret             
+
+0494  code031b        7, -1, -1, $h136, $h137
+04B4  code031c        7, 2
+04C2  code031f        7
+04CA  code031a        7
+04D2  ret             
+
+04D4  code031a        7
+04DC  code031b        7, (-1 - $h139), $h140, $h136, $h137
+0502  code031c        7, 1
+0510  code031f        7
+0518  ret             
+
+051A  code031a        6
+0522  code031b        6, $h139, 0, $h136, $h137
+0542  code031c        6, 1
+0550  code031f        6
+0558  ret             
+
+055A  code031b        7, (-1 - $h139), $h140, $h136, $h137
+0580  code031c        7, 2
+058E  code031f        7
+0596  code031a        7
+059E  ret             
+
+05A0  code031b        6, $h139, 0, $h136, $h137
+05C0  code031c        6, 2
+05CE  code031f        6
+05D6  code031a        6
+05DE  ret             
+
+05E0  code031a        7
+05E8  code031b        7, -1, -1, $h141, $h137
+0608  code031c        7, 1
+0616  code040d        15
+061E  code031a        6
+0626  code031b        6, -1, -1, $h136, $h137
+0646  code031c        6, 1
+0654  code031f        6
+065C  code031a        7
+0664  code031b        6, -1, -1, $h136, ($h137 / 2)
+068A  code031c        6, 2
+0698  code031f        6
+06A0  code031a        6
+06A8  ret             
+
+06AA  code031a        7
+06B2  code031b        7, -1, -1, $h141, $h137
+06D2  code031c        7, 1
+06E0  code040d        15
+06E8  code031a        6
+06F0  code031b        6, -1, -1, $h136, $h137
+0710  code031c        6, 1
+071E  code031f        6
+0726  code031a        7
+072E  ret             
+
+0730  code031b        6, -1, -1, $h136, ($h137 / 2)
+0756  code031c        6, 2
+0764  code031f        6
+076C  code031a        6
+0774  ret             
+
+0776  jumpz           0x079c, ($h131 == 0)
+0786  setvar          0x0002, 0x00cb, ($h139 | 0x0001)
+0798  goto            0x09d6
+
+079C  jumpz           0x07c2, ($h131 == 1)
+07AC  setvar          0x0002, 0x00cb, ($h139 | 0x0002)
+07BE  goto            0x09d6
+
+07C2  jumpz           0x07e8, ($h131 == 2)
+07D2  setvar          0x0002, 0x00cb, ($h139 | 0x0004)
+07E4  goto            0x09d6
+
+07E8  jumpz           0x080e, ($h131 == 3)
+07F8  setvar          0x0002, 0x00cb, ($h139 | 0x0008)
+080A  goto            0x09d6
+
+080E  jumpz           0x0834, ($h131 == 4)
+081E  setvar          0x0002, 0x00cb, ($h139 | 0x0010)
+0830  goto            0x09d6
+
+0834  jumpz           0x085a, ($h131 == 5)
+0844  setvar          0x0002, 0x00cb, ($h139 | 0x0020)
+0856  goto            0x09d6
+
+085A  jumpz           0x0880, ($h131 == 6)
+086A  setvar          0x0002, 0x00cb, ($h139 | 0x0040)
+087C  goto            0x09d6
+
+0880  jumpz           0x08a6, ($h131 == 7)
+0890  setvar          0x0002, 0x00cb, ($h139 | 0x0080)
+08A2  goto            0x09d6
+
+08A6  jumpz           0x08cc, ($h131 == 8)
+08B6  setvar          0x0002, 0x00cb, ($h139 | 0x0100)
+08C8  goto            0x09d6
+
+08CC  jumpz           0x08f2, ($h131 == 9)
+08DC  setvar          0x0002, 0x00cb, ($h139 | 0x0200)
+08EE  goto            0x09d6
+
+08F2  jumpz           0x0918, ($h131 == 10)
+0902  setvar          0x0002, 0x00cb, ($h139 | 0x0400)
+0914  goto            0x09d6
+
+0918  jumpz           0x093e, ($h131 == 11)
+0928  setvar          0x0002, 0x00cb, ($h139 | 0x0800)
+093A  goto            0x09d6
+
+093E  jumpz           0x0964, ($h131 == 12)
+094E  setvar          0x0002, 0x00cb, ($h139 | 0x1000)
+0960  goto            0x09d6
+
+0964  jumpz           0x098a, ($h131 == 13)
+0974  setvar          0x0002, 0x00cb, ($h139 | 0x2000)
+0986  goto            0x09d6
+
+098A  jumpz           0x09b0, ($h131 == 14)
+099A  setvar          0x0002, 0x00cb, ($h139 | 0x4000)
+09AC  goto            0x09d6
+
+09B0  jumpz           0x09d6, ($h131 == 15)
+09C0  setvar          0x0002, 0x00cb, ($h139 | 0xFFFF8000)
+09D2  goto            0x09d6
+
+09D6  ret             
+
+09D8  code046d        0, 192
+09E6  code043e        0, 6, 0
+09FA  walkto          0, $h128, ($h129 - 8), 1
+0A1A  walkwait        0
+0A22  ret             
+
+0A24  code046d        0, 192
+0A32  code043e        0, 6, 0
+0A46  walkto          0, $h128, ($h129 + 8), 1
+0A66  walkwait        0
+0A6E  ret             
+
+0A70  code046d        0, 192
+0A7E  code043e        0, 6, 0
+0A92  walkto          0, ($h128 - 8), $h129, 1
+0AB2  walkwait        0
+0ABA  ret             
+
+0ABC  code046d        0, 192
+0ACA  code043e        0, 6, 0
+0ADE  walkto          0, ($h128 + 8), $h129, 1
+0AFE  walkwait        0
+0B06  ret             
+
+0B08  code033a        196, 0
+0B16  code048e        
+0B18  code031a        7
+0B20  code031b        7, -1, -1, 32767, 6
+0B40  code031c        7, 1
+0B4E  code031f        7
+0B56  code0443        0, 48, 0
+0B6A  code043d        0, $h192, $h193
+0B7E  code0443        0, 48, 1
+0B92  code031b        7, -1, -1, 32767, 6
+0BB2  code031c        7, 2
+0BC0  code031f        7
+0BC8  code031a        7
+0BD0  code033e        196
+0BD8  ret             
+

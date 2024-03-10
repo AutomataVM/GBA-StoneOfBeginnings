@@ -1,0 +1,1142 @@
+0000  setvar          0x0003, 0x0199, 0
+000C  setvar          0x0003, 0x0206, 1
+0018  code0490        0
+0020  code043d        1, 592, 152
+0034  code043e        1, 6, 0
+0048  walkto          1, 524, 152, 1
+0062  walkwait        1
+006A  code043e        1, 3, 0
+007E  code040d        30
+0086  jumpz           0x00c6, ($b003 == 0)
+0096  code047f        224
+009E  code0480        0, 1, 0, 0
+00B8  code0481        1
+00C0  code0482        
+00C2  goto            0x0186
+
+00C6  jumpz           0x0106, ($b003 == 1)
+00D6  code047f        225
+00DE  code0480        0, 1, 0, 0
+00F8  code0481        1
+0100  code0482        
+0102  goto            0x0186
+
+0106  jumpz           0x0146, ($b003 == 2)
+0116  code047f        226
+011E  code0480        0, 1, 0, 0
+0138  code0481        1
+0140  code0482        
+0142  goto            0x0186
+
+0146  jumpz           0x0186, ($b003 == 3)
+0156  code047f        227
+015E  code0480        0, 1, 0, 0
+0178  code0481        1
+0180  code0482        
+0182  goto            0x0186
+
+0186  code047d        0, 2
+0194  code0301        16, 3
+01A2  code047e        0, 1
+01B0  jumpz           0x01d4, ($b003 == 0)
+01C0  dialogtxt       "ぱーとなー…"
+01D0  goto            0x021c
+
+01D4  jumpz           0x01f0, ($b003 == 1)
+01E4  dialogtxt       "δ…"
+01EC  goto            0x021c
+
+01F0  jumpz           0x020c, ($b003 == 2)
+0200  dialogtxt       "δ…"
+0208  goto            0x021c
+
+020C  dialogtxt       "δさん…"
+0218  goto            0x021c
+
+021C  code0309        
+021E  code047e        0, 0
+022C  code0302        3
+0234  code040d        15
+023C  code0481        0
+0244  code040d        30
+024C  code043e        1, 6, 0
+0260  walkto          1, 500, 152, 0
+027A  code040d        15
+0282  setvar          0x0002, 0x00c9, 30
+028E  setvar          0x0002, 0x00c8, 0
+029A  call            0x2e58
+029E  code040d        30
+02A6  code0488        -1, 1
+02B4  code043d        0, 436, 152
+02C8  code043d        1, 460, 152
+02DC  code043e        1, 3, 0
+02F0  code043c        1, 2
+02FE  code043c        0, 4
+030C  call            0x2e98
+0310  code0478        0, 0
+031E  code0479        0, 0, 12
+0332  code047d        0, 0
+0340  code0478        1, 2
+034E  jumpz           0x0376, ($b003 == 0)
+035E  code0479        1, 0, 12
+0372  goto            0x03de
+
+0376  jumpz           0x039e, ($b003 == 1)
+0386  code0479        1, 0, 16
+039A  goto            0x03de
+
+039E  jumpz           0x03c6, ($b003 == 2)
+03AE  code0479        1, 0, 16
+03C2  goto            0x03de
+
+03C6  code0479        1, 0, 16
+03DA  goto            0x03de
+
+03DE  code047d        1, 2
+03EC  call            0x34e0
+03F0  jumpz           0x0f4c, ($b003 == 0)
+0400  call            0x3448
+0404  dialogtxt       "…"
+040A  code047b        
+040C  code0309        
+040E  call            0x349c
+0412  code0479        0, 0, 12
+0426  call            0x33fa
+042A  jumpz           0x048a, ($b002 == 0)
+043A  dialogtxt       "アニスたちも捕まえたし"
+0454  dialogtxt       "あとはゴヴァンの魔石を戻せば"
+0474  dialogtxt       "おしまいだな…"
+0486  goto            0x04da
+
+048A  dialogtxt       "アニスたちも捕まえたし"
+04A4  dialogtxt       "あとはゴヴァンの魔石を戻せば"
+04C4  dialogtxt       "おしまいだね…"
+04D6  goto            0x04da
+
+04DA  code0309        
+04DC  call            0x3430
+04E0  code0479        1, 0, 12
+04F4  call            0x3466
+04F8  dialogtxt       "うぇるまん様ノ　回復モ"
+0512  dialogtxt       "時間ノ問題デショウ"
+0528  code0309        
+052A  call            0x349c
+052E  code0479        0, 0, 13
+0542  call            0x33fa
+0546  jumpz           0x0580, ($b002 == 0)
+0556  dialogtxt       "そっか…"
+0562  dialogtxt       "よかったな、ミューノ…"
+057C  goto            0x05aa
+
+0580  dialogtxt       "そっか…"
+058C  dialogtxt       "よかったね、ミューノ…"
+05A6  goto            0x05aa
+
+05AA  code0309        
+05AC  call            0x3430
+05B0  code0479        1, 4, 12
+05C4  call            0x3466
+05C8  dialogtxt       "…"
+05CE  code0309        
+05D0  call            0x349c
+05D4  code0479        0, 0, 16
+05E8  call            0x33fa
+05EC  jumpz           0x0640, ($b002 == 0)
+05FC  dialogtxt       "それにしても"
+060C  dialogtxt       "お前と会ってから"
+0620  dialogtxt       "いろんなことがあったな…"
+063C  goto            0x0686
+
+0640  dialogtxt       "それにしても"
+0650  dialogtxt       "あなたと会ってから"
+0666  dialogtxt       "いろんなことがあったね…"
+0682  goto            0x0686
+
+0686  code0309        
+0688  call            0x3430
+068C  code0479        1, 0, 12
+06A0  call            0x3466
+06A4  dialogtxt       "私モ　鍛冶師ノぱーとなーノ"
+06C2  dialogtxt       "任務ナド"
+06CE  dialogtxt       "想定外デシタ"
+06DE  code0309        
+06E0  call            0x349c
+06E4  code0479        0, 0, 12
+06F8  call            0x33fa
+06FC  jumpz           0x074a, ($b002 == 0)
+070C  dialogtxt       "どうだった？"
+071C  dialogtxt       "鍛冶師のパートナーは"
+0734  dialogtxt       "面白かったか？"
+0746  goto            0x0786
+
+074A  dialogtxt       "どうだった？"
+075A  dialogtxt       "鍛冶師のパートナーは"
+0772  dialogtxt       "面白かった？"
+0782  goto            0x0786
+
+0786  code0309        
+0788  call            0x3430
+078C  code0479        1, 0, 12
+07A0  call            0x3466
+07A4  dialogtxt       "面白イ？"
+07B0  dialogtxt       "私ニハ　ソンナ感情ハアリマセン"
+07D2  dialogtxt       "与エラレタ任務ヲ　コナシタマデデス"
+07F8  code0309        
+07FA  call            0x349c
+07FE  code0479        0, 4, 12
+0812  call            0x33fa
+0816  dialogtxt       "そっか…"
+0822  dialogtxt       "それはちょっと"
+0834  dialogtxt       "さびしいかな…"
+0846  code0309        
+0848  call            0x3430
+084C  code0479        1, 0, 12
+0860  call            0x3466
+0864  dialogtxt       "シカシ　戦闘兵器トシテ作ラレタ私ガ"
+088A  dialogtxt       "モノヲ作リ出セル　トイウコトハ"
+08AC  dialogtxt       "発見デシタ"
+08BA  code0309        
+08BC  call            0x349c
+08C0  code0479        0, 0, 16
+08D4  call            0x33fa
+08D8  jumpz           0x0932, ($b002 == 0)
+08E8  dialogtxt       "へぇ…"
+08F2  dialogtxt       "γの仕事はすごく正確だし"
+090E  dialogtxt       "良い職人になれると思うけどな"
+092E  goto            0x097a
+
+0932  dialogtxt       "へぇ…"
+093C  dialogtxt       "γの仕事はすごく正確だし"
+0958  dialogtxt       "良い職人になれると思うけど"
+0976  goto            0x097a
+
+097A  code0309        
+097C  call            0x3430
+0980  code0479        1, 0, 12
+0994  call            0x3466
+0998  dialogtxt       "アリガトウゴザイマス"
+09B0  dialogtxt       "シカシ　私ノ作業ハ"
+09C6  dialogtxt       "タダ　正確ナダケ　デス"
+09E0  code0309        
+09E2  code0479        0, 0, 14
+09F6  dialogtxt       "アナタノ作ルモノハ"
+0A0C  dialogtxt       "同ジヨウニ　作業シテイテモ"
+0A2A  dialogtxt       "ホンノ少シ　変化シテイマス"
+0A48  code0309        
+0A4A  dialogtxt       "ソレガ　武器ニ　魂ヲ込メル"
+0A68  dialogtxt       "トイウコト　ナノデショウカ？"
+0A88  code0309        
+0A8A  call            0x349c
+0A8E  code0479        0, 4, 13
+0AA2  call            0x33fa
+0AA6  jumpz           0x0af8, ($b002 == 0)
+0AB6  dialogtxt       "いや…"
+0AC0  dialogtxt       "自分ではよくわからないんだけど"
+0AE2  dialogtxt       "そうなのかな？"
+0AF4  goto            0x0b3c
+
+0AF8  dialogtxt       "うーん…"
+0B04  dialogtxt       "自分ではよくわからないんだけど"
+0B26  dialogtxt       "そうなのかな？"
+0B38  goto            0x0b3c
+
+0B3C  code0309        
+0B3E  call            0x3430
+0B42  code0479        1, 4, 12
+0B56  call            0x3466
+0B5A  dialogtxt       "私ニハ　魂ヲ込メル　トイウコトモ"
+0B7E  dialogtxt       "正確ニハ　理解デキマセン"
+0B9A  dialogtxt       "私ノ中ニ　魂ナド　存在シマセンカラ"
+0BC0  code0309        
+0BC2  call            0x349c
+0BC6  code0479        0, 5, 17
+0BDA  call            0x33fa
+0BDE  jumpz           0x0c26, ($b002 == 0)
+0BEE  dialogtxt       "そんなことないよ！"
+0C04  dialogtxt       "γにだって"
+0C12  dialogtxt       "魂はあるさ！"
+0C22  goto            0x0c5e
+
+0C26  dialogtxt       "そんなことないよ！"
+0C3C  dialogtxt       "γにだって"
+0C4A  dialogtxt       "魂はあるよ！"
+0C5A  goto            0x0c5e
+
+0C5E  code0309        
+0C60  call            0x3430
+0C64  code0479        1, 5, 12
+0C78  call            0x3466
+0C7C  dialogtxt       "ドコニデスカ？"
+0C8E  code0309        
+0C90  call            0x349c
+0C94  code0479        0, 2, 15
+0CA8  call            0x33fa
+0CAC  jumpz           0x0d1c, ($b002 == 0)
+0CBC  dialogtxt       "どこって…、それはわからないけど"
+0CE0  dialogtxt       "たまにγだって怒ったり"
+0CFA  dialogtxt       "するときがあるじゃないか！"
+0D18  goto            0x0d7a
+
+0D1C  dialogtxt       "どこって…、それはわからないけど"
+0D40  dialogtxt       "たまにγだって怒ったり"
+0D5A  dialogtxt       "するときがあるじゃない！"
+0D76  goto            0x0d7a
+
+0D7A  code0309        
+0D7C  call            0x3430
+0D80  code0479        1, 0, 12
+0D94  call            0x3466
+0D98  dialogtxt       "ソレハ　気ノセイデス"
+0DB0  dialogtxt       "私ニ　感情ナド　アリマセン"
+0DCE  code0309        
+0DD0  call            0x349c
+0DD4  code0479        0, 0, 12
+0DE8  call            0x33fa
+0DEC  jumpz           0x0e52, ($b002 == 0)
+0DFC  dialogtxt       "そんなことないと思うぜ"
+0E16  dialogtxt       "そういうγだから"
+0E2A  dialogtxt       "オレたちは今までパートナーとして"
+0E4E  goto            0x0eaa
+
+0E52  dialogtxt       "そんなことないと思うよ"
+0E6C  dialogtxt       "そういうγだから"
+0E80  dialogtxt       "わたしたちは今までパートナーとして"
+0EA6  goto            0x0eaa
+
+0EAA  code0309        
+0EAC  dialogtxt       "がんばってこれたんだと思うし"
+0ECC  code0309        
+0ECE  call            0x3430
+0ED2  code0479        1, 1, 12
+0EE6  call            0x3466
+0EEA  dialogtxt       "…"
+0EF0  dialogtxt       "ソウナノデスカ？"
+0F04  code0309        
+0F06  call            0x349c
+0F0A  code0479        0, 2, 13
+0F1E  call            0x33fa
+0F22  dialogtxt       "そうだよ"
+0F2E  dialogtxt       "絶対に…！"
+0F3C  code0309        
+0F3E  call            0x3536
+0F42  call            0x3418
+0F46  code047b        
+0F48  goto            0x0f4c
+
+0F4C  jumpz           0x1944, ($b003 == 1)
+0F5C  call            0x3448
+0F60  dialogtxt       "…"
+0F66  code047b        
+0F68  code0309        
+0F6A  call            0x349c
+0F6E  code0479        0, 0, 12
+0F82  call            0x33fa
+0F86  jumpz           0x0fe6, ($b002 == 0)
+0F96  dialogtxt       "アニスたちも捕まえたし"
+0FB0  dialogtxt       "あとはゴヴァンの魔石を戻せば"
+0FD0  dialogtxt       "おしまいだな…"
+0FE2  goto            0x1036
+
+0FE6  dialogtxt       "アニスたちも捕まえたし"
+1000  dialogtxt       "あとはゴヴァンの魔石を戻せば"
+1020  dialogtxt       "おしまいだね…"
+1032  goto            0x1036
+
+1036  code0309        
+1038  call            0x3430
+103C  code0479        1, 0, 12
+1050  call            0x3466
+1054  dialogtxt       "そうじゃの"
+1062  dialogtxt       "ウェルマン殿の調子も"
+107A  dialogtxt       "大分よくなったそうじゃしの"
+1098  code0309        
+109A  call            0x349c
+109E  code0479        0, 0, 13
+10B2  call            0x33fa
+10B6  jumpz           0x10f0, ($b002 == 0)
+10C6  dialogtxt       "そっか…"
+10D2  dialogtxt       "よかったな、ミューノ…"
+10EC  goto            0x111a
+
+10F0  dialogtxt       "そっか…"
+10FC  dialogtxt       "よかったね、ミューノ…"
+1116  goto            0x111a
+
+111A  code0309        
+111C  call            0x3430
+1120  code0479        1, 1, 12
+1134  call            0x3466
+1138  dialogtxt       "うむ…"
+1142  dialogtxt       "おぬしも今までよくやったの"
+1160  dialogtxt       "もうひとふんばりじゃ"
+1178  code0309        
+117A  call            0x349c
+117E  code0479        0, 0, 12
+1192  call            0x33fa
+1196  jumpz           0x11fa, ($b002 == 0)
+11A6  dialogtxt       "ありがと、γ…"
+11B8  dialogtxt       "それにしても、お前と会ってから"
+11DA  dialogtxt       "いろんなことがあったな…"
+11F6  goto            0x1250
+
+11FA  dialogtxt       "ありがと、γ…"
+120C  dialogtxt       "それにしても、あなたと会ってから"
+1230  dialogtxt       "いろんなことがあったね…"
+124C  goto            0x1250
+
+1250  code0309        
+1252  call            0x3430
+1256  code0479        1, 4, 12
+126A  call            0x3466
+126E  dialogtxt       "本当じゃ、まさかワガハイも"
+128C  dialogtxt       "鍛冶師のパートナーになるとは"
+12AC  dialogtxt       "ユメにも思わんかったぞい"
+12C8  code0309        
+12CA  call            0x349c
+12CE  code0479        0, 0, 13
+12E2  call            0x33fa
+12E6  jumpz           0x1334, ($b002 == 0)
+12F6  dialogtxt       "どうだった？"
+1306  dialogtxt       "鍛冶師のパートナーは"
+131E  dialogtxt       "面白かったか？"
+1330  goto            0x1370
+
+1334  dialogtxt       "どうだった？"
+1344  dialogtxt       "鍛冶師のパートナーは"
+135C  dialogtxt       "面白かった？"
+136C  goto            0x1370
+
+1370  code0309        
+1372  call            0x3430
+1376  code0479        1, 0, 13
+138A  call            0x3466
+138E  dialogtxt       "まあの"
+1398  dialogtxt       "モノを作り出すことは"
+13B0  dialogtxt       "単純に楽しいもんじゃ"
+13C8  code0309        
+13CA  code0479        0, 0, 12
+13DE  code0479        1, 0, 12
+13F2  dialogtxt       "それにおぬしといっしょだと"
+1410  dialogtxt       "なんだかんだと退屈することは"
+1430  dialogtxt       "なかったからの"
+1442  code0309        
+1444  call            0x349c
+1448  code0479        0, 2, 13
+145C  call            0x33fa
+1460  jumpz           0x14d4, ($b002 == 0)
+1470  dialogtxt       "それはオレだって同じだよ"
+148C  dialogtxt       "オレだってお前と会ってから"
+14AA  dialogtxt       "毎日ドキドキすることばっかだったぜ"
+14D0  goto            0x153e
+
+14D4  dialogtxt       "それはわたしだって同じだよ"
+14F2  dialogtxt       "わたしだってあなたと会ってから"
+1514  dialogtxt       "毎日ドキドキすることばっかだったよ"
+153A  goto            0x153e
+
+153E  code0309        
+1540  call            0x3430
+1544  code0479        1, 1, 13
+1558  call            0x3466
+155C  dialogtxt       "ははは…"
+1568  dialogtxt       "亀の甲より年の劫"
+157C  dialogtxt       "まだまだ若いモンには負けんぞ"
+159C  code0309        
+159E  code0479        0, 0, 12
+15B2  code0479        1, 2, 13
+15C6  dialogtxt       "おぬしもワガハイとの修行の"
+15E4  dialogtxt       "経験をいかして"
+15F6  dialogtxt       "立派な鍛冶師になるのじゃぞ"
+1614  code0309        
+1616  call            0x349c
+161A  code0479        0, 2, 13
+162E  call            0x33fa
+1632  jumpz           0x168a, ($b002 == 0)
+1642  dialogtxt       "うん、まかせとけって！"
+165C  dialogtxt       "いつかγ用の武器も"
+1672  dialogtxt       "作ってやるからな"
+1686  goto            0x16d2
+
+168A  dialogtxt       "うん、まかせといて！"
+16A2  dialogtxt       "いつかγ用の武器も"
+16B8  dialogtxt       "作ってあげるからね"
+16CE  goto            0x16d2
+
+16D2  code0309        
+16D4  call            0x3430
+16D8  code0479        1, 0, 12
+16EC  call            0x3466
+16F0  dialogtxt       "ほほう"
+16FA  dialogtxt       "まあ、あまり期待しないで"
+1716  dialogtxt       "待っておるぞ"
+1726  code0309        
+1728  call            0x349c
+172C  code0479        0, 0, 16
+1740  call            0x33fa
+1744  jumpz           0x17a8, ($b002 == 0)
+1754  dialogtxt       "そういえば、γ"
+1766  dialogtxt       "魔石を戻しに行く前に"
+177E  dialogtxt       "なんかやり残したこととかないのか？"
+17A4  goto            0x17fa
+
+17A8  dialogtxt       "そういえば、γ"
+17BA  dialogtxt       "魔石を戻しに行く前に"
+17D2  dialogtxt       "なんかやり残したこととかないの？"
+17F6  goto            0x17fa
+
+17FA  code0309        
+17FC  call            0x3430
+1800  code0479        1, 0, 16
+1814  call            0x3466
+1818  dialogtxt       "やり残したこと…か"
+182E  code0309        
+1830  code0479        1, 0, 14
+1844  dialogtxt       "ないの"
+184E  code0309        
+1850  call            0x349c
+1854  code0479        0, 4, 12
+1868  call            0x33fa
+186C  jumpz           0x18ac, ($b002 == 0)
+187C  dialogtxt       "そ、そうなのか…"
+1890  dialogtxt       "なんかさびしいなぁ…"
+18A8  goto            0x18dc
+
+18AC  dialogtxt       "そ、そうなんだ…"
+18C0  dialogtxt       "なんかさびしいなぁ…"
+18D8  goto            0x18dc
+
+18DC  code0309        
+18DE  call            0x3430
+18E2  code0479        1, 4, 12
+18F6  call            0x3466
+18FA  dialogtxt       "そう言われてもの"
+190E  dialogtxt       "まあ時間はまだある"
+1924  dialogtxt       "考えておくよ"
+1934  code0309        
+1936  call            0x3536
+193A  call            0x3484
+193E  code047b        
+1940  goto            0x1944
+
+1944  jumpz           0x244c, ($b003 == 2)
+1954  call            0x3448
+1958  dialogtxt       "…"
+195E  code047b        
+1960  code0309        
+1962  call            0x349c
+1966  code0479        0, 0, 12
+197A  call            0x33fa
+197E  jumpz           0x19de, ($b002 == 0)
+198E  dialogtxt       "アニスたちも捕まえたし"
+19A8  dialogtxt       "あとはゴヴァンの魔石を戻せば"
+19C8  dialogtxt       "おしまいだな…"
+19DA  goto            0x1a2e
+
+19DE  dialogtxt       "アニスたちも捕まえたし"
+19F8  dialogtxt       "あとはゴヴァンの魔石を戻せば"
+1A18  dialogtxt       "おしまいだね…"
+1A2A  goto            0x1a2e
+
+1A2E  code0309        
+1A30  call            0x3430
+1A34  code0479        1, 0, 12
+1A48  call            0x3466
+1A4C  dialogtxt       "そうだな"
+1A58  dialogtxt       "ウェルマンの調子も"
+1A6E  dialogtxt       "大分よくなったらしい"
+1A86  code0309        
+1A88  call            0x349c
+1A8C  code0479        0, 0, 13
+1AA0  call            0x33fa
+1AA4  jumpz           0x1ade, ($b002 == 0)
+1AB4  dialogtxt       "そっか…"
+1AC0  dialogtxt       "よかったな、ミューノ…"
+1ADA  goto            0x1b08
+
+1ADE  dialogtxt       "そっか…"
+1AEA  dialogtxt       "よかったね、ミューノ…"
+1B04  goto            0x1b08
+
+1B08  code0309        
+1B0A  call            0x3430
+1B0E  code0479        1, 0, 13
+1B22  call            0x3466
+1B26  dialogtxt       "ふ…"
+1B2E  code0309        
+1B30  call            0x349c
+1B34  code0479        0, 0, 16
+1B48  call            0x33fa
+1B4C  jumpz           0x1ba2, ($b002 == 0)
+1B5C  dialogtxt       "それにしても…"
+1B6E  dialogtxt       "お前と会ってから"
+1B82  dialogtxt       "いろんなことがあったな…"
+1B9E  goto            0x1bea
+
+1BA2  dialogtxt       "それにしても…"
+1BB4  dialogtxt       "あなたと会ってから"
+1BCA  dialogtxt       "いろんなことがあったね…"
+1BE6  goto            0x1bea
+
+1BEA  code0309        
+1BEC  call            0x3430
+1BF0  code0479        1, 4, 16
+1C04  call            0x3466
+1C08  dialogtxt       "まったく…、まさか私が鍛冶師の"
+1C2A  dialogtxt       "パートナーになるとは…"
+1C44  dialogtxt       "今でも信じられん"
+1C58  code0309        
+1C5A  call            0x349c
+1C5E  code0479        0, 0, 14
+1C72  call            0x33fa
+1C76  jumpz           0x1ccc, ($b002 == 0)
+1C86  dialogtxt       "どうだった？"
+1C96  dialogtxt       "鍛冶師のパートナーは…"
+1CB0  dialogtxt       "やっぱイヤだったか？"
+1CC8  goto            0x1d12
+
+1CCC  dialogtxt       "どうだった？"
+1CDC  dialogtxt       "鍛冶師のパートナーって…"
+1CF8  dialogtxt       "やっぱイヤだった？"
+1D0E  goto            0x1d12
+
+1D12  code0309        
+1D14  call            0x3430
+1D18  code0479        0, 5, 14
+1D2C  code0479        1, 2, 15
+1D40  call            0x3466
+1D44  dialogtxt       "当然だ！"
+1D50  dialogtxt       "あんな熱いところで働くなど"
+1D6E  dialogtxt       "もう二度とゴメンだ！"
+1D86  code0309        
+1D88  call            0x349c
+1D8C  code0479        0, 4, 12
+1DA0  code0479        1, 2, 12
+1DB4  call            0x33fa
+1DB8  jumpz           0x1e02, ($b002 == 0)
+1DC8  dialogtxt       "そっか…"
+1DD4  dialogtxt       "そんなにつらかったのか"
+1DEE  dialogtxt       "悪かったな…"
+1DFE  goto            0x1e3c
+
+1E02  dialogtxt       "そっか…"
+1E0E  dialogtxt       "そんなにつらかったんだ"
+1E28  dialogtxt       "悪かったね…"
+1E38  goto            0x1e3c
+
+1E3C  code0309        
+1E3E  call            0x3430
+1E42  code0479        0, 5, 14
+1E56  code0479        1, 2, 15
+1E6A  call            0x3466
+1E6E  dialogtxt       "つらいだと？　ふざけるな！"
+1E8C  dialogtxt       "あの程度でこの私が"
+1EA2  dialogtxt       "つらいなどと思うものか！"
+1EBE  code0309        
+1EC0  call            0x349c
+1EC4  code0479        0, 1, 16
+1ED8  call            0x33fa
+1EDC  jumpz           0x1f0c, ($b002 == 0)
+1EEC  dialogtxt       "もう…"
+1EF6  dialogtxt       "なんなんだよ…"
+1F08  goto            0x1f2a
+
+1F0C  dialogtxt       "もう…"
+1F16  dialogtxt       "なんなのよ…"
+1F26  goto            0x1f2a
+
+1F2A  code0309        
+1F2C  call            0x3430
+1F30  code0479        1, 2, 12
+1F44  call            0x3466
+1F48  dialogtxt       "ただ…、なんだ…"
+1F5C  dialogtxt       "キサマの周りでは事件が"
+1F76  dialogtxt       "絶えなかったからな…"
+1F8E  code0309        
+1F90  code0479        1, 0, 12
+1FA4  dialogtxt       "それは、悪くなかった"
+1FBC  code0309        
+1FBE  call            0x349c
+1FC2  code0479        0, 0, 14
+1FD6  call            0x33fa
+1FDA  jumpz           0x2020, ($b002 == 0)
+1FEA  dialogtxt       "たしかにお前といると"
+2002  dialogtxt       "問題ばっか起きたからな"
+201C  goto            0x2058
+
+2020  dialogtxt       "たしかにあなたといると"
+203A  dialogtxt       "問題ばっか起きたからね"
+2054  goto            0x2058
+
+2058  code0309        
+205A  call            0x3430
+205E  code0479        1, 2, 15
+2072  call            0x3466
+2076  dialogtxt       "調子にのるなよ！"
+208A  code0309        
+208C  call            0x349c
+2090  code0479        0, 1, 12
+20A4  call            0x33fa
+20A8  jumpz           0x2168, ($b002 == 0)
+20B8  dialogtxt       "ははは…"
+20C4  dialogtxt       "まあ、お前との修行を思い出せば"
+20E6  dialogtxt       "どんなことにでも耐えられそうだし"
+210A  code0309        
+210C  code0479        0, 0, 13
+2120  dialogtxt       "はやく一人前の鍛冶師になって"
+2140  dialogtxt       "γ用の武器も"
+2150  dialogtxt       "作ってやるからな"
+2164  goto            0x221c
+
+2168  dialogtxt       "あはは…"
+2174  dialogtxt       "まあ、あなたとの修行を思い出せば"
+2198  dialogtxt       "どんなことにでも耐えられそうだし"
+21BC  code0309        
+21BE  code0479        0, 0, 13
+21D2  dialogtxt       "はやく一人前の鍛冶師になって"
+21F2  dialogtxt       "γ用の武器も"
+2202  dialogtxt       "作ってあげるからね"
+2218  goto            0x221c
+
+221C  code0309        
+221E  call            0x3430
+2222  code0479        1, 6, 12
+2236  call            0x3466
+223A  dialogtxt       "ふ…"
+2242  dialogtxt       "好きにしろ"
+2250  code0309        
+2252  call            0x349c
+2256  code0479        0, 0, 16
+226A  call            0x33fa
+226E  jumpz           0x22d2, ($b002 == 0)
+227E  dialogtxt       "そういえば、γ"
+2290  dialogtxt       "魔石を戻しに行く前に"
+22A8  dialogtxt       "なんかやり残したこととかないのか？"
+22CE  goto            0x2324
+
+22D2  dialogtxt       "そういえば、γ"
+22E4  dialogtxt       "魔石を戻しに行く前に"
+22FC  dialogtxt       "なんかやり残したこととかないの？"
+2320  goto            0x2324
+
+2324  code0309        
+2326  call            0x3430
+232A  code0479        1, 2, 16
+233E  call            0x3466
+2342  dialogtxt       "やり残したこと…？"
+2358  code0309        
+235A  code0479        1, 2, 12
+236E  dialogtxt       "ない"
+2376  code0309        
+2378  call            0x349c
+237C  code0479        0, 4, 12
+2390  call            0x33fa
+2394  jumpz           0x23d4, ($b002 == 0)
+23A4  dialogtxt       "そ、そうなのか…"
+23B8  dialogtxt       "なんかさびしいなぁ…"
+23D0  goto            0x2404
+
+23D4  dialogtxt       "そ、そうなんだ…"
+23E8  dialogtxt       "なんかさびしいなぁ…"
+2400  goto            0x2404
+
+2404  code0309        
+2406  call            0x3430
+240A  code0479        1, 2, 14
+241E  call            0x3466
+2422  dialogtxt       "ちっ…"
+242C  dialogtxt       "知ったことか"
+243C  code0309        
+243E  call            0x3536
+2442  call            0x3484
+2446  code047b        
+2448  goto            0x244c
+
+244C  jumpz           0x2e48, ($b003 == 3)
+245C  call            0x3448
+2460  dialogtxt       "…"
+2466  code047b        
+2468  code0309        
+246A  call            0x349c
+246E  code0479        0, 0, 12
+2482  call            0x33fa
+2486  jumpz           0x24e6, ($b002 == 0)
+2496  dialogtxt       "アニスたちも捕まえたし"
+24B0  dialogtxt       "あとはゴヴァンの魔石を戻せば"
+24D0  dialogtxt       "おしまいだな…"
+24E2  goto            0x2536
+
+24E6  dialogtxt       "アニスたちも捕まえたし"
+2500  dialogtxt       "あとはゴヴァンの魔石を戻せば"
+2520  dialogtxt       "おしまいだね…"
+2532  goto            0x2536
+
+2536  code0309        
+2538  call            0x3430
+253C  code0479        1, 0, 12
+2550  call            0x3466
+2554  dialogtxt       "そうですね"
+2562  dialogtxt       "ウェルマン様の調子も"
+257A  dialogtxt       "大分よくなったそうですわ"
+2596  code0309        
+2598  call            0x349c
+259C  code0479        0, 0, 13
+25B0  call            0x33fa
+25B4  jumpz           0x25ee, ($b002 == 0)
+25C4  dialogtxt       "そっか…"
+25D0  dialogtxt       "よかったな、ミューノ…"
+25EA  goto            0x2618
+
+25EE  dialogtxt       "そっか…"
+25FA  dialogtxt       "よかったね、ミューノ…"
+2614  goto            0x2618
+
+2618  code0309        
+261A  call            0x3430
+261E  code0479        1, 1, 13
+2632  call            0x3466
+2636  dialogtxt       "はい…"
+2640  dialogtxt       "δさんもご苦労様でした"
+265A  dialogtxt       "あと少し、がんばりましょう！"
+267A  code0309        
+267C  call            0x349c
+2680  code0479        0, 0, 16
+2694  call            0x33fa
+2698  jumpz           0x26f8, ($b002 == 0)
+26A8  dialogtxt       "そうだな…"
+26B6  dialogtxt       "それにしても、お前と会ってから"
+26D8  dialogtxt       "いろんなことがあったな…"
+26F4  goto            0x274a
+
+26F8  dialogtxt       "そうだね…"
+2706  dialogtxt       "それにしても、あなたと会ってから"
+272A  dialogtxt       "いろんなことがあったね…"
+2746  goto            0x274a
+
+274A  code0309        
+274C  call            0x3430
+2750  code0479        1, 0, 13
+2764  call            0x3466
+2768  dialogtxt       "本当ですわ、まさか私が"
+2782  dialogtxt       "鍛冶師のパートナーになるなんて"
+27A4  dialogtxt       "思ってもみませんでしたわ"
+27C0  code0309        
+27C2  call            0x349c
+27C6  code0479        0, 0, 12
+27DA  call            0x33fa
+27DE  dialogtxt       "どうだった？"
+27EE  dialogtxt       "鍛冶師のパートナーは"
+2806  dialogtxt       "面白かった？"
+2816  code0309        
+2818  call            0x3430
+281C  code0479        1, 4, 15
+2830  call            0x3466
+2834  dialogtxt       "そうですね…"
+2844  dialogtxt       "とっても熱かったですわ"
+285E  code0309        
+2860  call            0x349c
+2864  code0479        0, 4, 13
+2878  call            0x33fa
+287C  jumpz           0x28b4, ($b002 == 0)
+288C  dialogtxt       "あはは…"
+2898  dialogtxt       "そっか…、ごめんな…"
+28B0  goto            0x28dc
+
+28B4  dialogtxt       "あはは…"
+28C0  dialogtxt       "そっか…、ごめんね…"
+28D8  goto            0x28dc
+
+28DC  code0309        
+28DE  call            0x3430
+28E2  code0479        1, 1, 12
+28F6  call            0x3466
+28FA  dialogtxt       "うふふ、冗談ですわ"
+2910  dialogtxt       "とても楽しかったですよ"
+292A  dialogtxt       "色んな形ができるんですもの"
+2948  code0309        
+294A  code0479        1, 10, 13
+295E  dialogtxt       "それに、δさんといると"
+2978  dialogtxt       "毎日ドキドキすることばかりで…"
+299A  code0309        
+299C  call            0x349c
+29A0  code0479        1, 5, 16
+29B4  code0479        0, 0, 16
+29C8  call            0x33fa
+29CC  dialogtxt       "それってコワかったってこと？"
+29EC  code0309        
+29EE  call            0x3430
+29F2  code0479        1, 2, 15
+2A06  call            0x3466
+2A0A  dialogtxt       "ち、ちがいますわ！"
+2A20  dialogtxt       "δさんがムチャばかりして"
+2A3C  dialogtxt       "心配してばかりだったってことですわ"
+2A62  code0309        
+2A64  call            0x349c
+2A68  code0479        0, 4, 12
+2A7C  call            0x33fa
+2A80  dialogtxt       "それはスミマセンでしたね"
+2A9C  code0309        
+2A9E  call            0x3430
+2AA2  code0479        1, 0, 12
+2AB6  call            0x3466
+2ABA  dialogtxt       "これからは親方さんのためにも"
+2ADA  dialogtxt       "あまりムチャはしないで"
+2AF4  dialogtxt       "立派な鍛冶師になってくださいね"
+2B16  code0309        
+2B18  call            0x349c
+2B1C  code0479        0, 2, 13
+2B30  call            0x33fa
+2B34  jumpz           0x2b8c, ($b002 == 0)
+2B44  dialogtxt       "うん、まかせとけって！"
+2B5E  dialogtxt       "いつかγ用の武器も"
+2B74  dialogtxt       "作ってやるからな"
+2B88  goto            0x2bd4
+
+2B8C  dialogtxt       "うん、まかせといて！"
+2BA4  dialogtxt       "いつかγ用の武器も"
+2BBA  dialogtxt       "作ってあげるからね"
+2BD0  goto            0x2bd4
+
+2BD4  code0309        
+2BD6  call            0x3430
+2BDA  code0479        1, 1, 13
+2BEE  call            0x3466
+2BF2  dialogtxt       "はい"
+2BFA  dialogtxt       "楽しみに待ってますわ"
+2C12  code0309        
+2C14  call            0x349c
+2C18  code0479        0, 0, 12
+2C2C  call            0x33fa
+2C30  jumpz           0x2c94, ($b002 == 0)
+2C40  dialogtxt       "そういえば、γ"
+2C52  dialogtxt       "魔石を戻しに行く前に"
+2C6A  dialogtxt       "なんかやり残したこととかないのか？"
+2C90  goto            0x2ce6
+
+2C94  dialogtxt       "そういえば、γ"
+2CA6  dialogtxt       "魔石を戻しに行く前に"
+2CBE  dialogtxt       "なんかやり残したこととかないの？"
+2CE2  goto            0x2ce6
+
+2CE6  code0309        
+2CE8  call            0x3430
+2CEC  code0479        1, 4, 16
+2D00  call            0x3466
+2D04  dialogtxt       "やり残したこと、ですか…"
+2D20  code0309        
+2D22  code0479        1, 0, 14
+2D36  dialogtxt       "えっと…"
+2D42  dialogtxt       "特にないと思いますけど…"
+2D5E  code0309        
+2D60  call            0x349c
+2D64  code0479        0, 4, 16
+2D78  call            0x33fa
+2D7C  jumpz           0x2dbc, ($b002 == 0)
+2D8C  dialogtxt       "そ、そうなのか…"
+2DA0  dialogtxt       "なんかさびしいなぁ…"
+2DB8  goto            0x2dec
+
+2DBC  dialogtxt       "そ、そうなんだ…"
+2DD0  dialogtxt       "なんかさびしいなぁ…"
+2DE8  goto            0x2dec
+
+2DEC  code0309        
+2DEE  call            0x3430
+2DF2  code0479        1, 4, 13
+2E06  call            0x3466
+2E0A  dialogtxt       "急に言われても…"
+2E1E  dialogtxt       "ちょっと考えてみますわ"
+2E38  code0309        
+2E3A  call            0x3536
+2E3E  call            0x3484
+2E42  code047b        
+2E44  goto            0x2e48
+
+2E48  code0333        2, 30
+2E56  done            
+
+2E58  code031a        7
+2E60  code031b        7, -1, -1, $h136, $h137
+2E80  code031c        7, 1
+2E8E  code031f        7
+2E96  ret             
+
+2E98  code031b        7, -1, -1, $h136, $h137
+2EB8  code031c        7, 2
+2EC6  code031f        7
+2ECE  code031a        7
+2ED6  ret             
+
+2ED8  code031a        7
+2EE0  code031b        7, (-1 - $h139), $h140, $h136, $h137
+2F06  code031c        7, 1
+2F14  code031f        7
+2F1C  ret             
+
+2F1E  code031a        6
+2F26  code031b        6, $h139, 0, $h136, $h137
+2F46  code031c        6, 1
+2F54  code031f        6
+2F5C  ret             
+
+2F5E  code031b        7, (-1 - $h139), $h140, $h136, $h137
+2F84  code031c        7, 2
+2F92  code031f        7
+2F9A  code031a        7
+2FA2  ret             
+
+2FA4  code031b        6, $h139, 0, $h136, $h137
+2FC4  code031c        6, 2
+2FD2  code031f        6
+2FDA  code031a        6
+2FE2  ret             
+
+2FE4  code031a        7
+2FEC  code031b        7, -1, -1, $h141, $h137
+300C  code031c        7, 1
+301A  code040d        15
+3022  code031a        6
+302A  code031b        6, -1, -1, $h136, $h137
+304A  code031c        6, 1
+3058  code031f        6
+3060  code031a        7
+3068  code031b        6, -1, -1, $h136, ($h137 / 2)
+308E  code031c        6, 2
+309C  code031f        6
+30A4  code031a        6
+30AC  ret             
+
+30AE  code031a        7
+30B6  code031b        7, -1, -1, $h141, $h137
+30D6  code031c        7, 1
+30E4  code040d        15
+30EC  code031a        6
+30F4  code031b        6, -1, -1, $h136, $h137
+3114  code031c        6, 1
+3122  code031f        6
+312A  code031a        7
+3132  ret             
+
+3134  code031b        6, -1, -1, $h136, ($h137 / 2)
+315A  code031c        6, 2
+3168  code031f        6
+3170  code031a        6
+3178  ret             
+
+317A  jumpz           0x31a0, ($h131 == 0)
+318A  setvar          0x0002, 0x00cb, ($h139 | 0x0001)
+319C  goto            0x33da
+
+31A0  jumpz           0x31c6, ($h131 == 1)
+31B0  setvar          0x0002, 0x00cb, ($h139 | 0x0002)
+31C2  goto            0x33da
+
+31C6  jumpz           0x31ec, ($h131 == 2)
+31D6  setvar          0x0002, 0x00cb, ($h139 | 0x0004)
+31E8  goto            0x33da
+
+31EC  jumpz           0x3212, ($h131 == 3)
+31FC  setvar          0x0002, 0x00cb, ($h139 | 0x0008)
+320E  goto            0x33da
+
+3212  jumpz           0x3238, ($h131 == 4)
+3222  setvar          0x0002, 0x00cb, ($h139 | 0x0010)
+3234  goto            0x33da
+
+3238  jumpz           0x325e, ($h131 == 5)
+3248  setvar          0x0002, 0x00cb, ($h139 | 0x0020)
+325A  goto            0x33da
+
+325E  jumpz           0x3284, ($h131 == 6)
+326E  setvar          0x0002, 0x00cb, ($h139 | 0x0040)
+3280  goto            0x33da
+
+3284  jumpz           0x32aa, ($h131 == 7)
+3294  setvar          0x0002, 0x00cb, ($h139 | 0x0080)
+32A6  goto            0x33da
+
+32AA  jumpz           0x32d0, ($h131 == 8)
+32BA  setvar          0x0002, 0x00cb, ($h139 | 0x0100)
+32CC  goto            0x33da
+
+32D0  jumpz           0x32f6, ($h131 == 9)
+32E0  setvar          0x0002, 0x00cb, ($h139 | 0x0200)
+32F2  goto            0x33da
+
+32F6  jumpz           0x331c, ($h131 == 10)
+3306  setvar          0x0002, 0x00cb, ($h139 | 0x0400)
+3318  goto            0x33da
+
+331C  jumpz           0x3342, ($h131 == 11)
+332C  setvar          0x0002, 0x00cb, ($h139 | 0x0800)
+333E  goto            0x33da
+
+3342  jumpz           0x3368, ($h131 == 12)
+3352  setvar          0x0002, 0x00cb, ($h139 | 0x1000)
+3364  goto            0x33da
+
+3368  jumpz           0x338e, ($h131 == 13)
+3378  setvar          0x0002, 0x00cb, ($h139 | 0x2000)
+338A  goto            0x33da
+
+338E  jumpz           0x33b4, ($h131 == 14)
+339E  setvar          0x0002, 0x00cb, ($h139 | 0x4000)
+33B0  goto            0x33da
+
+33B4  jumpz           0x33da, ($h131 == 15)
+33C4  setvar          0x0002, 0x00cb, ($h139 | 0xFFFF8000)
+33D6  goto            0x33da
+
+33DA  ret             
+
+33DC  code0301        2, 4
+33EA  code047e        0, 1
+33F8  ret             
+
+33FA  code0301        2, 7
+3408  code047e        0, 1
+3416  ret             
+
+3418  code047e        0, 0
+3426  code0302        4
+342E  ret             
+
+3430  code047e        0, 0
+343E  code0302        7
+3446  ret             
+
+3448  code0301        4, 5
+3456  code047e        1, 1
+3464  ret             
+
+3466  code0301        4, 7
+3474  code047e        1, 1
+3482  ret             
+
+3484  code047e        1, 0
+3492  code0302        5
+349A  ret             
+
+349C  code047e        1, 0
+34AA  code0302        7
+34B2  ret             
+
+34B4  code047a        0, 1, 1
+34C8  ret             
+
+34CA  code047a        1, 1, 1
+34DE  ret             
+
+34E0  code047a        0, 1, 1
+34F4  code047a        1, 1, 1
+3508  ret             
+
+350A  code047a        0, 0, 1
+351E  ret             
+
+3520  code047a        1, 0, 1
+3534  ret             
+
+3536  code047a        0, 0, 1
+354A  code047a        1, 0, 1
+355E  ret             
+

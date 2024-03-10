@@ -1,0 +1,22 @@
+0000  setvar          0x0002, 0x00a4, -1
+000C  code04a3        
+000E  jumpz           0x005c, ($h101 != 1)
+001E  code0301        0, 7
+002C  dialogtxt       "ポータルは起動していません"
+004A  code0309        
+004C  code0302        7
+0054  goto            0x00b6
+
+0058  goto            0x005c
+
+005C  menutitle       "ダンジョンに戻る？"
+0072  menutxt         0x008a, "戻る"
+007C  menutxt         0x00b6, "やめる"
+0088  code0315        
+008A  setvar          0x0002, 0x017f, -3
+0096  code04a2        
+0098  code041c        27, 0, 0, -1
+00B2  code041d        
+00B4  code040a        
+00B6  done            
+

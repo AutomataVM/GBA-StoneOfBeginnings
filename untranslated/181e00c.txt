@@ -1,0 +1,65 @@
+0000  setvar          0x0002, 0x017f, -1
+000C  setvar          0x0002, 0x0177, 6
+0018  code0368        
+001A  code0369        
+001C  code046f        208, 223, 0
+0030  code046f        224, 255, 0
+0044  code0470        288, 415, 0
+0058  code0470        32, 47, 0
+006C  code0470        544, 799, 0
+0080  code038d        2
+0088  code0470        48, 63, 0
+009C  code0408        0
+00A4  code031b        0, -16, -16, $h136, 1
+00C4  code031c        0, 2
+00D2  code031f        0
+00DA  code031a        0
+00E2  code036a        507
+00EA  jumpz           0x011e, $b070
+00F4  code0366        507, -1
+0102  popuptxt        "ネコが逃げ出した！"
+0118  code0318        
+011A  goto            0x011e
+
+011E  code0366        521, -1
+012C  code036a        512
+0134  jumpz           0x0178, $b070
+013E  code0366        512, -1
+014C  popuptxt        "苦情の手紙が届いた！"
+0164  code0318        
+0166  code0366        520, 1
+0174  goto            0x0178
+
+0178  code036a        518
+0180  jumpz           0x01c6, $b070
+018A  code0366        518, -1
+0198  popuptxt        "ザックから苦情がきた！"
+01B2  code0318        
+01B4  code0366        542, 1
+01C2  goto            0x01c6
+
+01C6  code040a        
+01C8  code04a4        
+01CA  code0470        1412, 1427, 0
+01DE  code0470        1428, 1442, 0
+01F2  code0470        1396, 1411, 0
+0206  code0366        539, -1
+0214  jumpz           0x0240, (($bv043 & 0x0002) || $bv043 == 4)
+0230  setvar          0x0003, 0x004b, 0
+023C  goto            0x0260
+
+0240  jumpz           0x0260, ($bv043 != 0)
+0250  setvar          0x0003, 0x004b, 4
+025C  goto            0x0260
+
+0260  jumpz           0x028c, (($bv044 & 0x0002) || $bv044 == 4)
+027C  setvar          0x0003, 0x004c, 0
+0288  goto            0x02ac
+
+028C  jumpz           0x02ac, ($bv044 != 0)
+029C  setvar          0x0003, 0x004c, 4
+02A8  goto            0x02ac
+
+02AC  code0005        866
+02B4  done            
+

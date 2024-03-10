@@ -1,0 +1,154 @@
+0000  setvar          0x0002, 0x0179, 0
+000C  setvar          0x0002, 0x0179, ($h313 + $f1124)
+001E  setvar          0x0002, 0x0179, ($h313 + $f1125)
+0030  setvar          0x0002, 0x0179, ($h313 + $f1126)
+0042  setvar          0x0002, 0x0179, ($h313 + $f1127)
+0054  setvar          0x0002, 0x0179, ($h313 + $f1128)
+0066  setvar          0x0002, 0x0179, ($h313 + $f1130)
+0078  jumpz           0x00e2, ($h313 < 2)
+0088  code0301        8, 7
+0096  dialogtxt       "現在移動可能な接続先が"
+00B0  dialogtxt       "存在しないので使用できません"
+00D0  code0309        
+00D2  code0302        7
+00DA  goto            0x0464
+
+00DE  goto            0x00e2
+
+00E2  menutitle       "どこにいきますか？"
+00F8  code0313        0x0464
+00FC  jumpz           0x012e, ($f1124 == 1 && ($h319 != 70 ? 1 : 0))
+0118  menutxt         0x0238, "ディックル村"
+012A  goto            0x012e
+
+012E  jumpz           0x0162, ($f1125 == 1 && ($h319 != 90 ? 1 : 0))
+014A  menutxt         0x024c, "マーネイル宿場"
+015E  goto            0x0162
+
+0162  jumpz           0x0196, ($f1126 == 1 && ($h319 != 110 ? 1 : 0))
+017E  menutxt         0x0260, "プロスバンの町"
+0192  goto            0x0196
+
+0196  jumpz           0x01c6, ($f1127 == 1 && ($h319 != 52 ? 1 : 0))
+01B2  menutxt         0x0274, "ルイーズ村"
+01C2  goto            0x01c6
+
+01C6  jumpz           0x01fc, ($f1128 == 1 && ($h319 != 215 ? 1 : 0))
+01E2  menutxt         0x043c, "ミシュースの廃墟"
+01F8  goto            0x01fc
+
+01FC  jumpz           0x022a, ($f1130 == 1 && ($h319 != 253 ? 1 : 0))
+0218  menutxt         0x0450, "転送の間"
+0226  goto            0x022a
+
+022A  menutxt         0x0464, "やめる"
+0236  code0315        
+0238  call            0x0474
+023C  setvar          0x0002, 0x0179, 3061
+0248  goto            0x0578
+
+024C  call            0x0474
+0250  setvar          0x0002, 0x0179, 3121
+025C  goto            0x0578
+
+0260  call            0x0474
+0264  setvar          0x0002, 0x0179, 3181
+0270  goto            0x0578
+
+0274  call            0x0474
+0278  jumpz           0x0298, ($h311 == 0)
+0288  setvar          0x0002, 0x0179, 263
+0294  goto            0x0438
+
+0298  jumpz           0x02b8, ($h311 == 1)
+02A8  setvar          0x0002, 0x0179, 363
+02B4  goto            0x0438
+
+02B8  jumpz           0x02d8, ($h311 == 2)
+02C8  setvar          0x0002, 0x0179, 463
+02D4  goto            0x0438
+
+02D8  jumpz           0x02f8, ($h311 == 3)
+02E8  setvar          0x0002, 0x0179, 563
+02F4  goto            0x0438
+
+02F8  jumpz           0x0318, ($h311 == 4)
+0308  setvar          0x0002, 0x0179, 663
+0314  goto            0x0438
+
+0318  jumpz           0x0338, ($h311 == 5)
+0328  setvar          0x0002, 0x0179, 763
+0334  goto            0x0438
+
+0338  jumpz           0x0358, ($h311 == 6)
+0348  setvar          0x0002, 0x0179, 863
+0354  goto            0x0438
+
+0358  jumpz           0x0378, ($h311 == 7)
+0368  setvar          0x0002, 0x0179, 963
+0374  goto            0x0438
+
+0378  jumpz           0x0398, ($h311 == 8)
+0388  setvar          0x0002, 0x0179, 1063
+0394  goto            0x0438
+
+0398  jumpz           0x03b8, ($h311 == 9)
+03A8  setvar          0x0002, 0x0179, 1163
+03B4  goto            0x0438
+
+03B8  jumpz           0x03d8, ($h311 == 10)
+03C8  setvar          0x0002, 0x0179, 1263
+03D4  goto            0x0438
+
+03D8  jumpz           0x03f8, ($h311 == 11)
+03E8  setvar          0x0002, 0x0179, 1363
+03F4  goto            0x0438
+
+03F8  jumpz           0x0418, ($h311 == 12)
+0408  setvar          0x0002, 0x0179, 1463
+0414  goto            0x0438
+
+0418  jumpz           0x0438, ($h311 == 99)
+0428  setvar          0x0002, 0x0179, 1563
+0434  goto            0x0438
+
+0438  goto            0x0578
+
+043C  call            0x0474
+0440  setvar          0x0002, 0x0179, 3366
+044C  goto            0x0578
+
+0450  call            0x0474
+0454  setvar          0x0002, 0x0179, 3464
+0460  goto            0x0578
+
+0464  setvar          0x0002, 0x0179, -1
+0470  goto            0x0578
+
+0474  setvar          0x0002, 0x00a0, 48
+0480  setvar          0x0002, 0x017f, -1
+048C  code041c        24, 0, 0, -1
+04A6  code041d        
+04A8  code040a        
+04AA  code0332        
+04AC  code0330        
+04AE  code0470        544, 799, 0
+04C2  setvar          0x0003, 0x0584, 0
+04CE  setvar          0x0003, 0x0585, 0
+04DA  setvar          0x0003, 0x0586, 0
+04E6  setvar          0x0003, 0x0587, 0
+04F2  setvar          0x0003, 0x0594, 0
+04FE  setvar          0x0003, 0x0595, 0
+050A  setvar          0x0003, 0x0596, 0
+0516  setvar          0x0003, 0x0597, 0
+0522  setvar          0x0003, 0x0598, 0
+052E  setvar          0x0003, 0x0599, 0
+053A  setvar          0x0003, 0x059a, 0
+0546  setvar          0x0003, 0x059b, 0
+0552  setvar          0x0003, 0x059c, 0
+055E  setvar          0x0003, 0x059d, 0
+056A  setvar          0x0003, 0x059e, 0
+0576  ret             
+
+0578  done            
+

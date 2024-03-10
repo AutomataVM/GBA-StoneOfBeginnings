@@ -1,0 +1,218 @@
+0000  setvar          0x0002, 0x01e1, 0
+000C  code0408        0
+0014  code0410        0, 298, 299, -1
+002E  code0410        1, 298, 302, -1
+0048  code0410        2, 298, 301, -1
+0062  code0411        
+0064  code0430        303
+006C  code0428        304, 5, 11, 0
+0086  code0418        0
+008E  setvar          0x0002, 0x00c9, 1
+009A  setvar          0x0002, 0x00c8, 0
+00A6  call            0x022e
+00AA  code0412        4, 1
+00B8  code043d        0, 240, 320
+00CC  code043c        0, 1
+00DA  code043e        0, 3, 0
+00EE  setvar          0x0002, 0x017f, 55
+00FA  code0409        
+00FC  code046e        29, 256, 0
+0110  code041d        
+0112  setvar          0x0002, 0x00c9, 60
+011E  setvar          0x0002, 0x00c8, 0
+012A  call            0x026e
+012E  code0006        2191
+0136  setvar          0x0002, 0x00cb, 61
+0142  setvar          0x0002, 0x00cc, -16
+014E  setvar          0x0002, 0x00c9, 60
+015A  setvar          0x0002, 0x00c8, 0
+0166  call            0x02ae
+016A  jumpz           0x0212, ($f0152 == 1)
+017A  code0304        1
+0182  dialogtxt       "　　そういったミューノのカオは　　　"
+01AA  dialogtxt       "カベの向こうで見ることができないけど"
+01D2  dialogtxt       "少しでも笑ってたらいいなって思った"
+01F8  code030a        6, 1
+0206  code0304        0
+020E  goto            0x0212
+
+0212  code040a        
+0214  setvar          0x0002, 0x00c9, 1
+0220  call            0x0334
+0224  code0005        2200
+022C  done            
+
+022E  code031a        7
+0236  code031b        7, -1, -1, $h136, $h137
+0256  code031c        7, 1
+0264  code031f        7
+026C  ret             
+
+026E  code031b        7, -1, -1, $h136, $h137
+028E  code031c        7, 2
+029C  code031f        7
+02A4  code031a        7
+02AC  ret             
+
+02AE  code031a        7
+02B6  code031b        7, (-1 - $h139), $h140, $h136, $h137
+02DC  code031c        7, 1
+02EA  code031f        7
+02F2  ret             
+
+02F4  code031a        6
+02FC  code031b        6, $h139, 0, $h136, $h137
+031C  code031c        6, 1
+032A  code031f        6
+0332  ret             
+
+0334  code031b        7, (-1 - $h139), $h140, $h136, $h137
+035A  code031c        7, 2
+0368  code031f        7
+0370  code031a        7
+0378  ret             
+
+037A  code031b        6, $h139, 0, $h136, $h137
+039A  code031c        6, 2
+03A8  code031f        6
+03B0  code031a        6
+03B8  ret             
+
+03BA  code031a        7
+03C2  code031b        7, -1, -1, $h141, $h137
+03E2  code031c        7, 1
+03F0  code040d        15
+03F8  code031a        6
+0400  code031b        6, -1, -1, $h136, $h137
+0420  code031c        6, 1
+042E  code031f        6
+0436  code031a        7
+043E  code031b        6, -1, -1, $h136, ($h137 / 2)
+0464  code031c        6, 2
+0472  code031f        6
+047A  code031a        6
+0482  ret             
+
+0484  code031a        7
+048C  code031b        7, -1, -1, $h141, $h137
+04AC  code031c        7, 1
+04BA  code040d        15
+04C2  code031a        6
+04CA  code031b        6, -1, -1, $h136, $h137
+04EA  code031c        6, 1
+04F8  code031f        6
+0500  code031a        7
+0508  ret             
+
+050A  code031b        6, -1, -1, $h136, ($h137 / 2)
+0530  code031c        6, 2
+053E  code031f        6
+0546  code031a        6
+054E  ret             
+
+0550  jumpz           0x0576, ($h131 == 0)
+0560  setvar          0x0002, 0x00cb, ($h139 | 0x0001)
+0572  goto            0x07b0
+
+0576  jumpz           0x059c, ($h131 == 1)
+0586  setvar          0x0002, 0x00cb, ($h139 | 0x0002)
+0598  goto            0x07b0
+
+059C  jumpz           0x05c2, ($h131 == 2)
+05AC  setvar          0x0002, 0x00cb, ($h139 | 0x0004)
+05BE  goto            0x07b0
+
+05C2  jumpz           0x05e8, ($h131 == 3)
+05D2  setvar          0x0002, 0x00cb, ($h139 | 0x0008)
+05E4  goto            0x07b0
+
+05E8  jumpz           0x060e, ($h131 == 4)
+05F8  setvar          0x0002, 0x00cb, ($h139 | 0x0010)
+060A  goto            0x07b0
+
+060E  jumpz           0x0634, ($h131 == 5)
+061E  setvar          0x0002, 0x00cb, ($h139 | 0x0020)
+0630  goto            0x07b0
+
+0634  jumpz           0x065a, ($h131 == 6)
+0644  setvar          0x0002, 0x00cb, ($h139 | 0x0040)
+0656  goto            0x07b0
+
+065A  jumpz           0x0680, ($h131 == 7)
+066A  setvar          0x0002, 0x00cb, ($h139 | 0x0080)
+067C  goto            0x07b0
+
+0680  jumpz           0x06a6, ($h131 == 8)
+0690  setvar          0x0002, 0x00cb, ($h139 | 0x0100)
+06A2  goto            0x07b0
+
+06A6  jumpz           0x06cc, ($h131 == 9)
+06B6  setvar          0x0002, 0x00cb, ($h139 | 0x0200)
+06C8  goto            0x07b0
+
+06CC  jumpz           0x06f2, ($h131 == 10)
+06DC  setvar          0x0002, 0x00cb, ($h139 | 0x0400)
+06EE  goto            0x07b0
+
+06F2  jumpz           0x0718, ($h131 == 11)
+0702  setvar          0x0002, 0x00cb, ($h139 | 0x0800)
+0714  goto            0x07b0
+
+0718  jumpz           0x073e, ($h131 == 12)
+0728  setvar          0x0002, 0x00cb, ($h139 | 0x1000)
+073A  goto            0x07b0
+
+073E  jumpz           0x0764, ($h131 == 13)
+074E  setvar          0x0002, 0x00cb, ($h139 | 0x2000)
+0760  goto            0x07b0
+
+0764  jumpz           0x078a, ($h131 == 14)
+0774  setvar          0x0002, 0x00cb, ($h139 | 0x4000)
+0786  goto            0x07b0
+
+078A  jumpz           0x07b0, ($h131 == 15)
+079A  setvar          0x0002, 0x00cb, ($h139 | 0xFFFF8000)
+07AC  goto            0x07b0
+
+07B0  ret             
+
+07B2  code046d        0, 192
+07C0  code043e        0, 6, 0
+07D4  walkto          0, $h128, ($h129 - 8), 1
+07F4  walkwait        0
+07FC  ret             
+
+07FE  code046d        0, 192
+080C  code043e        0, 6, 0
+0820  walkto          0, $h128, ($h129 + 8), 1
+0840  walkwait        0
+0848  ret             
+
+084A  code046d        0, 192
+0858  code043e        0, 6, 0
+086C  walkto          0, ($h128 - 8), $h129, 1
+088C  walkwait        0
+0894  ret             
+
+0896  code046d        0, 192
+08A4  code043e        0, 6, 0
+08B8  walkto          0, ($h128 + 8), $h129, 1
+08D8  walkwait        0
+08E0  ret             
+
+08E2  code033a        196, 0
+08F0  code048e        
+08F2  code031a        7
+08FA  code031b        7, -1, -1, 32767, 6
+091A  code031c        7, 1
+0928  code031f        7
+0930  code0443        0, 48, 0
+0944  code043d        0, $h192, $h193
+0958  code0443        0, 48, 1
+096C  code031b        7, -1, -1, 32767, 6
+098C  code031c        7, 2
+099A  code031f        7
+09A2  code031a        7
+09AA  code033e        196
+09B2  ret             
+

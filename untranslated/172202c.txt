@@ -1,0 +1,102 @@
+0000  jumpz           0x00ac, ($h311 == 6 || $h311 == 7)
+001C  setvar          0x0002, 0x0178, -1
+0028  setvar          0x0002, 0x01c9, 0
+0034  code043e        0, 3, 0
+0048  code0445        0, 3
+0056  code0446        0
+005E  code0301        8, 7
+006C  code0305        1
+0074  dialogtxt       "ポータルの欠片だけ消えてしまった！"
+009A  code0309        
+009C  code0302        7
+00A4  goto            0x0376
+
+00A8  goto            0x00ac
+
+00AC  code04a0        
+00AE  setvar          0x0002, 0x0178, -1
+00BA  setvar          0x0002, 0x017f, -3
+00C6  jumpz           0x00e6, ($h311 == 0)
+00D6  setvar          0x0002, 0x0178, 200
+00E2  goto            0x0286
+
+00E6  jumpz           0x0106, ($h311 == 1)
+00F6  setvar          0x0002, 0x0178, 300
+0102  goto            0x0286
+
+0106  jumpz           0x0126, ($h311 == 2)
+0116  setvar          0x0002, 0x0178, 400
+0122  goto            0x0286
+
+0126  jumpz           0x0146, ($h311 == 3)
+0136  setvar          0x0002, 0x0178, 500
+0142  goto            0x0286
+
+0146  jumpz           0x0166, ($h311 == 4)
+0156  setvar          0x0002, 0x0178, 600
+0162  goto            0x0286
+
+0166  jumpz           0x0186, ($h311 == 5)
+0176  setvar          0x0002, 0x0178, 700
+0182  goto            0x0286
+
+0186  jumpz           0x01a6, ($h311 == 6)
+0196  setvar          0x0002, 0x0178, 800
+01A2  goto            0x0286
+
+01A6  jumpz           0x01c6, ($h311 == 7)
+01B6  setvar          0x0002, 0x0178, 900
+01C2  goto            0x0286
+
+01C6  jumpz           0x01e6, ($h311 == 8)
+01D6  setvar          0x0002, 0x0178, 1000
+01E2  goto            0x0286
+
+01E6  jumpz           0x0206, ($h311 == 9)
+01F6  setvar          0x0002, 0x0178, 1100
+0202  goto            0x0286
+
+0206  jumpz           0x0226, ($h311 == 10)
+0216  setvar          0x0002, 0x0178, 1200
+0222  goto            0x0286
+
+0226  jumpz           0x0246, ($h311 == 11)
+0236  setvar          0x0002, 0x0178, 1300
+0242  goto            0x0286
+
+0246  jumpz           0x0266, ($h311 == 12)
+0256  setvar          0x0002, 0x0178, 1400
+0262  goto            0x0286
+
+0266  jumpz           0x0286, ($h311 == 99)
+0276  setvar          0x0002, 0x0178, 1500
+0282  goto            0x0286
+
+0286  jumpz           0x0376, ($h312 != -1)
+0296  jumpz           0x02bc, ($h315 == 0)
+02A6  setvar          0x0002, 0x0178, ($h312 + 1)
+02B8  goto            0x0354
+
+02BC  jumpz           0x02e2, ($h315 == 1)
+02CC  setvar          0x0002, 0x0178, ($h312 + 21)
+02DE  goto            0x0354
+
+02E2  jumpz           0x0308, ($h315 == 2)
+02F2  setvar          0x0002, 0x0178, ($h312 + 31)
+0304  goto            0x0354
+
+0308  jumpz           0x032e, ($h315 == 3)
+0318  setvar          0x0002, 0x0178, ($h312 + 62)
+032A  goto            0x0354
+
+032E  jumpz           0x0354, ($h315 == 4)
+033E  setvar          0x0002, 0x0178, ($h312 + 81)
+0350  goto            0x0354
+
+0354  code041c        27, 0, 0, -1
+036E  code041d        
+0370  code040a        
+0372  goto            0x0376
+
+0376  done            
+
