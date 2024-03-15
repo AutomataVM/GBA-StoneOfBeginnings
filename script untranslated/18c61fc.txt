@@ -1,0 +1,915 @@
+setvar          $bv029, 0
+call            @Func_154c
+code036a        $h232
+setvar          $bv029, $b070
+jumpz           @Cond_0038, ($h311 == 0)
+goto            @Label_154a
+
+@Cond_0038:
+jumpz           @Cond_0228, ($h311 == 1)
+code047d        0, 122
+jumpz           @Cond_01c8, ($bv019 == 0)
+jumpz           @Cond_00c8, ($bv029 == 0)
+code0301        8, 7
+code047e        0, 1
+code037c        $h232
+dialogtxt       "ζが欲しいのう"
+code0309        
+code047e        0, 0
+code0302        7
+goto            @Label_01c4
+
+@Cond_00c8:
+code0301        8, 7
+code047e        0, 1
+code037c        $h232
+dialogtxt       "おぬしが持っている"
+dialogtxt       "そのζと"
+code0309        
+code037c        $h233
+dialogtxt       "ζを"
+dialogtxt       "交換してくれぬかのう"
+code0309        
+code047e        0, 0
+code0302        7
+call            @Func_1732
+jumpz           @Cond_01c0, ($bv019 == 1)
+code0301        8, 7
+code047e        0, 1
+dialogtxt       "ほんに、エエもん、ありがたいのう"
+code0309        
+code047e        0, 0
+code0302        7
+goto            @Cond_01c0
+
+@Cond_01c0:
+goto            @Label_01c4
+
+@Label_01c4:
+goto            @Label_0224
+
+@Cond_01c8:
+code0301        8, 7
+code047e        0, 1
+dialogtxt       "ほんに、エエもん、ありがたいのう"
+code0309        
+code047e        0, 0
+code0302        7
+goto            @Label_0224
+
+@Label_0224:
+goto            @Label_154a
+
+@Cond_0228:
+jumpz           @Cond_03f0, ($h311 == 2)
+code047d        0, 123
+jumpz           @Cond_0398, ($bv019 == 0)
+jumpz           @Cond_02b6, ($bv029 == 0)
+code0301        8, 7
+code047e        0, 1
+code037c        $h232
+dialogtxt       "ζ、"
+dialogtxt       "ζ…"
+code0309        
+code047e        0, 0
+code0302        7
+goto            @Label_0394
+
+@Cond_02b6:
+code0301        8, 7
+code047e        0, 1
+code037c        $h232
+dialogtxt       "そのζと"
+code0309        
+code037c        $h233
+dialogtxt       "ボクのζ"
+dialogtxt       "かえっこしない？"
+code0309        
+code047e        0, 0
+code0302        7
+call            @Func_1732
+jumpz           @Cond_0390, ($bv019 == 1)
+code0301        8, 7
+code047e        0, 1
+dialogtxt       "いしし…、絶対ボクの勝ち"
+code0309        
+code047e        0, 0
+code0302        7
+goto            @Cond_0390
+
+@Cond_0390:
+goto            @Label_0394
+
+@Label_0394:
+goto            @Label_03ec
+
+@Cond_0398:
+code0301        8, 7
+code047e        0, 1
+dialogtxt       "いしし…、絶対ボクの勝ち"
+code0309        
+code047e        0, 0
+code0302        7
+goto            @Label_03ec
+
+@Label_03ec:
+goto            @Label_154a
+
+@Cond_03f0:
+jumpz           @Cond_05f0, ($h311 == 3)
+code047d        0, 121
+jumpz           @Cond_0596, ($bv019 == 0)
+jumpz           @Cond_0498, ($bv029 == 0)
+code0301        8, 7
+code047e        0, 1
+code037c        $h232
+dialogtxt       "どこかにζ"
+dialogtxt       "持っている人いないかしら"
+code0309        
+code047e        0, 0
+code0302        7
+goto            @Label_0592
+
+@Cond_0498:
+code0301        8, 7
+code047e        0, 1
+code037c        $h232
+dialogtxt       "ねぇ、きみが持っている"
+dialogtxt       "そのζと"
+code0309        
+code037c        $h233
+dialogtxt       "ワタシのζを"
+dialogtxt       "交換しない？"
+code0309        
+code047e        0, 0
+code0302        7
+call            @Func_1732
+jumpz           @Cond_058e, ($bv019 == 1)
+code0301        8, 7
+code047e        0, 1
+dialogtxt       "ちょっと、損した気がするわ"
+code0309        
+code047e        0, 0
+code0302        7
+goto            @Cond_058e
+
+@Cond_058e:
+goto            @Label_0592
+
+@Label_0592:
+goto            @Label_05ec
+
+@Cond_0596:
+code0301        8, 7
+code047e        0, 1
+dialogtxt       "ちょっと、損した気がするわ"
+code0309        
+code047e        0, 0
+code0302        7
+goto            @Label_05ec
+
+@Label_05ec:
+goto            @Label_154a
+
+@Cond_05f0:
+jumpz           @Cond_07ea, ($h311 == 4)
+code047d        0, 123
+jumpz           @Cond_0782, ($bv019 == 0)
+jumpz           @Cond_068a, ($bv029 == 0)
+code0301        8, 7
+code047e        0, 1
+code037c        $h232
+dialogtxt       "ねぇ、ζ"
+dialogtxt       "持ってない？"
+code0309        
+code047e        0, 0
+code0302        7
+goto            @Label_077e
+
+@Cond_068a:
+code0301        8, 7
+code047e        0, 1
+code037c        $h232
+dialogtxt       "ねぇ、そのζと"
+code0309        
+code037c        $h233
+dialogtxt       "ワタシのζ、"
+dialogtxt       "交換してよ？"
+code0309        
+code047e        0, 0
+code0302        7
+call            @Func_1732
+jumpz           @Cond_077a, ($bv019 == 1)
+code0301        8, 7
+code047e        0, 1
+dialogtxt       "これが、欲しかったのよ"
+dialogtxt       "損してないから"
+code0309        
+code047e        0, 0
+code0302        7
+goto            @Cond_077a
+
+@Cond_077a:
+goto            @Label_077e
+
+@Label_077e:
+goto            @Label_07e6
+
+@Cond_0782:
+code0301        8, 7
+code047e        0, 1
+dialogtxt       "これが、欲しかったのよ"
+dialogtxt       "損してないから"
+code0309        
+code047e        0, 0
+code0302        7
+goto            @Label_07e6
+
+@Label_07e6:
+goto            @Label_154a
+
+@Cond_07ea:
+jumpz           @Cond_09ec, ($h311 == 5)
+code047d        0, 118
+jumpz           @Cond_098c, ($bv019 == 0)
+jumpz           @Cond_0890, ($bv029 == 0)
+code0301        8, 7
+code047e        0, 1
+code037c        $h232
+dialogtxt       "どこかにζ"
+dialogtxt       "持っている人いないかな"
+code0309        
+code047e        0, 0
+code0302        7
+goto            @Label_0988
+
+@Cond_0890:
+code0301        8, 7
+code047e        0, 1
+code037c        $h232
+dialogtxt       "きみが持っている"
+dialogtxt       "そのζと"
+code0309        
+code037c        $h233
+dialogtxt       "オ[NAME 8]のζを"
+dialogtxt       "交換しないか"
+code0309        
+code047e        0, 0
+code0302        7
+call            @Func_1732
+jumpz           @Cond_0984, ($bv019 == 1)
+code0301        8, 7
+code047e        0, 1
+dialogtxt       "この交換、絶対オ[NAME 8]の得だと思うね"
+code0309        
+code047e        0, 0
+code0302        7
+goto            @Cond_0984
+
+@Cond_0984:
+goto            @Label_0988
+
+@Label_0988:
+goto            @Label_09e8
+
+@Cond_098c:
+code0301        8, 7
+code047e        0, 1
+dialogtxt       "この交換、絶対オ[NAME 8]の得だと思うね"
+code0309        
+code047e        0, 0
+code0302        7
+goto            @Label_09e8
+
+@Label_09e8:
+goto            @Label_154a
+
+@Cond_09ec:
+jumpz           @Cond_0bb4, ($h311 == 7)
+code047d        0, 123
+jumpz           @Cond_0b5c, ($bv019 == 0)
+jumpz           @Cond_0a7a, ($bv029 == 0)
+code0301        8, 7
+code047e        0, 1
+code037c        $h232
+dialogtxt       "ζ、"
+dialogtxt       "ζ…"
+code0309        
+code047e        0, 0
+code0302        7
+goto            @Label_0b58
+
+@Cond_0a7a:
+code0301        8, 7
+code047e        0, 1
+code037c        $h232
+dialogtxt       "そのζと"
+code0309        
+code037c        $h233
+dialogtxt       "ボクのζ"
+dialogtxt       "かえっこしない？"
+code0309        
+code047e        0, 0
+code0302        7
+call            @Func_1732
+jumpz           @Cond_0b54, ($bv019 == 1)
+code0301        8, 7
+code047e        0, 1
+dialogtxt       "いしし…、絶対ボクの勝ち"
+code0309        
+code047e        0, 0
+code0302        7
+goto            @Cond_0b54
+
+@Cond_0b54:
+goto            @Label_0b58
+
+@Label_0b58:
+goto            @Label_0bb0
+
+@Cond_0b5c:
+code0301        8, 7
+code047e        0, 1
+dialogtxt       "いしし…、絶対ボクの勝ち"
+code0309        
+code047e        0, 0
+code0302        7
+goto            @Label_0bb0
+
+@Label_0bb0:
+goto            @Label_154a
+
+@Cond_0bb4:
+jumpz           @Cond_0d7c, ($h311 == 8)
+code047d        0, 123
+jumpz           @Cond_0d24, ($bv019 == 0)
+jumpz           @Cond_0c42, ($bv029 == 0)
+code0301        8, 7
+code047e        0, 1
+code037c        $h232
+dialogtxt       "ζ、"
+dialogtxt       "ζ…"
+code0309        
+code047e        0, 0
+code0302        7
+goto            @Label_0d20
+
+@Cond_0c42:
+code0301        8, 7
+code047e        0, 1
+code037c        $h232
+dialogtxt       "そのζと"
+code0309        
+code037c        $h233
+dialogtxt       "ボクのζ"
+dialogtxt       "かえっこしない？"
+code0309        
+code047e        0, 0
+code0302        7
+call            @Func_1732
+jumpz           @Cond_0d1c, ($bv019 == 1)
+code0301        8, 7
+code047e        0, 1
+dialogtxt       "いしし…、絶対ボクの勝ち"
+code0309        
+code047e        0, 0
+code0302        7
+goto            @Cond_0d1c
+
+@Cond_0d1c:
+goto            @Label_0d20
+
+@Label_0d20:
+goto            @Label_0d78
+
+@Cond_0d24:
+code0301        8, 7
+code047e        0, 1
+dialogtxt       "いしし…、絶対ボクの勝ち"
+code0309        
+code047e        0, 0
+code0302        7
+goto            @Label_0d78
+
+@Label_0d78:
+goto            @Label_154a
+
+@Cond_0d7c:
+jumpz           @Cond_0f7e, ($h311 == 9)
+code047d        0, 125
+jumpz           @Cond_0f1e, ($bv019 == 0)
+jumpz           @Cond_0e22, ($bv029 == 0)
+code0301        8, 7
+code047e        0, 1
+code037c        $h232
+dialogtxt       "どこかにζ"
+dialogtxt       "持っている人いないかな"
+code0309        
+code047e        0, 0
+code0302        7
+goto            @Label_0f1a
+
+@Cond_0e22:
+code0301        8, 7
+code047e        0, 1
+code037c        $h232
+dialogtxt       "きみが持っている"
+dialogtxt       "そのζと"
+code0309        
+code037c        $h233
+dialogtxt       "オ[NAME 8]のζを"
+dialogtxt       "交換しないか"
+code0309        
+code047e        0, 0
+code0302        7
+call            @Func_1732
+jumpz           @Cond_0f16, ($bv019 == 1)
+code0301        8, 7
+code047e        0, 1
+dialogtxt       "この交換、絶対オ[NAME 8]の得だと思うね"
+code0309        
+code047e        0, 0
+code0302        7
+goto            @Cond_0f16
+
+@Cond_0f16:
+goto            @Label_0f1a
+
+@Label_0f1a:
+goto            @Label_0f7a
+
+@Cond_0f1e:
+code0301        8, 7
+code047e        0, 1
+dialogtxt       "この交換、絶対オ[NAME 8]の得だと思うね"
+code0309        
+code047e        0, 0
+code0302        7
+goto            @Label_0f7a
+
+@Label_0f7a:
+goto            @Label_154a
+
+@Cond_0f7e:
+jumpz           @Cond_0f92, ($h311 == 10)
+goto            @Label_154a
+
+@Cond_0f92:
+jumpz           @Cond_1194, ($h311 == 11)
+code047d        0, 120
+jumpz           @Cond_1134, ($bv019 == 0)
+jumpz           @Cond_1038, ($bv029 == 0)
+code0301        8, 7
+code047e        0, 1
+code037c        $h232
+dialogtxt       "どこかにζ"
+dialogtxt       "持っている人いないかな"
+code0309        
+code047e        0, 0
+code0302        7
+goto            @Label_1130
+
+@Cond_1038:
+code0301        8, 7
+code047e        0, 1
+code037c        $h232
+dialogtxt       "きみが持っている"
+dialogtxt       "そのζと"
+code0309        
+code037c        $h233
+dialogtxt       "オ[NAME 8]のζを"
+dialogtxt       "交換しないか"
+code0309        
+code047e        0, 0
+code0302        7
+call            @Func_1732
+jumpz           @Cond_112c, ($bv019 == 1)
+code0301        8, 7
+code047e        0, 1
+dialogtxt       "この交換、絶対オ[NAME 8]の得だと思うね"
+code0309        
+code047e        0, 0
+code0302        7
+goto            @Cond_112c
+
+@Cond_112c:
+goto            @Label_1130
+
+@Label_1130:
+goto            @Label_1190
+
+@Cond_1134:
+code0301        8, 7
+code047e        0, 1
+dialogtxt       "この交換、絶対オ[NAME 8]の得だと思うね"
+code0309        
+code047e        0, 0
+code0302        7
+goto            @Label_1190
+
+@Label_1190:
+goto            @Label_154a
+
+@Cond_1194:
+jumpz           @Cond_1370, ($h311 == 12)
+code047d        0, 119
+jumpz           @Cond_1322, ($bv019 == 0)
+jumpz           @Cond_1238, ($bv029 == 0)
+code0301        8, 7
+code047e        0, 1
+code037c        $h232
+dialogtxt       "どこかにζが、"
+dialogtxt       "有るといいんだが"
+code0309        
+code047e        0, 0
+code0302        7
+goto            @Label_131e
+
+@Cond_1238:
+code0301        8, 7
+code047e        0, 1
+code037c        $h232
+dialogtxt       "お前が持っている"
+dialogtxt       "そのζと"
+code0309        
+code037c        $h233
+dialogtxt       "オ[NAME 8]のζを"
+dialogtxt       "交換しないか"
+code0309        
+code047e        0, 0
+code0302        7
+call            @Func_1732
+jumpz           @Cond_131a, ($bv019 == 1)
+code0301        8, 7
+code047e        0, 1
+dialogtxt       "良い交換だった"
+code0309        
+code047e        0, 0
+code0302        7
+goto            @Cond_131a
+
+@Cond_131a:
+goto            @Label_131e
+
+@Label_131e:
+goto            @Label_136c
+
+@Cond_1322:
+code0301        8, 7
+code047e        0, 1
+dialogtxt       "良い交換だった"
+code0309        
+code047e        0, 0
+code0302        7
+goto            @Label_136c
+
+@Label_136c:
+goto            @Label_154a
+
+@Cond_1370:
+jumpz           @Label_154a, ($h311 == 99)
+code047d        0, 122
+jumpz           @Cond_14fa, ($bv019 == 0)
+jumpz           @Cond_140e, ($bv029 == 0)
+code0301        8, 7
+code047e        0, 1
+code037c        $h232
+dialogtxt       "どこかにζが、"
+dialogtxt       "無いかのう"
+code0309        
+code047e        0, 0
+code0302        7
+goto            @Label_14f6
+
+@Cond_140e:
+code0301        8, 7
+code047e        0, 1
+code037c        $h232
+dialogtxt       "おぬしが持っている"
+dialogtxt       "そのζと"
+code0309        
+code037c        $h233
+dialogtxt       "ワシのζを"
+dialogtxt       "交換せぬか"
+code0309        
+code047e        0, 0
+code0302        7
+call            @Func_1732
+jumpz           @Cond_14f2, ($bv019 == 1)
+code0301        8, 7
+code047e        0, 1
+dialogtxt       "良い交換じゃった"
+code0309        
+code047e        0, 0
+code0302        7
+goto            @Cond_14f2
+
+@Cond_14f2:
+goto            @Label_14f6
+
+@Label_14f6:
+goto            @Label_1546
+
+@Cond_14fa:
+code0301        8, 7
+code047e        0, 1
+dialogtxt       "良い交換じゃった"
+code0309        
+code047e        0, 0
+code0302        7
+goto            @Label_1546
+
+@Label_1546:
+goto            @Label_154a
+
+@Label_154a:
+done            
+
+@Func_154c:
+jumpz           @Cond_1578, ($bv032 == 0)
+setvar          $h232, 319
+setvar          $h233, 323
+goto            @Label_1730
+
+@Cond_1578:
+jumpz           @Cond_15a4, ($bv032 == 1)
+setvar          $h232, 323
+setvar          $h233, 337
+goto            @Label_1730
+
+@Cond_15a4:
+jumpz           @Cond_15d0, ($bv032 == 2)
+setvar          $h232, 337
+setvar          $h233, 317
+goto            @Label_1730
+
+@Cond_15d0:
+jumpz           @Cond_15fc, ($bv032 == 3)
+setvar          $h232, 317
+setvar          $h233, 329
+goto            @Label_1730
+
+@Cond_15fc:
+jumpz           @Cond_1628, ($bv032 == 4)
+setvar          $h232, 329
+setvar          $h233, 333
+goto            @Label_1730
+
+@Cond_1628:
+jumpz           @Cond_1654, ($bv032 == 5)
+setvar          $h232, 333
+setvar          $h233, 456
+goto            @Label_1730
+
+@Cond_1654:
+jumpz           @Cond_1680, ($bv032 == 6)
+setvar          $h232, 456
+setvar          $h233, 371
+goto            @Label_1730
+
+@Cond_1680:
+jumpz           @Cond_16ac, ($bv032 == 7)
+setvar          $h232, 371
+setvar          $h233, 424
+goto            @Label_1730
+
+@Cond_16ac:
+jumpz           @Cond_16d8, ($bv032 == 8)
+setvar          $h232, 424
+setvar          $h233, 377
+goto            @Label_1730
+
+@Cond_16d8:
+jumpz           @Cond_1704, ($bv032 == 9)
+setvar          $h232, 377
+setvar          $h233, 379
+goto            @Label_1730
+
+@Cond_1704:
+jumpz           @Label_1730, ($bv032 == 10)
+setvar          $h232, 379
+setvar          $h233, 387
+goto            @Label_1730
+
+@Label_1730:
+ret             
+
+@Func_1732:
+menutitle       "交換しますか"
+menutxt         @Menu_175a, "する"
+menutxt         @Menu_179a, "しない"
+menuwait        
+
+@Menu_175a:
+setvar          $bv019, 1
+setvar          $bv032, ($bv032 + 1)
+code0366        $h232, -1
+code0366        $h233, 1
+code0367        
+goto            @Menu_179a
+
+@Menu_179a:
+ret             
+
+code031a        7
+code031b        7, -1, -1, $h136, $h137
+code031c        7, 1
+code031f        7
+ret             
+
+code031b        7, -1, -1, $h136, $h137
+code031c        7, 2
+code031f        7
+code031a        7
+ret             
+
+code031a        7
+code031b        7, (-1 - $h139), $h140, $h136, $h137
+code031c        7, 1
+code031f        7
+ret             
+
+code031a        6
+code031b        6, $h139, 0, $h136, $h137
+code031c        6, 1
+code031f        6
+ret             
+
+code031b        7, (-1 - $h139), $h140, $h136, $h137
+code031c        7, 2
+code031f        7
+code031a        7
+ret             
+
+code031b        6, $h139, 0, $h136, $h137
+code031c        6, 2
+code031f        6
+code031a        6
+ret             
+
+code031a        7
+code031b        7, -1, -1, $h141, $h137
+code031c        7, 1
+code040d        15
+code031a        6
+code031b        6, -1, -1, $h136, $h137
+code031c        6, 1
+code031f        6
+code031a        7
+code031b        6, -1, -1, $h136, ($h137 / 2)
+code031c        6, 2
+code031f        6
+code031a        6
+ret             
+
+code031a        7
+code031b        7, -1, -1, $h141, $h137
+code031c        7, 1
+code040d        15
+code031a        6
+code031b        6, -1, -1, $h136, $h137
+code031c        6, 1
+code031f        6
+code031a        7
+ret             
+
+code031b        6, -1, -1, $h136, ($h137 / 2)
+code031c        6, 2
+code031f        6
+code031a        6
+ret             
+
+jumpz           @Cond_1ae4, ($h131 == 0)
+setvar          $h139, ($h139 | 0x0001)
+goto            @Label_1d1e
+
+@Cond_1ae4:
+jumpz           @Cond_1b0a, ($h131 == 1)
+setvar          $h139, ($h139 | 0x0002)
+goto            @Label_1d1e
+
+@Cond_1b0a:
+jumpz           @Cond_1b30, ($h131 == 2)
+setvar          $h139, ($h139 | 0x0004)
+goto            @Label_1d1e
+
+@Cond_1b30:
+jumpz           @Cond_1b56, ($h131 == 3)
+setvar          $h139, ($h139 | 0x0008)
+goto            @Label_1d1e
+
+@Cond_1b56:
+jumpz           @Cond_1b7c, ($h131 == 4)
+setvar          $h139, ($h139 | 0x0010)
+goto            @Label_1d1e
+
+@Cond_1b7c:
+jumpz           @Cond_1ba2, ($h131 == 5)
+setvar          $h139, ($h139 | 0x0020)
+goto            @Label_1d1e
+
+@Cond_1ba2:
+jumpz           @Cond_1bc8, ($h131 == 6)
+setvar          $h139, ($h139 | 0x0040)
+goto            @Label_1d1e
+
+@Cond_1bc8:
+jumpz           @Cond_1bee, ($h131 == 7)
+setvar          $h139, ($h139 | 0x0080)
+goto            @Label_1d1e
+
+@Cond_1bee:
+jumpz           @Cond_1c14, ($h131 == 8)
+setvar          $h139, ($h139 | 0x0100)
+goto            @Label_1d1e
+
+@Cond_1c14:
+jumpz           @Cond_1c3a, ($h131 == 9)
+setvar          $h139, ($h139 | 0x0200)
+goto            @Label_1d1e
+
+@Cond_1c3a:
+jumpz           @Cond_1c60, ($h131 == 10)
+setvar          $h139, ($h139 | 0x0400)
+goto            @Label_1d1e
+
+@Cond_1c60:
+jumpz           @Cond_1c86, ($h131 == 11)
+setvar          $h139, ($h139 | 0x0800)
+goto            @Label_1d1e
+
+@Cond_1c86:
+jumpz           @Cond_1cac, ($h131 == 12)
+setvar          $h139, ($h139 | 0x1000)
+goto            @Label_1d1e
+
+@Cond_1cac:
+jumpz           @Cond_1cd2, ($h131 == 13)
+setvar          $h139, ($h139 | 0x2000)
+goto            @Label_1d1e
+
+@Cond_1cd2:
+jumpz           @Cond_1cf8, ($h131 == 14)
+setvar          $h139, ($h139 | 0x4000)
+goto            @Label_1d1e
+
+@Cond_1cf8:
+jumpz           @Label_1d1e, ($h131 == 15)
+setvar          $h139, ($h139 | 0x00008000)
+goto            @Label_1d1e
+
+@Label_1d1e:
+ret             
+
+code0301        2, 4
+code047e        0, 1
+ret             
+
+code0301        2, 7
+code047e        0, 1
+ret             
+
+code047e        0, 0
+code0302        4
+ret             
+
+code047e        0, 0
+code0302        7
+ret             
+
+code0301        4, 5
+code047e        1, 1
+ret             
+
+code0301        4, 7
+code047e        1, 1
+ret             
+
+code047e        1, 0
+code0302        5
+ret             
+
+code047e        1, 0
+code0302        7
+ret             
+
+code047a        0, 1, 1
+ret             
+
+code047a        1, 1, 1
+ret             
+
+code047a        0, 1, 1
+code047a        1, 1, 1
+ret             
+
+code047a        0, 0, 1
+ret             
+
+code047a        1, 0, 1
+ret             
+
+code047a        0, 0, 1
+code047a        1, 0, 1
+ret             
+

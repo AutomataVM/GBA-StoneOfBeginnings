@@ -1,0 +1,169 @@
+code0303        
+jumpz           @Cond_0022, ($w015 > 11)
+setvar          $w015, 0
+goto            @Cond_0022
+
+@Cond_0022:
+setvar          $h051, 3
+@Label_002e:
+setvar          $b045, 1
+setvar          $b042, 100
+setvar          $b044, 1
+setvar          $b060, 0
+setvar          $b043, 100
+setname         0xC083, "リッチバーン"
+setname         0xC183, "ランドル"
+jumpz           @Cond_00fa, ($w015 == 0)
+setvar          $b032, 0
+setvar          $b039, 0
+setvar          $b033, 4
+setvar          $h032, 20
+setvar          $b034, 2
+setvar          $h033, 158
+setvar          $h034, 155
+goto            @Label_05a2
+
+@Cond_00fa:
+jumpz           @Cond_0156, ($w015 == 1)
+setvar          $b032, 5
+setvar          $b039, 3
+setvar          $b033, 0
+setvar          $h032, 21
+setvar          $b034, 1
+setvar          $h033, 15
+goto            @Label_05a2
+
+@Cond_0156:
+jumpz           @Cond_01b2, ($w015 == 2)
+setvar          $b032, 5
+setvar          $b039, 3
+setvar          $b033, 8
+setvar          $h032, 353
+setvar          $b034, 1
+setvar          $h033, 17
+goto            @Label_05a2
+
+@Cond_01b2:
+jumpz           @Cond_023e, ($w015 == 3)
+setvar          $b032, 0
+setvar          $b039, 0
+setvar          $b033, 3
+setvar          $h032, 54
+setvar          $b034, 4
+setvar          $h033, 101
+setvar          $h034, 101
+setvar          $h035, 105
+setvar          $h036, 107
+setvar          $b003, 0
+goto            @Label_05a2
+
+@Cond_023e:
+jumpz           @Cond_029a, ($w015 == 4)
+setvar          $b032, 1
+setvar          $b039, 4
+setvar          $b033, 2
+setvar          $h032, 354
+setvar          $b034, 1
+setvar          $h033, 254
+goto            @Label_05a2
+
+@Cond_029a:
+jumpz           @Cond_02f6, ($w015 == 5)
+setvar          $b032, 0
+setvar          $b039, 0
+setvar          $b033, 1
+setvar          $h032, 355
+setvar          $b034, 1
+setvar          $h033, 167
+goto            @Label_05a2
+
+@Cond_02f6:
+jumpz           @Cond_0376, ($w015 == 6)
+setvar          $b032, 0
+setvar          $b039, 1
+setvar          $b033, 2
+setvar          $h032, 55
+setvar          $b034, 3
+setvar          $h033, 103
+setvar          $h034, 103
+setvar          $h034, 106
+setvar          $b003, 1
+goto            @Label_05a2
+
+@Cond_0376:
+jumpz           @Cond_03d2, ($w015 == 7)
+setvar          $b032, 5
+setvar          $b039, 3
+setvar          $b033, 5
+setvar          $h032, 356
+setvar          $b034, 1
+setvar          $h033, 14
+goto            @Label_05a2
+
+@Cond_03d2:
+jumpz           @Cond_042e, ($w015 == 8)
+setvar          $b032, 1
+setvar          $b039, 4
+setvar          $b033, 0
+setvar          $h032, 9
+setvar          $b034, 1
+setvar          $h033, 246
+goto            @Label_05a2
+
+@Cond_042e:
+jumpz           @Cond_04ae, ($w015 == 9)
+setvar          $b032, 0
+setvar          $b039, 0
+setvar          $b033, 2
+setvar          $h032, 56
+setvar          $b034, 3
+setvar          $h033, 103
+setvar          $h034, 103
+setvar          $h034, 106
+setvar          $b003, 2
+goto            @Label_05a2
+
+@Cond_04ae:
+jumpz           @Cond_053a, ($w015 == 10)
+setvar          $b032, 0
+setvar          $b039, 2
+setvar          $b033, 3
+setvar          $h032, 57
+setvar          $b034, 4
+setvar          $h033, 101
+setvar          $h034, 101
+setvar          $h035, 105
+setvar          $h036, 107
+setvar          $b003, 3
+goto            @Label_05a2
+
+@Cond_053a:
+jumpz           @Label_05a2, ($w015 == 11)
+setvar          $b032, 0
+setvar          $b039, 1
+setvar          $b033, 4
+setvar          $h032, 23
+setvar          $b034, 2
+setvar          $h033, 159
+setvar          $h034, 157
+goto            @Label_05a2
+
+@Label_05a2:
+code0100        
+code0101        
+setvar          $b045, 0
+setvar          $w015, ($w015 + 1)
+code0303        
+jumpz           @Cond_05ec, ($h051 > 0)
+setvar          $h051, ($h051 - 1)
+goto            @Cond_05ec
+
+@Cond_05ec:
+jumpz           @Cond_0604, ($h051 != 0)
+goto            @Label_002e
+
+goto            @Cond_0604
+
+@Cond_0604:
+done            
+

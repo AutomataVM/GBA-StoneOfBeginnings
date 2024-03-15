@@ -1,0 +1,689 @@
+code043e        0, 6, 0
+walkto          0, 128, 544, 1
+walkwait        0
+code043e        0, 3, 0
+code043c        0, 3
+code0491        0
+setvar          $w000, 3
+code0478        1, 20
+code0479        1, 0, 16
+code047d        1, 135
+call            @Func_1c44
+call            @Func_1bc2
+dialogtxt       "これで面子はそろいましたが"
+dialogtxt       "予定外の人も多いですね…？"
+code047b        
+code0309        
+call            @Func_1c16
+code0478        0, 29
+code0479        0, 4, 12
+code047d        0, 136
+call            @Func_1c2e
+code043c        4, 4
+call            @Func_1b74
+dialogtxt       "ああ…"
+dialogtxt       "こいつらも勝負に立ち会いたいって"
+dialogtxt       "言い出したもんでな"
+code047b        
+code0309        
+code0479        0, 0, 12
+dialogtxt       "どうにかならんか？"
+code0309        
+call            @Func_1baa
+code043c        2, 2
+code0479        1, 5, 16
+call            @Func_1be0
+dialogtxt       "そんな…、グマグの炎遺跡は"
+dialogtxt       "本来なら村人ですら立ち入り禁止の"
+dialogtxt       "場所なんですよ"
+code0309        
+code0479        1, 2, 14
+dialogtxt       "あそこで勝負をするだけでも"
+dialogtxt       "問題だっていうのに…"
+code0309        
+call            @Func_1c84
+call            @Func_1c16
+code047b        
+code0478        0, 0
+code0479        0, 2, 12
+code047d        0, 0
+call            @Func_1c2e
+call            @Func_1b74
+jumpz           @Cond_0306, ($b002 == 0)
+dialogtxt       "いいじゃん"
+dialogtxt       "どうせオ[NAME 8]が勝ったら"
+dialogtxt       "中を見せてもらえるんだし"
+goto            @Label_0350
+
+@Cond_0306:
+dialogtxt       "いいじゃない"
+dialogtxt       "どうせわたしが勝ったら"
+dialogtxt       "中を見せてくれるんでしょ"
+goto            @Label_0350
+
+@Label_0350:
+code047b        
+code0309        
+call            @Func_1baa
+code043c        4, 1
+code043c        2, 1
+code0479        1, 2, 12
+call            @Func_1be0
+dialogtxt       "へえ…"
+dialogtxt       "君は私に勝てる気でいるんですね？"
+dialogtxt       "かわいそうに"
+code0309        
+call            @Func_1c16
+code0479        0, 5, 15
+call            @Func_1b74
+jumpz           @Cond_040a, ($b002 == 0)
+dialogtxt       "なんだと！"
+goto            @Label_0420
+
+@Cond_040a:
+dialogtxt       "なによ、それ！"
+goto            @Label_0420
+
+@Label_0420:
+code0309        
+call            @Func_1baa
+code0479        1, 4, 12
+call            @Func_1be0
+dialogtxt       "そんなに期待しているのに"
+dialogtxt       "何も見られないなんて"
+dialogtxt       "たしかにかわいそうだ"
+code0309        
+code0479        1, 0, 13
+dialogtxt       "仕方ない、いいでしょう"
+dialogtxt       "勝負に立ち会うことを許可します"
+code0309        
+call            @Func_1cb0
+call            @Func_1bfe
+code047b        
+code0445        1, 12
+code0445        3, 12
+code0446        3
+code0478        0, 6
+code0479        0, 0, 13
+code047d        0, 107
+call            @Func_1c5a
+call            @Func_1b56
+dialogtxt       "ホントですか！"
+dialogtxt       "ありがとうございます！"
+code047b        
+code0309        
+call            @Func_1baa
+code043c        2, 2
+code0479        1, 1, 12
+call            @Func_1be0
+dialogtxt       "お礼はいいですよ"
+dialogtxt       "あなたの見たい魔晶柱は"
+dialogtxt       "裁きの間の奥にあるのですからね"
+code0309        
+call            @Func_1cb0
+call            @Func_1bfe
+code047b        
+code0478        1, 0
+code0479        1, 0, 14
+code047d        1, 0
+code0478        0, 2
+jumpz           @Cond_0660, ($b003 == 0)
+code0479        0, 0, 12
+goto            @Label_06c8
+
+@Cond_0660:
+jumpz           @Cond_0688, ($b003 == 1)
+code0479        0, 2, 12
+goto            @Label_06c8
+
+@Cond_0688:
+jumpz           @Cond_06b0, ($b003 == 2)
+code0479        0, 2, 12
+goto            @Label_06c8
+
+@Cond_06b0:
+code0479        0, 2, 14
+goto            @Label_06c8
+
+@Label_06c8:
+code047d        0, 2
+call            @Func_1c5a
+code043c        1, 4
+call            @Func_1b56
+jumpz           @Cond_0758, ($b003 == 0)
+dialogtxt       "勝負ニ勝タナイト　見ルコトハ"
+dialogtxt       "デ[NAME 4]ナイ　トイウコトデス"
+dialogtxt       "タノミマシタ　ぱーとなー"
+goto            @Cond_0758
+
+@Cond_0758:
+jumpz           @Cond_07a2, ($b003 == 1)
+dialogtxt       "勝たないと見られぬ、と言うことか"
+dialogtxt       "たのんだぞ、δ"
+goto            @Cond_07a2
+
+@Cond_07a2:
+jumpz           @Cond_07f2, ($b003 == 2)
+dialogtxt       "勝たないと見られない、か…"
+dialogtxt       "ヤツも相当自信がありそうだ"
+goto            @Cond_07f2
+
+@Cond_07f2:
+jumpz           @Cond_0854, ($b003 == 3)
+dialogtxt       "あの人に勝たないと見られない"
+dialogtxt       "…ってコトですよ"
+dialogtxt       "がんばってくださいね！"
+goto            @Cond_0854
+
+@Cond_0854:
+code047b        
+code0309        
+call            @Func_1baa
+code043c        0, 2
+code0479        1, 2, 13
+call            @Func_1be0
+jumpz           @Cond_08ba, ($b002 == 0)
+dialogtxt       "まかせとけ"
+dialogtxt       "絶対たおしてやる！"
+goto            @Label_08ea
+
+@Cond_08ba:
+dialogtxt       "まかせといて"
+dialogtxt       "絶対やっつけちゃうから！"
+goto            @Label_08ea
+
+@Label_08ea:
+code0309        
+call            @Func_1cb0
+call            @Func_1bfe
+code047b        
+code0445        4, 7
+code0446        4
+code0478        0, 0
+code0479        0, 0, 14
+code047d        0, 0
+code0478        1, 29
+code0479        1, 0, 13
+code047d        1, 136
+call            @Func_1c5a
+call            @Func_1bc2
+dialogtxt       "よし、決まったな"
+dialogtxt       "では改めて、勝負の決まりを"
+dialogtxt       "確認するぞ"
+code047b        
+code0309        
+code043c        3, 1
+code043c        2, 1
+code043c        0, 3
+code043c        1, 3
+code0479        0, 2, 14
+code0479        1, 0, 12
+dialogtxt       "δとトラムの"
+dialogtxt       "１対１の戦いだ"
+dialogtxt       "使用していい武器は、１本"
+code0309        
+call            @Func_1c16
+code0479        0, 2, 16
+call            @Func_1b74
+dialogtxt       "武器は１本だけ、か…"
+code0309        
+call            @Func_1baa
+code0479        0, 2, 14
+code0479        1, 0, 16
+call            @Func_1be0
+dialogtxt       "負けをみとめたり"
+dialogtxt       "戦闘不能になったり"
+dialogtxt       "武器を壊された方が負けだ"
+code0309        
+call            @Func_1c9a
+call            @Func_1c16
+code047b        
+code0478        1, 20
+code0479        1, 2, 12
+code047d        1, 135
+call            @Func_1c44
+call            @Func_1be0
+dialogtxt       "もちろん"
+dialogtxt       "裁きの間にたどりつけなくても"
+dialogtxt       "負けですよ"
+code047b        
+code0309        
+code0479        1, 2, 13
+dialogtxt       "遺跡の中には侵入者を撃退するため"
+dialogtxt       "召喚獣がたくさんいますからね"
+code0309        
+call            @Func_1cb0
+call            @Func_1bfe
+code047b        
+code0445        3, 15
+code0446        3
+code0478        0, 6
+code0479        0, 4, 14
+code047d        0, 107
+call            @Func_1c2e
+call            @Func_1b56
+dialogtxt       "δ…"
+code047b        
+code0309        
+call            @Func_1baa
+code0478        1, 0
+code0479        1, 2, 12
+code047d        1, 0
+call            @Func_1c44
+call            @Func_1be0
+dialogtxt       "大丈夫"
+jumpz           @Cond_0cb0, ($b002 == 0)
+dialogtxt       "心配すんなって"
+goto            @Label_0cc4
+
+@Cond_0cb0:
+dialogtxt       "心配しないで"
+goto            @Label_0cc4
+
+@Label_0cc4:
+code047b        
+code0309        
+call            @Func_1cb0
+call            @Func_1bfe
+code047b        
+code0478        0, 6
+code0479        0, 0, 16
+code047d        0, 107
+code0478        1, 20
+code0479        1, 0, 12
+code047d        1, 135
+code043e        2, 6, 0
+walkto          2, 124, 504, 1
+walkwait        2
+code043e        2, 3, 0
+code043c        2, 2
+call            @Func_1c44
+call            @Func_1bc2
+dialogtxt       "では、行きましょう"
+dialogtxt       "さあ、ミューノさん"
+code047b        
+code0309        
+call            @Func_1c9a
+call            @Func_1c16
+code047b        
+code043c        3, 4
+code0479        0, 0, 17
+call            @Func_1c2e
+call            @Func_1b74
+dialogtxt       "あ、ちょっと…"
+code0309        
+call            @Func_1c84
+call            @Func_1b92
+code047b        
+code0445        3, 9
+code043e        2, 6, 0
+walkto          2, 124, 496, 1
+walkwait        2
+walkto          2, 72, 496, 1
+code040d        30
+code0445        1, 10
+code0445        0, 2
+code043e        3, 6, 0
+walkto          3, 72, 496, 1
+walkwait        2
+walkto          2, 40, 440, 1
+walkwait        3
+walkto          3, 40, 440, 1
+walkwait        2
+code043e        2, 3, 0
+code043c        2, 3
+code043e        4, 6, 0
+walkto          4, 124, 496, 1
+walkwait        4
+code0446        0
+code0445        1, 14
+walkto          4, 72, 496, 1
+walkwait        4
+walkto          4, 40, 440, 1
+walkwait        3
+code043e        3, 3, 0
+code043c        3, 3
+walkwait        4
+code043e        4, 3, 0
+code043c        4, 3
+code0446        1
+code043c        1, 4
+code0478        1, 0
+code0479        1, 0, 14
+code047d        1, 0
+code0478        0, 2
+jumpz           @Cond_108a, ($b003 == 0)
+code0479        0, 5, 12
+goto            @Label_10f2
+
+@Cond_108a:
+jumpz           @Cond_10b2, ($b003 == 1)
+code0479        0, 2, 15
+goto            @Label_10f2
+
+@Cond_10b2:
+jumpz           @Cond_10da, ($b003 == 2)
+code0479        0, 3, 14
+goto            @Label_10f2
+
+@Cond_10da:
+code0479        0, 2, 14
+goto            @Label_10f2
+
+@Label_10f2:
+code047d        0, 2
+call            @Func_1c5a
+call            @Func_1b56
+jumpz           @Cond_1154, ($b003 == 0)
+dialogtxt       "みゅーの様ガ　行ッテシマイマス！"
+dialogtxt       "私タチモ　早ク！"
+goto            @Cond_1154
+
+@Cond_1154:
+jumpz           @Cond_1196, ($b003 == 1)
+dialogtxt       "ミューノが行ってしまうぞ！"
+dialogtxt       "我らも早く！"
+goto            @Cond_1196
+
+@Cond_1196:
+jumpz           @Cond_11ec, ($b003 == 2)
+dialogtxt       "ちっ…、ミューノが…"
+dialogtxt       "おい、モタモタするな！"
+dialogtxt       "早く行くぞ！"
+goto            @Cond_11ec
+
+@Cond_11ec:
+jumpz           @Cond_123e, ($b003 == 3)
+dialogtxt       "ミューノ様が行ってしまいますわ！"
+dialogtxt       "私たちも急ぎましょう！"
+goto            @Cond_123e
+
+@Cond_123e:
+code047b        
+code0309        
+call            @Func_1baa
+code043c        0, 2
+code0479        1, 2, 15
+call            @Func_1be0
+jumpz           @Cond_1296, ($b002 == 0)
+dialogtxt       "あ…"
+dialogtxt       "お、おう！"
+goto            @Label_12b0
+
+@Cond_1296:
+dialogtxt       "あ…"
+dialogtxt       "う、うん！"
+goto            @Label_12b0
+
+@Label_12b0:
+code0309        
+call            @Func_1cb0
+call            @Func_1bfe
+code047b        
+code043d        2, 128, 360
+code043d        3, 128, 376
+code043d        4, 112, 384
+code0489        2, 1, 24
+code043c        0, 3
+code043c        1, 3
+code048c        
+code043e        2, 6, 0
+walkto          2, 128, 348, 1
+walkwait        2
+code043e        2, 3, 0
+code043c        2, 3
+code0419        0, 2, 0, 13, 38, 0
+code033a        110, 0
+code041b        0
+code043e        2, 6, 0
+walkto          2, 128, 328, 1
+walkwait        2
+code043e        2, 3, 0
+code043c        2, 3
+code0443        2, 16, 0
+code0443        2, 32, 0
+code043e        3, 6, 0
+walkto          3, 128, 328, 1
+walkwait        3
+code043e        3, 3, 0
+code043c        3, 3
+code0443        3, 16, 0
+code0443        3, 32, 0
+code043e        4, 6, 0
+walkto          4, 128, 328, 1
+walkwait        4
+code043e        4, 3, 0
+code043c        4, 3
+code0443        4, 16, 0
+code0443        4, 32, 0
+code041a        0, 0
+code0419        0, 2, 0, 13, 38, 5
+code041b        0
+code041a        0, 0
+code0489        0, 1, 24
+code048c        
+code0492        
+code043b        2
+code0439        2
+code043b        3
+code0439        3
+code043b        4
+code0439        4
+done            
+
+code031a        7
+code031b        7, -1, -1, $h136, $h137
+code031c        7, 1
+code031f        7
+ret             
+
+code031b        7, -1, -1, $h136, $h137
+code031c        7, 2
+code031f        7
+code031a        7
+ret             
+
+code031a        7
+code031b        7, (-1 - $h139), $h140, $h136, $h137
+code031c        7, 1
+code031f        7
+ret             
+
+code031a        6
+code031b        6, $h139, 0, $h136, $h137
+code031c        6, 1
+code031f        6
+ret             
+
+code031b        7, (-1 - $h139), $h140, $h136, $h137
+code031c        7, 2
+code031f        7
+code031a        7
+ret             
+
+code031b        6, $h139, 0, $h136, $h137
+code031c        6, 2
+code031f        6
+code031a        6
+ret             
+
+code031a        7
+code031b        7, -1, -1, $h141, $h137
+code031c        7, 1
+code040d        15
+code031a        6
+code031b        6, -1, -1, $h136, $h137
+code031c        6, 1
+code031f        6
+code031a        7
+code031b        6, -1, -1, $h136, ($h137 / 2)
+code031c        6, 2
+code031f        6
+code031a        6
+ret             
+
+code031a        7
+code031b        7, -1, -1, $h141, $h137
+code031c        7, 1
+code040d        15
+code031a        6
+code031b        6, -1, -1, $h136, $h137
+code031c        6, 1
+code031f        6
+code031a        7
+ret             
+
+code031b        6, -1, -1, $h136, ($h137 / 2)
+code031c        6, 2
+code031f        6
+code031a        6
+ret             
+
+jumpz           @Cond_191a, ($h131 == 0)
+setvar          $h139, ($h139 | 0x0001)
+goto            @Label_1b54
+
+@Cond_191a:
+jumpz           @Cond_1940, ($h131 == 1)
+setvar          $h139, ($h139 | 0x0002)
+goto            @Label_1b54
+
+@Cond_1940:
+jumpz           @Cond_1966, ($h131 == 2)
+setvar          $h139, ($h139 | 0x0004)
+goto            @Label_1b54
+
+@Cond_1966:
+jumpz           @Cond_198c, ($h131 == 3)
+setvar          $h139, ($h139 | 0x0008)
+goto            @Label_1b54
+
+@Cond_198c:
+jumpz           @Cond_19b2, ($h131 == 4)
+setvar          $h139, ($h139 | 0x0010)
+goto            @Label_1b54
+
+@Cond_19b2:
+jumpz           @Cond_19d8, ($h131 == 5)
+setvar          $h139, ($h139 | 0x0020)
+goto            @Label_1b54
+
+@Cond_19d8:
+jumpz           @Cond_19fe, ($h131 == 6)
+setvar          $h139, ($h139 | 0x0040)
+goto            @Label_1b54
+
+@Cond_19fe:
+jumpz           @Cond_1a24, ($h131 == 7)
+setvar          $h139, ($h139 | 0x0080)
+goto            @Label_1b54
+
+@Cond_1a24:
+jumpz           @Cond_1a4a, ($h131 == 8)
+setvar          $h139, ($h139 | 0x0100)
+goto            @Label_1b54
+
+@Cond_1a4a:
+jumpz           @Cond_1a70, ($h131 == 9)
+setvar          $h139, ($h139 | 0x0200)
+goto            @Label_1b54
+
+@Cond_1a70:
+jumpz           @Cond_1a96, ($h131 == 10)
+setvar          $h139, ($h139 | 0x0400)
+goto            @Label_1b54
+
+@Cond_1a96:
+jumpz           @Cond_1abc, ($h131 == 11)
+setvar          $h139, ($h139 | 0x0800)
+goto            @Label_1b54
+
+@Cond_1abc:
+jumpz           @Cond_1ae2, ($h131 == 12)
+setvar          $h139, ($h139 | 0x1000)
+goto            @Label_1b54
+
+@Cond_1ae2:
+jumpz           @Cond_1b08, ($h131 == 13)
+setvar          $h139, ($h139 | 0x2000)
+goto            @Label_1b54
+
+@Cond_1b08:
+jumpz           @Cond_1b2e, ($h131 == 14)
+setvar          $h139, ($h139 | 0x4000)
+goto            @Label_1b54
+
+@Cond_1b2e:
+jumpz           @Label_1b54, ($h131 == 15)
+setvar          $h139, ($h139 | 0x00008000)
+goto            @Label_1b54
+
+@Label_1b54:
+ret             
+
+@Func_1b56:
+code0301        2, 4
+code047e        0, 1
+ret             
+
+@Func_1b74:
+code0301        2, 7
+code047e        0, 1
+ret             
+
+@Func_1b92:
+code047e        0, 0
+code0302        4
+ret             
+
+@Func_1baa:
+code047e        0, 0
+code0302        7
+ret             
+
+@Func_1bc2:
+code0301        4, 5
+code047e        1, 1
+ret             
+
+@Func_1be0:
+code0301        4, 7
+code047e        1, 1
+ret             
+
+@Func_1bfe:
+code047e        1, 0
+code0302        5
+ret             
+
+@Func_1c16:
+code047e        1, 0
+code0302        7
+ret             
+
+@Func_1c2e:
+code047a        0, 1, 1
+ret             
+
+@Func_1c44:
+code047a        1, 1, 1
+ret             
+
+@Func_1c5a:
+code047a        0, 1, 1
+code047a        1, 1, 1
+ret             
+
+@Func_1c84:
+code047a        0, 0, 1
+ret             
+
+@Func_1c9a:
+code047a        1, 0, 1
+ret             
+
+@Func_1cb0:
+code047a        0, 0, 1
+code047a        1, 0, 1
+ret             
+

@@ -1,0 +1,43 @@
+setvar          $h319, -1
+setvar          $h311, 4
+code0368        
+code0369        
+code046f        208, 223, 0
+code046f        224, 255, 0
+code0470        288, 415, 0
+code0470        32, 47, 0
+code0470        544, 799, 0
+code038d        0
+code0470        48, 63, 0
+code0408        0
+code031b        0, -16, -16, $h136, 1
+code031c        0, 2
+code031f        0
+code031a        0
+code036a        507
+jumpz           @Cond_011e, $b070
+code0366        507, -1
+popuptxt        "[NAME 6]コが逃げ出した！"
+code0318        
+goto            @Cond_011e
+
+@Cond_011e:
+code0366        522, -1
+code036a        510
+jumpz           @Cond_0178, $b070
+code0366        510, -1
+popuptxt        "苦情の手紙が届いた！"
+code0318        
+code0366        521, 1
+goto            @Cond_0178
+
+@Cond_0178:
+code040a        
+code04a4        
+code0470        1412, 1427, 0
+code0470        1428, 1442, 0
+code0470        1396, 1411, 0
+gotomap         625 ; map 174571c
+
+done            
+

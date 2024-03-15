@@ -1,0 +1,261 @@
+setvar          $h314, 1
+code0006        11
+setvar          $b097, 0
+code0408        0
+code0410        0, 47, 49, -1
+code0410        1, 47, 52, 55
+code0410        2, 48, 51, 56
+code0411        
+code0430        57
+code0428        58, 5, 11, 0
+code0418        2
+setvar          $h137, 1
+setvar          $h136, 0
+call            @Func_032a
+code0412        4, 1
+code043d        0, 160, 176
+code043c        0, 3
+code043e        0, 3, 0
+code0488        -1, 1
+code048a        40, 40
+setvar          $h319, 4
+code0409        
+code046e        29, 256, 0
+code041d        
+setvar          $h137, 60
+setvar          $h136, 0
+call            @Func_036a
+code040d        30
+code0489        0, 2, 16
+code048c        
+code0006        1791
+setvar          $h139, 61
+setvar          $h140, -16
+setvar          $h137, 60
+setvar          $h136, 0
+call            @Func_03aa
+jumpz           @Cond_0262, ($f0152 == 1)
+code0304        1
+dialogtxt       "　　　　　　　そのとき　　　　　　　"
+dialogtxt       "　たしかにミューノは笑ったんだけど　"
+dialogtxt       "　なぜだかさびしそうに見えたんだ　　"
+code030a        6, 1
+code0304        0
+goto            @Label_030e
+
+@Cond_0262:
+jumpz           @Label_030e, ($f0153 == 1)
+jumpz           @Cond_030a, ($b003 == 0)
+code0304        1
+dialogtxt       "　　　　　なんとなくだけど　　　　　"
+dialogtxt       "　　　　　今、γが"
+dialogtxt       "　　よろこんでいるように見えたんだ　"
+code030a        6, 1
+code0304        0
+goto            @Cond_030a
+
+@Cond_030a:
+goto            @Label_030e
+
+@Label_030e:
+code040a        
+setvar          $h137, 1
+call            @Func_0430
+gotomap         1800 ; map 17df6ac
+
+done            
+
+@Func_032a:
+code031a        7
+code031b        7, -1, -1, $h136, $h137
+code031c        7, 1
+code031f        7
+ret             
+
+@Func_036a:
+code031b        7, -1, -1, $h136, $h137
+code031c        7, 2
+code031f        7
+code031a        7
+ret             
+
+@Func_03aa:
+code031a        7
+code031b        7, (-1 - $h139), $h140, $h136, $h137
+code031c        7, 1
+code031f        7
+ret             
+
+code031a        6
+code031b        6, $h139, 0, $h136, $h137
+code031c        6, 1
+code031f        6
+ret             
+
+@Func_0430:
+code031b        7, (-1 - $h139), $h140, $h136, $h137
+code031c        7, 2
+code031f        7
+code031a        7
+ret             
+
+code031b        6, $h139, 0, $h136, $h137
+code031c        6, 2
+code031f        6
+code031a        6
+ret             
+
+code031a        7
+code031b        7, -1, -1, $h141, $h137
+code031c        7, 1
+code040d        15
+code031a        6
+code031b        6, -1, -1, $h136, $h137
+code031c        6, 1
+code031f        6
+code031a        7
+code031b        6, -1, -1, $h136, ($h137 / 2)
+code031c        6, 2
+code031f        6
+code031a        6
+ret             
+
+code031a        7
+code031b        7, -1, -1, $h141, $h137
+code031c        7, 1
+code040d        15
+code031a        6
+code031b        6, -1, -1, $h136, $h137
+code031c        6, 1
+code031f        6
+code031a        7
+ret             
+
+code031b        6, -1, -1, $h136, ($h137 / 2)
+code031c        6, 2
+code031f        6
+code031a        6
+ret             
+
+jumpz           @Cond_0672, ($h131 == 0)
+setvar          $h139, ($h139 | 0x0001)
+goto            @Label_08ac
+
+@Cond_0672:
+jumpz           @Cond_0698, ($h131 == 1)
+setvar          $h139, ($h139 | 0x0002)
+goto            @Label_08ac
+
+@Cond_0698:
+jumpz           @Cond_06be, ($h131 == 2)
+setvar          $h139, ($h139 | 0x0004)
+goto            @Label_08ac
+
+@Cond_06be:
+jumpz           @Cond_06e4, ($h131 == 3)
+setvar          $h139, ($h139 | 0x0008)
+goto            @Label_08ac
+
+@Cond_06e4:
+jumpz           @Cond_070a, ($h131 == 4)
+setvar          $h139, ($h139 | 0x0010)
+goto            @Label_08ac
+
+@Cond_070a:
+jumpz           @Cond_0730, ($h131 == 5)
+setvar          $h139, ($h139 | 0x0020)
+goto            @Label_08ac
+
+@Cond_0730:
+jumpz           @Cond_0756, ($h131 == 6)
+setvar          $h139, ($h139 | 0x0040)
+goto            @Label_08ac
+
+@Cond_0756:
+jumpz           @Cond_077c, ($h131 == 7)
+setvar          $h139, ($h139 | 0x0080)
+goto            @Label_08ac
+
+@Cond_077c:
+jumpz           @Cond_07a2, ($h131 == 8)
+setvar          $h139, ($h139 | 0x0100)
+goto            @Label_08ac
+
+@Cond_07a2:
+jumpz           @Cond_07c8, ($h131 == 9)
+setvar          $h139, ($h139 | 0x0200)
+goto            @Label_08ac
+
+@Cond_07c8:
+jumpz           @Cond_07ee, ($h131 == 10)
+setvar          $h139, ($h139 | 0x0400)
+goto            @Label_08ac
+
+@Cond_07ee:
+jumpz           @Cond_0814, ($h131 == 11)
+setvar          $h139, ($h139 | 0x0800)
+goto            @Label_08ac
+
+@Cond_0814:
+jumpz           @Cond_083a, ($h131 == 12)
+setvar          $h139, ($h139 | 0x1000)
+goto            @Label_08ac
+
+@Cond_083a:
+jumpz           @Cond_0860, ($h131 == 13)
+setvar          $h139, ($h139 | 0x2000)
+goto            @Label_08ac
+
+@Cond_0860:
+jumpz           @Cond_0886, ($h131 == 14)
+setvar          $h139, ($h139 | 0x4000)
+goto            @Label_08ac
+
+@Cond_0886:
+jumpz           @Label_08ac, ($h131 == 15)
+setvar          $h139, ($h139 | 0x00008000)
+goto            @Label_08ac
+
+@Label_08ac:
+ret             
+
+code046d        0, 192
+code043e        0, 6, 0
+walkto          0, $h128, ($h129 - 8), 1
+walkwait        0
+ret             
+
+code046d        0, 192
+code043e        0, 6, 0
+walkto          0, $h128, ($h129 + 8), 1
+walkwait        0
+ret             
+
+code046d        0, 192
+code043e        0, 6, 0
+walkto          0, ($h128 - 8), $h129, 1
+walkwait        0
+ret             
+
+code046d        0, 192
+code043e        0, 6, 0
+walkto          0, ($h128 + 8), $h129, 1
+walkwait        0
+ret             
+
+code033a        196, 0
+code048e        
+code031a        7
+code031b        7, -1, -1, 32767, 6
+code031c        7, 1
+code031f        7
+code0443        0, 48, 0
+code043d        0, $h192, $h193
+code0443        0, 48, 1
+code031b        7, -1, -1, 32767, 6
+code031c        7, 2
+code031f        7
+code031a        7
+code033e        196
+ret             
+

@@ -1,0 +1,109 @@
+code036a        500
+jumpz           @Cond_0020, ($b070 == 1)
+goto            @Label_00c6
+
+goto            @Cond_0020
+
+@Cond_0020:
+code036a        501
+jumpz           @Cond_0040, ($b070 == 1)
+goto            @Label_00c6
+
+goto            @Cond_0040
+
+@Cond_0040:
+code036a        502
+jumpz           @Cond_0060, ($b070 == 1)
+goto            @Label_00c6
+
+goto            @Cond_0060
+
+@Cond_0060:
+code0301        8, 7
+code047d        0, 146
+code047e        0, 1
+dialogtxt       "基本は竿！"
+dialogtxt       "話はそれからだ"
+code0309        
+code047e        0, 0
+code0302        7
+goto            @Label_023a
+
+@Label_00c6:
+code036a        336
+jumpz           @Cond_00e6, ($b070 >= 1)
+goto            @Label_016a
+
+goto            @Cond_00e6
+
+@Cond_00e6:
+code036a        337
+jumpz           @Cond_0106, ($b070 >= 1)
+goto            @Label_016a
+
+goto            @Cond_0106
+
+@Cond_0106:
+code036a        338
+jumpz           @Cond_0126, ($b070 >= 1)
+goto            @Label_016a
+
+goto            @Cond_0126
+
+@Cond_0126:
+code036a        339
+jumpz           @Cond_0146, ($b070 >= 1)
+goto            @Label_016a
+
+goto            @Cond_0146
+
+@Cond_0146:
+code036a        340
+jumpz           @Cond_0166, ($b070 >= 1)
+goto            @Label_016a
+
+goto            @Cond_0166
+
+@Cond_0166:
+goto            @Label_01a4
+
+@Label_016a:
+menutitle       "どうするのかね？"
+menutxt         @Menu_01d4, "釣り"
+menutxt         @Menu_01f4, "景品交換"
+menutxt         @Label_023a, "やめる"
+menuwait        
+
+@Label_01a4:
+menutitle       "どうするのかね？"
+menutxt         @Menu_01f4, "景品交換"
+menutxt         @Label_023a, "やめる"
+menuwait        
+
+@Menu_01d4:
+setvar          $h096, 63
+code040a        
+code0389        
+setvar          $h309, 1
+goto            @Label_0246
+
+@Menu_01f4:
+setvar          $h096, 63
+code040a        
+jumpz           @Cond_021e, ($h311 == 99)
+code0353        12
+goto            @Label_022a
+
+@Cond_021e:
+code0353        $h311
+goto            @Label_022a
+
+@Label_022a:
+setvar          $h309, 1
+goto            @Label_0246
+
+@Label_023a:
+setvar          $h309, 0
+@Label_0246:
+done            
+

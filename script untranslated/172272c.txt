@@ -1,0 +1,176 @@
+jumpz           @Cond_007a, ($h319 == 44)
+code038e        284, 0
+jumpz           @Cond_0076, ($h220 == 0)
+code0301        0, 7
+code0305        1
+dialogtxt       "ウリ[NAME 4][NAME 8]チュウ…"
+code0309        
+code0302        7
+setvar          $h309, 0
+goto            @Label_0490
+
+goto            @Cond_0076
+
+@Cond_0076:
+goto            @Cond_007a
+
+@Cond_007a:
+jumpz           @Cond_0146, ($h319 == 46)
+jumpz           @Cond_00e0, ($h311 < 8)
+code0301        0, 7
+code0305        1
+dialogtxt       "近日稼動予定！"
+code0309        
+code0302        7
+setvar          $h309, 0
+goto            @Label_0490
+
+goto            @Cond_00e0
+
+@Cond_00e0:
+code038e        285, 1
+jumpz           @Cond_0142, ($h221 == 0)
+code0301        0, 7
+code0305        1
+dialogtxt       "おしまいッ！"
+code0309        
+code0302        7
+setvar          $h309, 0
+goto            @Label_0490
+
+goto            @Cond_0142
+
+@Cond_0142:
+goto            @Cond_0146
+
+@Cond_0146:
+code036a        348
+jumpz           @Cond_020c, (($b070 < 5 ? 1 : 0) && $h319 == 46)
+code0301        8, 7
+code047d        0, 0
+code047e        0, 1
+jumpz           @Cond_01c0, ($b002 == 0)
+dialogtxt       "福引き券が足りない…"
+goto            @Label_01e0
+
+@Cond_01c0:
+dialogtxt       "福引き券が足りないよぉ…"
+goto            @Label_01e0
+
+@Label_01e0:
+code0309        
+code047e        0, 0
+code0302        7
+setvar          $h309, 0
+goto            @Label_0490
+
+goto            @Cond_020c
+
+@Cond_020c:
+jumpz           @Cond_02b6, ($b070 == 0)
+code0301        8, 7
+code047d        0, 0
+code047e        0, 1
+jumpz           @Cond_0272, ($b002 == 0)
+dialogtxt       "福引き券持ってない…"
+goto            @Label_028e
+
+@Cond_0272:
+dialogtxt       "福引き券がないよぉ…"
+goto            @Label_028e
+
+@Label_028e:
+code0309        
+code047e        0, 0
+code0302        7
+setvar          $h309, 0
+goto            @Label_0490
+
+@Cond_02b6:
+setvar          $h096, 63
+code041c        16, 0, 0, 1
+code041d        
+code040a        
+jumpz           @Cond_03d4, ($h319 == 44)
+jumpz           @Cond_030c, ($h311 == 4)
+code038c        0
+goto            @Label_03d0
+
+@Cond_030c:
+jumpz           @Cond_0328, ($h311 == 5)
+code038c        1
+goto            @Label_03d0
+
+@Cond_0328:
+jumpz           @Cond_0344, ($h311 == 8)
+code038c        4
+goto            @Label_03d0
+
+@Cond_0344:
+jumpz           @Cond_0360, ($h311 == 9)
+code038c        5
+goto            @Label_03d0
+
+@Cond_0360:
+jumpz           @Cond_037c, ($h311 == 10)
+code038c        6
+goto            @Label_03d0
+
+@Cond_037c:
+jumpz           @Cond_0398, ($h311 == 11)
+code038c        7
+goto            @Label_03d0
+
+@Cond_0398:
+jumpz           @Cond_03b4, ($h311 == 12)
+code038c        8
+goto            @Label_03d0
+
+@Cond_03b4:
+jumpz           @Label_03d0, ($h311 == 99)
+code038c        9
+goto            @Label_03d0
+
+@Label_03d0:
+goto            @Label_0480
+
+@Cond_03d4:
+jumpz           @Cond_03f0, ($h311 == 8)
+code038c        14
+goto            @Label_047c
+
+@Cond_03f0:
+jumpz           @Cond_040c, ($h311 == 9)
+code038c        15
+goto            @Label_047c
+
+@Cond_040c:
+jumpz           @Cond_0428, ($h311 == 10)
+code038c        16
+goto            @Label_047c
+
+@Cond_0428:
+jumpz           @Cond_0444, ($h311 == 11)
+code038c        17
+goto            @Label_047c
+
+@Cond_0444:
+jumpz           @Cond_0460, ($h311 == 12)
+code038c        18
+goto            @Label_047c
+
+@Cond_0460:
+jumpz           @Label_047c, ($h311 == 99)
+code038c        19
+goto            @Label_047c
+
+@Label_047c:
+goto            @Label_0480
+
+@Label_0480:
+setvar          $h309, 1
+goto            @Label_0490
+
+@Label_0490:
+done            
+

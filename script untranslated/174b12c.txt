@@ -1,0 +1,372 @@
+@start:
+setvar          $b097, 0
+code0408        0
+code0410        0, 221, 222, -1
+code0410        1, 221, 223, 225
+code0410        2, 221, 224, 226
+code0411        
+code0430        227
+code0412        4, 1
+code0418        2
+setvar          $b075, 1
+setvar          $b072, 0
+placetxt        "プロスバンの町　道具屋"
+code040c        1, @Label_0248
+code040c        2, @Label_023e
+code0438        2, 397, 645, 1
+code043a        2, 2, 0
+code043d        2, 128, 148
+call            @Func_0c9e
+code041c        0, 168, 247, 1
+jumpz           @Cond_0156, ($h319 == 31)
+code041c        1, 168, 247, 3
+goto            @Cond_0156
+
+@Cond_0156:
+mapev           0, @Event_020c, 4
+mapevpos        0, (13,31)-(29,31)
+mapev           1, @Event_025c, 32
+mapevpos        1, (15,20)-(16,20)
+mapev           31, @Event_049e, 32
+mapevpos        31, (25,23)-(26,23)
+setvar          $h319, 45
+code0409        
+code046e        28, 256, 0
+code041d        
+code040b        
+
+@Event_020c:
+setvar          $h096, 32
+code041c        17, 0, 0, 1
+code041d        
+code040a        
+gotomap         632 ; map 17464dc
+
+@Label_023e:
+code0006        21
+code040b        
+
+@Label_0248:
+setvar          $h096, 63
+code040a        
+code034f        
+goto            @start
+
+@Event_025c:
+code043e        2, 3, 0
+@Label_0270:
+jumpz           @Cond_0488, 1
+code0350        2, 4
+code0351        
+jumpz           @Cond_02a2, ($b068 == -1)
+goto            @Cond_0488
+
+goto            @Label_0484
+
+@Cond_02a2:
+setvar          $h096, 63
+code040a        
+code0352        
+setvar          $b097, 0
+code0408        0
+code0410        0, 221, 222, -1
+code0410        1, 221, 223, 225
+code0410        2, 221, 224, 226
+code0411        
+code0430        227
+code0412        4, 1
+code0418        2
+setvar          $b075, 1
+setvar          $b072, 0
+placetxt        "プロスバンの町　道具屋"
+code040c        1, @Label_0248
+code040c        2, @Label_023e
+code0438        2, 397, 645, 1
+code043a        2, 2, 0
+code043d        2, 128, 148
+call            @Func_0c9e
+code041c        0, 168, 247, 1
+mapev           0, @Event_020c, 4
+mapevpos        0, (13,31)-(29,31)
+mapev           1, @Event_025c, 32
+mapevpos        1, (15,20)-(16,20)
+mapev           31, @Event_049e, 32
+mapevpos        31, (25,23)-(26,23)
+code0409        
+code043e        2, 3, 0
+goto            @Label_0484
+
+@Label_0484:
+goto            @Label_0270
+
+@Cond_0488:
+code043e        2, 0, 0
+code040b        
+
+@Event_049e:
+code0301        8, 7
+dialogtxt       "旅先でケガをした経験はありませんか？"
+dialogtxt       "そんな時にはＦエイド、何でもそろう"
+dialogtxt       "便利な道具屋"
+code0309        
+code0302        7
+code040b        
+
+done            
+
+code031a        7
+code031b        7, -1, -1, $h136, $h137
+code031c        7, 1
+code031f        7
+ret             
+
+code031b        7, -1, -1, $h136, $h137
+code031c        7, 2
+code031f        7
+code031a        7
+ret             
+
+code031a        7
+code031b        7, (-1 - $h139), $h140, $h136, $h137
+code031c        7, 1
+code031f        7
+ret             
+
+code031a        6
+code031b        6, $h139, 0, $h136, $h137
+code031c        6, 1
+code031f        6
+ret             
+
+code031b        7, (-1 - $h139), $h140, $h136, $h137
+code031c        7, 2
+code031f        7
+code031a        7
+ret             
+
+code031b        6, $h139, 0, $h136, $h137
+code031c        6, 2
+code031f        6
+code031a        6
+ret             
+
+code031a        7
+code031b        7, -1, -1, $h141, $h137
+code031c        7, 1
+code040d        15
+code031a        6
+code031b        6, -1, -1, $h136, $h137
+code031c        6, 1
+code031f        6
+code031a        7
+code031b        6, -1, -1, $h136, ($h137 / 2)
+code031c        6, 2
+code031f        6
+code031a        6
+ret             
+
+code031a        7
+code031b        7, -1, -1, $h141, $h137
+code031c        7, 1
+code040d        15
+code031a        6
+code031b        6, -1, -1, $h136, $h137
+code031c        6, 1
+code031f        6
+code031a        7
+ret             
+
+code031b        6, -1, -1, $h136, ($h137 / 2)
+code031c        6, 2
+code031f        6
+code031a        6
+ret             
+
+jumpz           @Cond_0860, ($h131 == 0)
+setvar          $h139, ($h139 | 0x0001)
+goto            @Label_0a9a
+
+@Cond_0860:
+jumpz           @Cond_0886, ($h131 == 1)
+setvar          $h139, ($h139 | 0x0002)
+goto            @Label_0a9a
+
+@Cond_0886:
+jumpz           @Cond_08ac, ($h131 == 2)
+setvar          $h139, ($h139 | 0x0004)
+goto            @Label_0a9a
+
+@Cond_08ac:
+jumpz           @Cond_08d2, ($h131 == 3)
+setvar          $h139, ($h139 | 0x0008)
+goto            @Label_0a9a
+
+@Cond_08d2:
+jumpz           @Cond_08f8, ($h131 == 4)
+setvar          $h139, ($h139 | 0x0010)
+goto            @Label_0a9a
+
+@Cond_08f8:
+jumpz           @Cond_091e, ($h131 == 5)
+setvar          $h139, ($h139 | 0x0020)
+goto            @Label_0a9a
+
+@Cond_091e:
+jumpz           @Cond_0944, ($h131 == 6)
+setvar          $h139, ($h139 | 0x0040)
+goto            @Label_0a9a
+
+@Cond_0944:
+jumpz           @Cond_096a, ($h131 == 7)
+setvar          $h139, ($h139 | 0x0080)
+goto            @Label_0a9a
+
+@Cond_096a:
+jumpz           @Cond_0990, ($h131 == 8)
+setvar          $h139, ($h139 | 0x0100)
+goto            @Label_0a9a
+
+@Cond_0990:
+jumpz           @Cond_09b6, ($h131 == 9)
+setvar          $h139, ($h139 | 0x0200)
+goto            @Label_0a9a
+
+@Cond_09b6:
+jumpz           @Cond_09dc, ($h131 == 10)
+setvar          $h139, ($h139 | 0x0400)
+goto            @Label_0a9a
+
+@Cond_09dc:
+jumpz           @Cond_0a02, ($h131 == 11)
+setvar          $h139, ($h139 | 0x0800)
+goto            @Label_0a9a
+
+@Cond_0a02:
+jumpz           @Cond_0a28, ($h131 == 12)
+setvar          $h139, ($h139 | 0x1000)
+goto            @Label_0a9a
+
+@Cond_0a28:
+jumpz           @Cond_0a4e, ($h131 == 13)
+setvar          $h139, ($h139 | 0x2000)
+goto            @Label_0a9a
+
+@Cond_0a4e:
+jumpz           @Cond_0a74, ($h131 == 14)
+setvar          $h139, ($h139 | 0x4000)
+goto            @Label_0a9a
+
+@Cond_0a74:
+jumpz           @Label_0a9a, ($h131 == 15)
+setvar          $h139, ($h139 | 0x00008000)
+goto            @Label_0a9a
+
+@Label_0a9a:
+ret             
+
+code046d        0, 192
+code043e        0, 6, 0
+walkto          0, $h128, ($h129 - 8), 1
+walkwait        0
+ret             
+
+code046d        0, 192
+code043e        0, 6, 0
+walkto          0, $h128, ($h129 + 8), 1
+walkwait        0
+ret             
+
+code046d        0, 192
+code043e        0, 6, 0
+walkto          0, ($h128 - 8), $h129, 1
+walkwait        0
+ret             
+
+code046d        0, 192
+code043e        0, 6, 0
+walkto          0, ($h128 + 8), $h129, 1
+walkwait        0
+ret             
+
+code033a        196, 0
+code048e        
+code031a        7
+code031b        7, -1, -1, 32767, 6
+code031c        7, 1
+code031f        7
+code0443        0, 48, 0
+code043d        0, $h192, $h193
+code0443        0, 48, 1
+code031b        7, -1, -1, 32767, 6
+code031c        7, 2
+code031f        7
+code031a        7
+code033e        196
+ret             
+
+@Func_0c9e:
+code0438        16, 407, 651, 1
+code043a        16, 16, 0
+code043d        16, 176, 176
+code043c        16, 2
+code0442        16, @Talk_0d08
+code0444        16, -1
+ret             
+
+@Talk_0d08:
+code0301        8, 7
+code047d        0, 148
+code047e        0, 1
+dialogtxt       "あら、そのハンマーは鍛冶師ね"
+dialogtxt       "今、鍛冶師や鍛冶職人に会うために"
+dialogtxt       "旅をして面識を広げてるのよ"
+code0309        
+dialogtxt       "将来は大きな店をもって娘と２人で"
+dialogtxt       "暮らすためにお得意さんを"
+dialogtxt       "見つけるためにね"
+code0309        
+dialogtxt       "鍛冶の事には詳しいから何か"
+dialogtxt       "知りたいことがあったら聞いてね"
+code0309        
+code047e        0, 0
+choicetxt       @Choice_0e8c, "強化について教えてほしい"
+choicetxt       @Choice_0f54, "解体について教えてほしい"
+choicetxt       @Choice_106c, "今は特にない"
+choicewait      
+
+@Choice_0e8c:
+code047e        0, 1
+dialogtxt       "強化はね、一度作製した武器に"
+dialogtxt       "色々なアイテムを合成して"
+dialogtxt       "もっと武器を強くするのよ"
+code0309        
+dialogtxt       "鍛冶ランクが高くないとダメだけど"
+dialogtxt       "最大３個までアイテムが使えるから"
+dialogtxt       "頑張ってみてね"
+code0309        
+goto            @Label_1096
+
+@Choice_0f54:
+code047e        0, 1
+dialogtxt       "解体はね、一度作製した武器を"
+dialogtxt       "マテルの状態に戻すことが出来るの"
+code0309        
+dialogtxt       "でも、ただマテルに戻るだけじゃ"
+dialogtxt       "無くて、パラメータを少しだけ"
+dialogtxt       "残したままマテルに戻るの"
+code0309        
+dialogtxt       "でも、熟練度が低い時や、鍛冶ランクが"
+dialogtxt       "高くないと、ほとんど無くなって"
+dialogtxt       "しまうから注意ね"
+code0309        
+goto            @Label_1096
+
+@Choice_106c:
+code047e        0, 1
+dialogtxt       "気が向いたらまた来てね"
+code0309        
+@Label_1096:
+code047e        0, 0
+code0302        7
+code040b        
+

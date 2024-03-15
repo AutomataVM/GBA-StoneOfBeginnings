@@ -1,0 +1,146 @@
+code0301        0, 7
+dialogtxt       "おまえのマ[NAME 4]割り職人度は…"
+code0309        
+jumpz           @Cond_0052, ($h045 < 10)
+dialogtxt       "マ[NAME 4]割り素人"
+goto            @Label_0108
+
+@Cond_0052:
+jumpz           @Cond_0078, ($h045 < 20)
+dialogtxt       "マ[NAME 4]割り見習い"
+goto            @Label_0108
+
+@Cond_0078:
+jumpz           @Cond_009c, ($h045 < 40)
+dialogtxt       "マ[NAME 4]割り職人"
+goto            @Label_0108
+
+@Cond_009c:
+jumpz           @Cond_00c0, ($h045 < 70)
+dialogtxt       "マ[NAME 4]割り名人"
+goto            @Label_0108
+
+@Cond_00c0:
+jumpz           @Cond_00e4, ($h045 < 100)
+dialogtxt       "マ[NAME 4]割り達人"
+goto            @Label_0108
+
+@Cond_00e4:
+jumpz           @Label_0108, ($h045 >= 100)
+dialogtxt       "マ[NAME 4]割り鉄人"
+goto            @Label_0108
+
+@Label_0108:
+code0309        
+dialogtxt       "だな"
+code0309        
+code0302        7
+code0443        0, 256, 0
+jumpz           @Cond_019c, ($h045 < 10)
+jumpz           @Cond_0162, ($b002 == 0)
+code033a        1491, 0
+goto            @Label_0174
+
+@Cond_0162:
+code033a        1394, 0
+goto            @Label_0174
+
+@Label_0174:
+code043e        0, 62, 1
+code043f        0
+code040d        30
+goto            @Label_02b8
+
+@Cond_019c:
+jumpz           @Cond_0214, ($h045 >= 70 ? 1 : 0) && ($h045 < 100 ? 1 : 0)
+jumpz           @Cond_01da, ($b002 == 0)
+code033a        1489, 0
+goto            @Label_01ec
+
+@Cond_01da:
+code033a        1392, 0
+goto            @Label_01ec
+
+@Label_01ec:
+code043e        0, 60, 1
+code043f        0
+code040d        30
+goto            @Label_02b8
+
+@Cond_0214:
+jumpz           @Label_02b8, ($h045 >= 100)
+jumpz           @Cond_0246, ($b002 == 0)
+code033a        1489, 0
+goto            @Label_0258
+
+@Cond_0246:
+code033a        1392, 0
+goto            @Label_0258
+
+@Label_0258:
+code043e        0, 60, 1
+code043f        0
+code043e        0, 59, 1
+code043f        0
+code043e        0, 61, 1
+code043f        0
+code040d        30
+goto            @Label_02b8
+
+@Label_02b8:
+code0443        0, 256, 1
+code043e        0, 3, 0
+setvar          $h219, ($h045 * 3)
+jumpz           @Cond_030a, ($h219 == 0)
+goto            @Label_0428
+
+goto            @Cond_030a
+
+@Cond_030a:
+code0301        0, 7
+dialogtxt       "これはマ[NAME 4]割りの報酬だ"
+code0309        
+dialogtxt       "とっておきなさい"
+code0309        
+code0302        7
+code0364        $h219
+code0365        
+jumpz           @Cond_0374, ($h045 < 10)
+goto            @Label_0428
+
+goto            @Label_0428
+
+@Cond_0374:
+jumpz           @Cond_0398, ($h045 < 20)
+code0366        336, 5
+code0367        
+goto            @Label_0428
+
+@Cond_0398:
+jumpz           @Cond_03bc, ($h045 < 40)
+code0366        337, 4
+code0367        
+goto            @Label_0428
+
+@Cond_03bc:
+jumpz           @Cond_03e0, ($h045 < 70)
+code0366        338, 3
+code0367        
+goto            @Label_0428
+
+@Cond_03e0:
+jumpz           @Cond_0404, ($h045 < 100)
+code0366        339, 2
+code0367        
+goto            @Label_0428
+
+@Cond_0404:
+jumpz           @Label_0428, ($h045 >= 100)
+code0366        340, 1
+code0367        
+goto            @Label_0428
+
+@Label_0428:
+setvar          $h219, 0
+done            
+

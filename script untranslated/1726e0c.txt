@@ -1,0 +1,85 @@
+code035e        389
+jumpz           @Cond_0028, ($b005 != 0)
+setvar          $b006, 2
+goto            @Label_00ba
+
+@Cond_0028:
+code0114        
+@Label_002a:
+code0300        
+code0312        
+code0313        @Menu_007e
+menutxt         @Menu_0052, "態勢を整える！"
+menutxt         @Menu_007e, "戦う"
+menuwait        
+
+@Menu_0052:
+setvar          $b075, 0
+setvar          $b072, 0
+setvar          $b081, 1
+code0303        
+code034f        
+goto            @Label_002a
+
+@Menu_007e:
+code036f        
+jumpz           @Cond_00b6, ($b071 != 1)
+code0300        
+popuptxt        "武器を１本にして下さい"
+code0318        
+goto            @Label_002a
+
+goto            @Cond_00b6
+
+@Cond_00b6:
+goto            @Label_00ba
+
+@Label_00ba:
+code035b        1
+setvar          $b032, 1
+setvar          $b033, 0
+setvar          $b039, 3
+setvar          $h032, (0 + $b002)
+setvar          $b034, 1
+setvar          $h033, ((340 + $b003) + 21)
+setvar          $b043, 100
+setvar          $b042, 100
+setvar          $b044, 0
+setvar          $w015, 0
+setvar          $b060, 0
+setvar          $b063, 0
+jumpz           @Cond_0184, ($b002 == 0)
+setvar          $h050, 65
+goto            @Label_0194
+
+@Cond_0184:
+setvar          $h050, 56
+goto            @Label_0194
+
+@Label_0194:
+code0331        5, 256
+code0100        
+code0101        
+jumpz           @Cond_01e2, ($b041 == 3)
+code0111        
+jumpz           @Cond_01ce, ($b004 == 1)
+code035c        
+goto            @Label_01de
+
+@Cond_01ce:
+code035d        
+code000d        
+gotomap         1 ; map 1720aac
+
+goto            @Label_01de
+
+@Label_01de:
+goto            @Label_01e8
+
+@Cond_01e2:
+code035d        
+goto            @Label_01e8
+
+@Label_01e8:
+done            
+

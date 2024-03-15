@@ -1,0 +1,261 @@
+code0332        
+code0331        40, 256
+code0478        0, 0
+code0479        0, 2, 14
+code047d        0, 0
+code0478        1, 9
+code0479        1, 2, 12
+code047d        1, 108
+call            @Func_0888
+call            @Func_0784
+jumpz           @Cond_00b2, ($b002 == 0)
+dialogtxt       "この武器に"
+dialogtxt       "オ[NAME 8]とγのすべてを…"
+goto            @Label_00de
+
+@Cond_00b2:
+dialogtxt       "この武器に"
+dialogtxt       "わたしとγのすべてを…"
+goto            @Label_00de
+
+@Label_00de:
+code047b        
+code0309        
+call            @Func_07d8
+code0479        1, 2, 14
+call            @Func_080e
+dialogtxt       "ふーん…、その武器が"
+dialogtxt       "アタシとロブの斧に勝つための"
+dialogtxt       "アンタのこたえなんだね…"
+code0309        
+call            @Func_0844
+code0479        0, 2, 12
+call            @Func_07a2
+dialogtxt       "…"
+code0309        
+call            @Func_07d8
+code0479        1, 2, 13
+call            @Func_080e
+dialogtxt       "なるほど…"
+dialogtxt       "そうか…"
+code0309        
+code0479        1, 2, 15
+dialogtxt       "よし"
+dialogtxt       "アンタの実力"
+dialogtxt       "見極めてあげるよ！"
+code0309        
+call            @Func_08de
+call            @Func_082c
+code047b        
+done            
+
+code031a        7
+code031b        7, -1, -1, $h136, $h137
+code031c        7, 1
+code031f        7
+ret             
+
+code031b        7, -1, -1, $h136, $h137
+code031c        7, 2
+code031f        7
+code031a        7
+ret             
+
+code031a        7
+code031b        7, (-1 - $h139), $h140, $h136, $h137
+code031c        7, 1
+code031f        7
+ret             
+
+code031a        6
+code031b        6, $h139, 0, $h136, $h137
+code031c        6, 1
+code031f        6
+ret             
+
+code031b        7, (-1 - $h139), $h140, $h136, $h137
+code031c        7, 2
+code031f        7
+code031a        7
+ret             
+
+code031b        6, $h139, 0, $h136, $h137
+code031c        6, 2
+code031f        6
+code031a        6
+ret             
+
+code031a        7
+code031b        7, -1, -1, $h141, $h137
+code031c        7, 1
+code040d        15
+code031a        6
+code031b        6, -1, -1, $h136, $h137
+code031c        6, 1
+code031f        6
+code031a        7
+code031b        6, -1, -1, $h136, ($h137 / 2)
+code031c        6, 2
+code031f        6
+code031a        6
+ret             
+
+code031a        7
+code031b        7, -1, -1, $h141, $h137
+code031c        7, 1
+code040d        15
+code031a        6
+code031b        6, -1, -1, $h136, $h137
+code031c        6, 1
+code031f        6
+code031a        7
+ret             
+
+code031b        6, -1, -1, $h136, ($h137 / 2)
+code031c        6, 2
+code031f        6
+code031a        6
+ret             
+
+jumpz           @Cond_0548, ($h131 == 0)
+setvar          $h139, ($h139 | 0x0001)
+goto            @Label_0782
+
+@Cond_0548:
+jumpz           @Cond_056e, ($h131 == 1)
+setvar          $h139, ($h139 | 0x0002)
+goto            @Label_0782
+
+@Cond_056e:
+jumpz           @Cond_0594, ($h131 == 2)
+setvar          $h139, ($h139 | 0x0004)
+goto            @Label_0782
+
+@Cond_0594:
+jumpz           @Cond_05ba, ($h131 == 3)
+setvar          $h139, ($h139 | 0x0008)
+goto            @Label_0782
+
+@Cond_05ba:
+jumpz           @Cond_05e0, ($h131 == 4)
+setvar          $h139, ($h139 | 0x0010)
+goto            @Label_0782
+
+@Cond_05e0:
+jumpz           @Cond_0606, ($h131 == 5)
+setvar          $h139, ($h139 | 0x0020)
+goto            @Label_0782
+
+@Cond_0606:
+jumpz           @Cond_062c, ($h131 == 6)
+setvar          $h139, ($h139 | 0x0040)
+goto            @Label_0782
+
+@Cond_062c:
+jumpz           @Cond_0652, ($h131 == 7)
+setvar          $h139, ($h139 | 0x0080)
+goto            @Label_0782
+
+@Cond_0652:
+jumpz           @Cond_0678, ($h131 == 8)
+setvar          $h139, ($h139 | 0x0100)
+goto            @Label_0782
+
+@Cond_0678:
+jumpz           @Cond_069e, ($h131 == 9)
+setvar          $h139, ($h139 | 0x0200)
+goto            @Label_0782
+
+@Cond_069e:
+jumpz           @Cond_06c4, ($h131 == 10)
+setvar          $h139, ($h139 | 0x0400)
+goto            @Label_0782
+
+@Cond_06c4:
+jumpz           @Cond_06ea, ($h131 == 11)
+setvar          $h139, ($h139 | 0x0800)
+goto            @Label_0782
+
+@Cond_06ea:
+jumpz           @Cond_0710, ($h131 == 12)
+setvar          $h139, ($h139 | 0x1000)
+goto            @Label_0782
+
+@Cond_0710:
+jumpz           @Cond_0736, ($h131 == 13)
+setvar          $h139, ($h139 | 0x2000)
+goto            @Label_0782
+
+@Cond_0736:
+jumpz           @Cond_075c, ($h131 == 14)
+setvar          $h139, ($h139 | 0x4000)
+goto            @Label_0782
+
+@Cond_075c:
+jumpz           @Label_0782, ($h131 == 15)
+setvar          $h139, ($h139 | 0x00008000)
+goto            @Label_0782
+
+@Label_0782:
+ret             
+
+@Func_0784:
+code0301        2, 4
+code047e        0, 1
+ret             
+
+@Func_07a2:
+code0301        2, 7
+code047e        0, 1
+ret             
+
+code047e        0, 0
+code0302        4
+ret             
+
+@Func_07d8:
+code047e        0, 0
+code0302        7
+ret             
+
+code0301        4, 5
+code047e        1, 1
+ret             
+
+@Func_080e:
+code0301        4, 7
+code047e        1, 1
+ret             
+
+@Func_082c:
+code047e        1, 0
+code0302        5
+ret             
+
+@Func_0844:
+code047e        1, 0
+code0302        7
+ret             
+
+code047a        0, 1, 1
+ret             
+
+code047a        1, 1, 1
+ret             
+
+@Func_0888:
+code047a        0, 1, 1
+code047a        1, 1, 1
+ret             
+
+code047a        0, 0, 1
+ret             
+
+code047a        1, 0, 1
+ret             
+
+@Func_08de:
+code047a        0, 0, 1
+code047a        1, 0, 1
+ret             
+
