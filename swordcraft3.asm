@@ -61,15 +61,44 @@
 .org 0x0964684C 
 .import "asm/fishing/fishing_map.lzss" 
 
+;link
+.org 0x0952891C 
+.import "asm/lzss/s_tsuushin_n_tile.lzss" 
+.org 0x0953682C 
+.import "asm/lzss/s_tsuushin_n_map.lzss" 
+;s_omake
+.org 0x0952A5EC 
+.import "asm//lzss/s_omake_n2_tile.lzss" 
+.org 0x09536DEC 
+.import "asm//lzss/s_omake_n2_map.lzss" 
+
 ;lottery minigame gfx
-;finish
-.org 0x964EA2C
-.import "asm/lottery/finish_gfx.bin" 
 .org 0x964DD6C
 .import "asm/lottery/start_ready.bin" 
 
+;firewood minigame gfx
+.org 0x094CF11C 
+.import "asm/firewood/firewood_ex2_tile.bin" 
+.org 0x094D3C4C 
+.import "asm/firewood/firewood_ex2_map.bin" 
+
+;minigame results
+.org 0x964F58C
+.import "asm/lottery/1_place.lzss" 
+;.org 0x964FE2C
+;.import "asm/lottery/2_place.lzss" 
+;.org 0x965048C
+;.import "asm/lottery/3_place.bin" 
+;.org 0x96509FC
+;.import "asm/lottery/4_place.bin" 
+;.org 0x9650F1C
+;.import "asm/lottery/5_place.bin" 
+
 ;battle messages (guard, poison, sleep)
 .include "asm/guard.asm"
+
+;fix for the item obtained window
+;.include "asm/battle_itemGet.asm"
 
 ;missing system messages
 .org 0x80C0040
@@ -109,5 +138,6 @@
 ;.asciiz "string 1"
 ;.org 0x80C0220
 ;.asciiz "string 2"
+
 
 .close

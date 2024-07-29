@@ -2,8 +2,8 @@
 armips swordcraft3.asm
 
 ::SYSTEM MESSAGES
-script_inserter\swordcraft3-menu swordcraft3-test.gba system_messages\magic.txt system_messages\weapons.txt system_messages\link.txt system_messages\effects.txt system_messages\special_attacks.txt system_messages\dictionary.txt system_messages\items.txt system_messages\menu.txt system_messages\bonus.txt 
-script_inserter\swordcraft3-menu swordcraft3-test.gba system_messages\menu3.txt
+script_inserter\swordcraft3-menu swordcraft3-test.gba system_messages\magic.txt system_messages\weapons.txt system_messages\link.txt system_messages\effects.txt system_messages\special_attacks.txt system_messages\dictionary.txt system_messages\items.txt system_messages\menu.txt system_messages\bonus.txt system_messages\menu3.txt
+::script_inserter\swordcraft3-menu swordcraft3-test.gba system_messages\menu3.txt
 
 ::DAY 0 SCRIPTS
 script_inserter\swordcraft3c swordcraft3-test.gba script\17bcb2c.txt --pos=17bcb2c
