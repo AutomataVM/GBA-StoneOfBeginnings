@@ -21,7 +21,7 @@
 .include "asm/saving.asm"
 
 ; Fixes and tweaks for the naming screen.
-;.include "asm/naming.asm"
+.include "asm/naming.asm"
 .include "asm/name_input.asm"
 .include "asm/sjis2ascii.asm"
 
@@ -85,14 +85,18 @@
 ;minigame results
 .org 0x964F58C
 .import "asm/lottery/1_place.lzss" 
-;.org 0x964FE2C
-;.import "asm/lottery/2_place.lzss" 
-;.org 0x965048C
-;.import "asm/lottery/3_place.bin" 
-;.org 0x96509FC
-;.import "asm/lottery/4_place.bin" 
-;.org 0x9650F1C
-;.import "asm/lottery/5_place.bin" 
+.org 0x964FE2C
+.import "asm/lottery/2_place.lzss" 
+.org 0x965048C
+.import "asm/lottery/3_place.lzss" 
+.org 0x96509FC
+.import "asm/lottery/4_place.lzss" 
+.org 0x9650F1C
+.import "asm/lottery/5_place.lzss" 
+.org 0x0965513C 
+.import "asm/lottery/guumu_tile.lzss" 
+.org 0x0965827C 
+.import "asm/lottery/guumu_map.lzss" 
 
 ;battle messages (guard, poison, sleep)
 .include "asm/guard.asm"
@@ -133,11 +137,12 @@
 .org 0x80C0060
 .sjisn "・money            "
 
-;fishing minigame system messages
-;.org 0x80C7220
-;.asciiz "string 1"
-;.org 0x80C0220
-;.asciiz "string 2"
-
+;fishing and lottery minigame system messages
+.org 0x80C0228
+.asciiz "Select fishing rod"
+.org 0x80C0210
+.asciiz "Select bait to use"
+.org 0x80C0244
+.asciiz "A button - Start B button - End"
 
 .close

@@ -2,7 +2,7 @@ set "_ROM=..\swordcraft3.gba"
 
 echo:; asm output> final\final.asm
 
-::call compile.cmd %_ROM% s_main     14ECADC 152C5BC
+call compile.cmd %_ROM% guumu      165513C 165827C
 ::call compile.cmd %_ROM% s_equip_1  14EEE8C 152CB8C
 ::call compile.cmd %_ROM% s_status   14F0E6C 152D16C
 ::call compile.cmd %_ROM% s_item     14F2E5C 152D74C
@@ -37,4 +37,5 @@ echo:; asm output> final\final.asm
 ::call compile.cmd %_ROM% leftover1  164a99c 164b9ac
 ::call compile.cmd %_ROM% leftover2  164bcbc 164ce4c
 ::call compile.cmd %_ROM% guumu      165513C 165827C
+
 pause
