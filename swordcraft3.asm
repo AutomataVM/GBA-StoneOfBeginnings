@@ -145,4 +145,9 @@
 .org 0x80C0244
 .asciiz "A button - Start B button - End"
 
+;customize screen
+.org 0x0951237C 
+.import "asm/s_custom_1_tile.lzss" 
+.org 0x09532E0C 
+.import "asm/s_custom_1_map.lzss" 
 .close

@@ -20,7 +20,7 @@ call compile.cmd %_ROM% guumu      165513C 165827C
 ::call compile.cmd %_ROM% s_combo    150C23C 1531CBC
 ::call compile.cmd %_ROM% s_secret_2 150E3AC 153228C
 ::call compile.cmd %_ROM% s_weapon_4 151046C 153286C
-::call compile.cmd %_ROM% s_custom_1 151237C 1532E0C
+call compile.cmd %_ROM% s_custom_1 151237C 1532E0C
 ::call compile.cmd %_ROM% s_custom_2 15144AC 15333EC
 ::call compile.cmd %_ROM% s_data     15163CC 153398C
 ::call compile.cmd %_ROM% s_buy      151870C 1533F6C
