@@ -78,9 +78,9 @@
 
 ;firewood minigame gfx
 .org 0x094CF11C 
-.import "asm/firewood/firewood_ex2_tile.bin" 
+.import "asm/firewood/firewood_k1_tile.bin" 
 .org 0x094D3C4C 
-.import "asm/firewood/firewood_ex2_map.bin" 
+.import "asm/firewood/firewood_k1_map.bin" 
 
 ;minigame results
 .org 0x964F58C
@@ -147,7 +147,7 @@
 
 ;customize screen
 .org 0x0951237C 
-.import "asm/s_custom_1_tile.lzss" 
+.import "asm/s_custom_1_k1_tile.lzss" 
 .org 0x09532E0C 
-.import "asm/s_custom_1_map.lzss" 
+.import "asm/s_custom_1_k1_map.lzss" 
 .close
