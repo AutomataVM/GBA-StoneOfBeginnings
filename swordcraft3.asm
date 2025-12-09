@@ -147,7 +147,7 @@
 
 ;customize screen
 .org 0x0951237C 
-.import "asm/s_custom_1_tile.lzss" 
+.import "asm/s_custom_1_k1_tile.lzss" 
 .org 0x09532E0C 
-.import "asm/s_custom_1_map.lzss" 
+.import "asm/s_custom_1_k1_map.lzss" 
 .close
