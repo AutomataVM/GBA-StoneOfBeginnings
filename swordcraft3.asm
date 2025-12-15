@@ -35,6 +35,10 @@
 .include "asm/item_obtained.asm"
 .include "asm/money_obtained.asm"
 
+;text dialog fixes
+.include "asm/golden_weapon_dialog.asm"
+.include "asm/battle_item_get_dialog.asm"
+
 ;graphics
 .include "asm/title.asm"
 .include "asm/gfx_craftsword_edit.asm"
