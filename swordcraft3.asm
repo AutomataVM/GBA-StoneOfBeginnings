@@ -144,10 +144,20 @@
 .asciiz "Select bait to use"
 .org 0x80C0244
 .asciiz "A button - Start B button - End"
+.org 0x80C0264
+.asciiz "That is all for today's business"
+
+;good weapon string
+.org 0x080BFF8C 
+.asciiz  "I made a good weapon!"
+;data not available
+.org 0x080C0024 
+.asciiz  "Data is not available!"
 
 ;customize screen
 .org 0x0951237C 
 .import "asm/s_custom_1_tile.lzss" 
 .org 0x09532E0C 
 .import "asm/s_custom_1_map.lzss" 
+
 .close

@@ -1,0 +1,429 @@
+@start:
+setvar          $b097, 0
+code0408        0
+code0410        0, 86, 87, 90
+code0410        1, 86, 88, -1
+code0410        2, 86, 89, 91
+code0411        
+code0430        92
+code0412        4, 1
+code0418        2
+setvar          $b075, 1
+setvar          $b072, 0
+placetxt        "Chief's House　Tool Shop"
+code040c        1, @Label_03a6
+code040c        2, @Label_039c
+code0438        2, 367, 632, 1
+code043a        2, 2, 0
+code043d        2, 128, 124
+call            @Func_0e5a
+code0438        17, 363, 632, 1
+code043a        17, 17, 0
+code043d        17, 80, 160
+code043c        17, 4
+code0442        17, @Talk_0686
+code0444        17, -1
+jumpz           @Cond_0198, ($bv016 == 7)
+code043e        17, 3, 0
+goto            @Cond_0198
+
+@Cond_0198:
+code041c        0, 128, 247, 1
+jumpz           @Cond_01e0, ($h319 == 0)
+code041c        1, 128, 247, 3
+goto            @Label_020e
+
+@Cond_01e0:
+jumpz           @Label_020e, ($h319 == 11)
+code041c        1, 216, 40, 1
+goto            @Label_020e
+
+@Label_020e:
+mapev           0, @Event_0338, 4
+mapevpos        0, (15,31)-(16,31)
+mapev           1, @Event_036a, 4
+mapevpos        1, (26,4)-(27,4)
+mapev           2, @Event_03ba, 32
+mapevpos        2, (15,17)-(16,18)
+setvar          $h319, 10
+code0409        
+code046e        28, 256, 0
+jumpz           @Cond_0308, ($bv016 == 7)
+code046d        0, 192
+code043c        17, (((($h130 - 1) + 2) & 0x0003) + 1)
+goto            @Cond_0308
+
+@Cond_0308:
+code041d        
+jumpz           @Cond_0336, ($bv016 == 7)
+code043e        0, 3, 0
+goto            @Talk_0686
+
+goto            @Cond_0336
+
+@Cond_0336:
+code040b        
+
+@Event_0338:
+setvar          $h096, 32
+code041c        17, 0, 0, 1
+code041d        
+code040a        
+gotomap         401 ; map 17344cc
+
+@Event_036a:
+setvar          $h096, 32
+code041c        18, 0, 0, 3
+code041d        
+code040a        
+gotomap         412 ; map 173824c
+
+@Label_039c:
+code0006        21
+code040b        
+
+@Label_03a6:
+setvar          $h096, 63
+code040a        
+code034f        
+goto            @start
+
+@Event_03ba:
+code043e        2, 3, 0
+@Label_03ce:
+jumpz           @Cond_0670, 1
+code0350        0, 2
+code0351        
+jumpz           @Cond_0400, ($b068 == -1)
+goto            @Cond_0670
+
+goto            @Label_066c
+
+@Cond_0400:
+setvar          $h096, 63
+code040a        
+code0352        
+setvar          $b097, 0
+code0408        0
+code0410        0, 86, 87, 90
+code0410        1, 86, 88, -1
+code0410        2, 86, 89, 91
+code0411        
+code0430        92
+code0412        4, 1
+code0418        2
+setvar          $b075, 1
+setvar          $b072, 0
+placetxt        "Chief's House　Tool Shop"
+code040c        1, @Label_03a6
+code040c        2, @Label_039c
+code0438        2, 367, 632, 1
+code043a        2, 2, 0
+code043d        2, 128, 124
+code0438        17, 363, 632, 1
+code043a        17, 17, 0
+code043d        17, 80, 160
+code043c        17, 4
+code0442        17, @Talk_0686
+code0444        17, -1
+jumpz           @Cond_05a4, ($bv016 == 7)
+code043e        17, 3, 0
+goto            @Cond_05a4
+
+@Cond_05a4:
+call            @Func_0e5a
+code041c        0, 128, 144, 1
+mapev           0, @Event_0338, 4
+mapevpos        0, (15,31)-(16,31)
+mapev           1, @Event_036a, 4
+mapevpos        1, (26,4)-(27,4)
+mapev           2, @Event_03ba, 32
+mapevpos        2, (15,17)-(16,18)
+code0409        
+code043e        2, 3, 0
+goto            @Label_066c
+
+@Label_066c:
+goto            @Label_03ce
+
+@Cond_0670:
+code043e        2, 0, 0
+code040b        
+
+@Talk_0686:
+code0006        3911
+jumpz           @Cond_06a6, ($bv016 == 7)
+goto            @start
+
+goto            @Cond_06a6
+
+@Cond_06a6:
+jumpz           @Cond_06d0, ($bv016 & 0x0010)
+setvar          $bv016, ($bv016 & 0x000F)
+goto            @start
+
+goto            @Cond_06d0
+
+@Cond_06d0:
+code040b        
+
+done            
+
+code031a        7
+code031b        7, -1, -1, $h136, $h137
+code031c        7, 1
+code031f        7
+ret             
+
+code031b        7, -1, -1, $h136, $h137
+code031c        7, 2
+code031f        7
+code031a        7
+ret             
+
+code031a        7
+code031b        7, (-1 - $h139), $h140, $h136, $h137
+code031c        7, 1
+code031f        7
+ret             
+
+code031a        6
+code031b        6, $h139, 0, $h136, $h137
+code031c        6, 1
+code031f        6
+ret             
+
+code031b        7, (-1 - $h139), $h140, $h136, $h137
+code031c        7, 2
+code031f        7
+code031a        7
+ret             
+
+code031b        6, $h139, 0, $h136, $h137
+code031c        6, 2
+code031f        6
+code031a        6
+ret             
+
+code031a        7
+code031b        7, -1, -1, $h141, $h137
+code031c        7, 1
+code040d        15
+code031a        6
+code031b        6, -1, -1, $h136, $h137
+code031c        6, 1
+code031f        6
+code031a        7
+code031b        6, -1, -1, $h136, ($h137 / 2)
+code031c        6, 2
+code031f        6
+code031a        6
+ret             
+
+code031a        7
+code031b        7, -1, -1, $h141, $h137
+code031c        7, 1
+code040d        15
+code031a        6
+code031b        6, -1, -1, $h136, $h137
+code031c        6, 1
+code031f        6
+code031a        7
+ret             
+
+code031b        6, -1, -1, $h136, ($h137 / 2)
+code031c        6, 2
+code031f        6
+code031a        6
+ret             
+
+jumpz           @Cond_0a1c, ($h131 == 0)
+setvar          $h139, ($h139 | 0x0001)
+goto            @Label_0c56
+
+@Cond_0a1c:
+jumpz           @Cond_0a42, ($h131 == 1)
+setvar          $h139, ($h139 | 0x0002)
+goto            @Label_0c56
+
+@Cond_0a42:
+jumpz           @Cond_0a68, ($h131 == 2)
+setvar          $h139, ($h139 | 0x0004)
+goto            @Label_0c56
+
+@Cond_0a68:
+jumpz           @Cond_0a8e, ($h131 == 3)
+setvar          $h139, ($h139 | 0x0008)
+goto            @Label_0c56
+
+@Cond_0a8e:
+jumpz           @Cond_0ab4, ($h131 == 4)
+setvar          $h139, ($h139 | 0x0010)
+goto            @Label_0c56
+
+@Cond_0ab4:
+jumpz           @Cond_0ada, ($h131 == 5)
+setvar          $h139, ($h139 | 0x0020)
+goto            @Label_0c56
+
+@Cond_0ada:
+jumpz           @Cond_0b00, ($h131 == 6)
+setvar          $h139, ($h139 | 0x0040)
+goto            @Label_0c56
+
+@Cond_0b00:
+jumpz           @Cond_0b26, ($h131 == 7)
+setvar          $h139, ($h139 | 0x0080)
+goto            @Label_0c56
+
+@Cond_0b26:
+jumpz           @Cond_0b4c, ($h131 == 8)
+setvar          $h139, ($h139 | 0x0100)
+goto            @Label_0c56
+
+@Cond_0b4c:
+jumpz           @Cond_0b72, ($h131 == 9)
+setvar          $h139, ($h139 | 0x0200)
+goto            @Label_0c56
+
+@Cond_0b72:
+jumpz           @Cond_0b98, ($h131 == 10)
+setvar          $h139, ($h139 | 0x0400)
+goto            @Label_0c56
+
+@Cond_0b98:
+jumpz           @Cond_0bbe, ($h131 == 11)
+setvar          $h139, ($h139 | 0x0800)
+goto            @Label_0c56
+
+@Cond_0bbe:
+jumpz           @Cond_0be4, ($h131 == 12)
+setvar          $h139, ($h139 | 0x1000)
+goto            @Label_0c56
+
+@Cond_0be4:
+jumpz           @Cond_0c0a, ($h131 == 13)
+setvar          $h139, ($h139 | 0x2000)
+goto            @Label_0c56
+
+@Cond_0c0a:
+jumpz           @Cond_0c30, ($h131 == 14)
+setvar          $h139, ($h139 | 0x4000)
+goto            @Label_0c56
+
+@Cond_0c30:
+jumpz           @Label_0c56, ($h131 == 15)
+setvar          $h139, ($h139 | 0x00008000)
+goto            @Label_0c56
+
+@Label_0c56:
+ret             
+
+code046d        0, 192
+code043e        0, 6, 0
+walkto          0, $h128, ($h129 - 8), 1
+walkwait        0
+ret             
+
+code046d        0, 192
+code043e        0, 6, 0
+walkto          0, $h128, ($h129 + 8), 1
+walkwait        0
+ret             
+
+code046d        0, 192
+code043e        0, 6, 0
+walkto          0, ($h128 - 8), $h129, 1
+walkwait        0
+ret             
+
+code046d        0, 192
+code043e        0, 6, 0
+walkto          0, ($h128 + 8), $h129, 1
+walkwait        0
+ret             
+
+code033a        196, 0
+code048e        
+code031a        7
+code031b        7, -1, -1, 32767, 6
+code031c        7, 1
+code031f        7
+code0443        0, 48, 0
+code043d        0, $h192, $h193
+code0443        0, 48, 1
+code031b        7, -1, -1, 32767, 6
+code031c        7, 2
+code031f        7
+code031a        7
+code033e        196
+ret             
+
+@Func_0e5a:
+code0438        16, 407, 651, 1
+code043a        16, 16, 0
+code043d        16, 200, 52
+code043c        16, 1
+code0442        16, @Talk_0ec4
+code0444        16, -1
+ret             
+
+@Talk_0ec4:
+code0301        8, 7
+code047d        0, 148
+code047e        0, 1
+dialogtxt       "My, you must be a Craftknight."
+dialogtxt       "Right now I'm on a journey to meet"
+dialogtxt       "many Craftknights and blacksmiths."
+code0309        
+dialogtxt       "I hope that some of them"
+dialogtxt       "will become regular customers"
+dialogtxt       "when my daughter and I open a shop."
+code0309        
+dialogtxt       "I know quite a lot about smithing."
+dialogtxt       "Feel free to ask me anything."
+code0309        
+code047e        0, 0
+choicetxt       @Choice_104e, "Teach me about crafting"
+choicetxt       @Choice_115a, "Teach me about smithing ranks"
+choicetxt       @Choice_1252, "Nothing right now"
+choicewait      
+
+@Choice_104e:
+code047e        0, 1
+dialogtxt       "I'll teach you a little bit"
+dialogtxt       "about Shapestones, then."
+code0309        
+dialogtxt       "Shapestones come in 6 varieties,"
+dialogtxt       "and determine the type of weapon."
+dialogtxt       "Using different materials"
+code0309        
+dialogtxt       "can result in a completely"
+dialogtxt       "different weapon of that type."
+dialogtxt       "It's best to experiment."
+code0309        
+goto            @Label_127c
+
+@Choice_115a:
+code047e        0, 1
+dialogtxt       "I'll teach you how to raise"
+dialogtxt       "your smithing rank."
+code0309        
+dialogtxt       "When you do anything outside"
+dialogtxt       "of repairing, you'll gain"
+dialogtxt       "experience."
+code0309        
+dialogtxt       "Gather enough and you'll"
+dialogtxt       "raise your rank."
+code0309        
+goto            @Label_127c
+
+@Choice_1252:
+code047e        0, 1
+dialogtxt       "I'll be here if you need me."
+code0309        
+@Label_127c:
+code047e        0, 0
+code0302        7
+code040b        
+
